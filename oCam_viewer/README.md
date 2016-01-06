@@ -11,12 +11,12 @@ Requirements
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
-$ svn export https://github.com/withrobot/oCam/{결정되면 업데이트}
+$ svn export https://github.com/withrobot/oCam/oCam_viewer
 ```
 - using git clone
 ```
 $ cd YOUR_WORKING_DIRECTORY
-$ git clone https://github.com/withrobot/oCam/{결정되면 업데이트}
+$ git clone https://github.com/withrobot/oCam/oCam_viewer
 ```
 
 2.Download and install from linux package manager(e.g. apt).
