@@ -1,4 +1,4 @@
-#oCam - ##5MP USB 3.0 Color Board Camera
+#oCam - 5MP USB 3.0 Color Board Camera
 ![ScreenShot](images/oCam_model.jpg)
 
 * **Easy**: oCam does note require any device driver to be installed on the host PC or the Odroid-XU4
@@ -7,3 +7,4 @@
 * **Good for embedded system**: oCam is verified with the Odroid-XU4 embedded board from HardKernel™
 
 ##Board Detail
+![ScreenShot](images/oCam_layout.png)
