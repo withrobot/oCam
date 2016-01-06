@@ -27,10 +27,8 @@ Type | Description |
 
 ##oCam-Viewer (for Linux)
 Detailed description is [here](oCam_viewer).
-![ScreenShot]
 
 ##Application: HandGesture
-![ScreenShot]
 
 Detailed description is [here](HandGesture)
 
