@@ -8,3 +8,4 @@
 
 ##Board Detail
 ![ScreenShot](images/oCam_layout.png)
+** 수치가 기입된 외형으로 변경할 예정
