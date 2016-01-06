@@ -12,7 +12,7 @@
 * 수치가 기입된 외형으로 변경할 예정
 
 ##Specifications
-Pin | Description |
+Type | Description |
 ------|------|
 **Sensor** | OmniVision OV5640 CMOS Image sensor |
 **Interface** | USB 3.0 |
@@ -22,5 +22,5 @@ Pin | Description |
 **Operation Temperature** | 0°C ~ + 70°C |
 **Shutter** | Electric Rolling Shutter |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
-**Frame Rate** | YUYV 1920x1080@15fps, 1280x720@30fps, 640x480@30fps, MJPEG 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
+**Frame Rate** | YUYV 1920x1080@15fps, 1280x720@30fps, 640x480@30fps<br/> MJPEG 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
 **Size** | 42mm x 42mm | 
