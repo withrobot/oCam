@@ -26,6 +26,7 @@ Type | Description |
 **Size** | 42mm x 42mm | 
 
 ##oCam-Viewer (for Linux)
+[![ScreenShot](images/oCam_viewer.png)](https://youtu.be/3x4ODTUOSds)
 Detailed description is [here](oCam_viewer).
 
 ##Application: HandGesture
