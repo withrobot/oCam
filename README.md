@@ -26,4 +26,4 @@ Type | Description |
 **Size** | 42mm x 42mm | 
 
 ##oCam-Viewer (for Linux)
-Detailed description is [here](oCam_Viewer).
+Detailed description is [here](oCam_viewer).
