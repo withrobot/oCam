@@ -16,8 +16,11 @@ Pin | Description | Type | Description
 ------|------|------|-------------
 **Sensor** | INT | O | DATA READY interrupt output
 **Interface** | SLEEP | I | Sleep mode selection input: L-sleep mode, H-normal mode. (Normal mode If not connected)
-J3-3 | I2C_SCL | I | I2C clock input 
-J3-4 | I2C_SDA |  I/O  | I2C data input and output 
-J3-5 | USB_DM | I/O | USB D-
-J3-6 | USB_DP | I/O | USB D+
-J3-7 | NC |   | Do Not Connect
+**Lens** | I2C_SCL | I | I2C clock input 
+**Supported OS** | I2C_SDA |  I/O  | I2C data input and output 
+**Power** | USB_DM | I/O | USB D-
+**Operation Temperature** | USB_DP | I/O | USB D+
+**Shutter** | NC |   | Do Not Connect
+**Camera Control** | NC |   | Do Not Connect
+**Frame Rate** | NC |   | Do Not Connect
+**Size** | NC |   | Do Not Connect
