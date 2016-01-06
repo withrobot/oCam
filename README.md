@@ -12,15 +12,15 @@
 * 수치가 기입된 외형으로 변경할 예정
 
 ##Specifications
-Pin | Description | Type | Description
-------|------|------|-------------
-**Sensor** | INT | O | DATA READY interrupt output
-**Interface** | SLEEP | I | Sleep mode selection input: L-sleep mode, H-normal mode. (Normal mode If not connected)
-**Lens** | I2C_SCL | I | I2C clock input 
-**Supported OS** | I2C_SDA |  I/O  | I2C data input and output 
-**Power** | USB_DM | I/O | USB D-
-**Operation Temperature** | USB_DP | I/O | USB D+
-**Shutter** | NC |   | Do Not Connect
-**Camera Control** | NC |   | Do Not Connect
-**Frame Rate** | NC |   | Do Not Connect
-**Size** | NC |   | Do Not Connect
+Pin | Description |
+------|------|
+**Sensor** | OmniVision OV5640 CMOS Image sensor |
+**Interface** | USB 3.0 |
+**Lens** | Standard M12 Lens with focal length of 6mm (optional – 4mm, 8mm, 12mm) | 
+**Supported OS** | Windows7, Windows8, Windows10, Linux, Plug-and play by UVC(USB Video Class) compliant | 
+**Power** | USB Bus Power | 
+**Operation Temperature** | 0°C ~ + 70°C |
+**Shutter** | Electric Rolling Shutter |
+**Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
+**Frame Rate** | YUYV 1920x1080@15fps, 1280x720@30fps, 640x480@30fps, MJPEG 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
+**Size** | 42mm x 42mm | 
