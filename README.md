@@ -10,3 +10,14 @@
 ![ScreenShot](images/oCam_layout.png)
 
 * 수치가 기입된 외형으로 변경할 예정
+
+##Specifications
+Pin | Description | Type | Description
+------|------|------|-------------
+**Sensor** | INT | O | DATA READY interrupt output
+**Interface** | SLEEP | I | Sleep mode selection input: L-sleep mode, H-normal mode. (Normal mode If not connected)
+J3-3 | I2C_SCL | I | I2C clock input 
+J3-4 | I2C_SDA |  I/O  | I2C data input and output 
+J3-5 | USB_DM | I/O | USB D-
+J3-6 | USB_DP | I/O | USB D+
+J3-7 | NC |   | Do Not Connect
