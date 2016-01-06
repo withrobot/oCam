@@ -7,5 +7,6 @@
 * **Good for embedded system**: oCam is verified with the Odroid-XU4 embedded board from HardKernel™
 
 ##Board Detail
-![ScreenShot](images/oCam_layout.png)
+![ScreenShot](images/oCam_layout.png)/br
+
 ** 수치가 기입된 외형으로 변경할 예정
