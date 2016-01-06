@@ -27,3 +27,10 @@ Type | Description |
 
 ##oCam-Viewer (for Linux)
 Detailed description is [here](oCam_viewer).
+
+
+##Application: HandGesture
+Detailed description is [here](HandGesture)
+
+##Tutorial
+Detailed description is [here](Tutorial)
