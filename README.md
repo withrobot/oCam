@@ -23,7 +23,7 @@ Type | Description |
 **Shutter** | Electric Rolling Shutter |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
 **Frame Rate** | **YUYV** 1920x1080@15fps, 1280x720@30fps, 640x480@30fps<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
+**Size** | 42mm x 42mm | 
 
 ##oCam-Viewer (for Linux)
 Detailed description is [here](oCam_Viewer).
-**Size** | 42mm x 42mm | 
