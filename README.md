@@ -19,7 +19,9 @@ Type | Description |
 **Supported OS** | Windows7, Windows8, Windows10, Linux, Plug-and play by UVC(USB Video Class) compliant | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
+**Electric Current** | 290mA |
 **Shutter** | Electric Rolling Shutter |
+**Field Of View(FOV)** | 65deg. |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
 **Frame Rate** | **YUV** 1920x1080@15fps, 1280x720@30fps, 640x480@30fps<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
 **Size** | 42mm x 42mm | 
