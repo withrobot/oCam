@@ -15,13 +15,13 @@ Type | Description |
 ------|------|
 **Sensor** | OmniVision OV5640 CMOS Image sensor |
 **Interface** | USB 3.0 |
-**Lens** | Standard M12 Lens with focal length of 6mm (optional – 4mm, 8mm, 12mm) | 
+**Lens** | Standard M12 Lens with focal length of 3.6mm (optional – 4mm, 8mm, 12mm) | 
 **Supported OS** | Windows7, Windows8, Windows10, Linux, Plug-and play by UVC(USB Video Class) compliant | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
 **Shutter** | Electric Rolling Shutter |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
-**Frame Rate** | **YUYV** 1920x1080@15fps, 1280x720@30fps, 640x480@30fps<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
+**Frame Rate** | **YUV** 1920x1080@15fps, 1280x720@30fps, 640x480@30fps<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps | 
 **Size** | 42mm x 42mm | 
 
 ##oCam-Viewer (for Linux)
