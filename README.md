@@ -1,5 +1,5 @@
 #oCam - 5MP USB 3.0 Color Board Camera
-###Model No. oCam-5CR-U3 - sales website(http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
+###Model No. oCam-5CR-U3 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
 
 ![ScreenShot](images/oCam_model.jpg)
 
