@@ -1,5 +1,6 @@
 #oCam - 5MP USB 3.0 Color Board Camera
-Model No. oCam-5CR-U3
+###Model No. oCam-5CR-U3
+
 ![ScreenShot](images/oCam_model.jpg)
 
 * **Easy**: oCam does note require any device driver to be installed on the host PC or the Odroid-XU4
