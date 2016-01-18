@@ -29,7 +29,7 @@ Type | Description |
 **Weight** | 30.5g | 
 **Size** | 42mm x 42mm | 
 
-##oCam Packing and Labeling
+##oCam Packaging and Labeling
 ![ScreenShot](images/oCam_unpacking.png)
 
 
