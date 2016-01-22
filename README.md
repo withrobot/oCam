@@ -39,7 +39,7 @@ Detailed description is [here](oCam_viewer).
 
 ##Application: HandGesture
 [![ScreenShot](images/oCam_handgesture.png)](https://youtu.be/qt8iNjDMUUo)
-Detailed description is [here](HandGesture)
+Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
 ##Tutorial
 Detailed description is [here](Tutorial)
