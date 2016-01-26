@@ -52,9 +52,9 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 * Refer to the attached [Makefile](HandGesture/Makefile)
 
 ##MotionEye OS
-[![ScreenShot](images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/3x4ODTUOSds)
+[![ScreenShot](images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/5_beESeyHOk)
 
-[![ScreenShot](images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/3x4ODTUOSds)
+[![ScreenShot](images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/zMtzTC-8uro)
 
 Detailed description is [here](https://github.com/ccrisan/motioneyeos)
 
