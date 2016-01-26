@@ -51,9 +51,11 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 #### How to build
 * Refer to the attached [Makefile](HandGesture/Makefile)
 
-##MotionEye OS
+##MotionEye OS - Video surveillance system
+* MotionEye OS(oCam + odroid XU4) 
 [![ScreenShot](images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/5_beESeyHOk)
 
+* MotionEye OS(oCam + raspberryPi2) 
 [![ScreenShot](images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/zMtzTC-8uro)
 
 Detailed description is [here](https://github.com/ccrisan/motioneyeos)
