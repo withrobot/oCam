@@ -49,7 +49,7 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 * Comment out saving result image
  
 #### How to build
-* Refer to the attached Makefile
+* Refer to the attached [Makefile](Handgesture/Makefile)
 
 ##Tutorial
 Detailed description is [here](Tutorial)
