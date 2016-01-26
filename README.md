@@ -41,15 +41,15 @@ Detailed description is [here](oCam_viewer).
 [![ScreenShot](images/oCam_handgesture.png)](https://youtu.be/qt8iNjDMUUo)
 Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
-###modifications
-* Change color based hand segmentation method to background difference method.
-* Add a trackbar for the threshold value of difference image.
-* Add an exception process for the empty data frame.
-* Add an exception process for the no-palm detection.
-* Comment out saving result image.
+#### modifications
+* Change color based hand segmentation method to background difference method
+* Add a trackbar for the threshold value of difference image
+* Add an exception process for the empty data frame
+* Add an exception process for the no-palm detection
+* Comment out saving result image
  
-### How to build
-* Refer to the attached Makefile.
+#### How to build
+* Refer to the attached Makefile
 
 ##Tutorial
 Detailed description is [here](Tutorial)
