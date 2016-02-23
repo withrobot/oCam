@@ -5,7 +5,7 @@ oCam is updated to support more resolutions and frame rates.
 Currently supported resolutions and frame rates are;
 ###USB 3.0
 YUV format
-2592 (H) x 1944 (V) pixels   7.5, 3.75 fps 
+2592 (H) x 1944 (V) pixels   7.5, 3.75 fps</br>
 1920 (H) x 1080 (V) pixels   15, 7.5 fps 
 1280 (H) x  960 (V) pixels   30, 15 fps 
 1280 (H) x  720 (V) pixels   30, 15 fps 
