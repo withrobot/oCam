@@ -12,6 +12,7 @@ Currently supported resolutions and frame rates are;
 1280 (H) x  720 (V) pixels   30, 15 fps</br>
  640 (H) x  480 (V) pixels   30, 15 fps</br>
  320 (H) x  240 (V) pixels   30, 15 fps</br>
+ 
 **MJPEG format**</br>
 1920 (H) x 1080 (V) pixels   30, 15 fps </br>
 1280 (H) x  720 (V) pixels   45, 30, 15 fps </br>
@@ -31,7 +32,7 @@ However, with ODROID-XU4, the frame rates will be reduced because of the process
 
 The currently supported resolutions and frame rates on ODROID-XU4 with oCam-viewer while displaying the image are;
 ###USB 3.0
-**YUV format**
+**YUV format**</br>
 2592 (H) x 1944 (V) pixels   3 fps </br>
 1920 (H) x 1080 (V) pixels   7 fps </br>
 1280 (H) x  960 (V) pixels   11 fps </br>
@@ -39,13 +40,13 @@ The currently supported resolutions and frame rates on ODROID-XU4 with oCam-view
  640 (H) x  480 (V) pixels   30, 15 fps </br>
  320 (H) x  240 (V) pixels   30, 15 fps</br>
  
-**MJPEG format**
+**MJPEG format**</br>
 1920 (H) x 1080 (V) pixels   5 fps </br>
 1280 (H) x  720 (V) pixels   11 fps </br>
  640 (H) x  480 (V) pixels   30, 15 fps </br>
 
 ###USB 2.0
-**YUV format**
+**YUV format**</br>
 2592 (H) x 1944 (V) pixels   3 fps </br>
 1920 (H) x 1080 (V) pixels   7 fps </br>
 1280 (H) x  960 (V) pixels   11 fps </br>
