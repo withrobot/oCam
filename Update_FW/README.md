@@ -1,6 +1,6 @@
 #How to update the firmware of oCam
 ###Step 1. *Run UpdateFW.exe*
-![ScreenShot](images/1_Run_UpdateFW.jpg)
+![ScreenShot](./images/1_Run_UpdateFW.jpg)
 ###Step 2. Click *[Erase FW]* to erase the installed firmware of oCam.
 ###Step 3. Check *Device Manager* to see if oCam appears as a WestBridge device with unknown device driver as shown below.
 ![ScreenShot](images/2_device_change.jpg)
