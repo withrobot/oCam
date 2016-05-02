@@ -1,7 +1,7 @@
 #oCam - 5MP USB 3.0 Color Board Camera
-###Model No. oCam-5CR-U3 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
+###Model No. oCam-5CR-U3
 
-![ScreenShot](images/oCam_model.jpg)
+![ScreenShot](../../images/oCam_model.jpg)
 
 * **Easy**: oCam does note require any device driver to be installed on the host PC or the Odroid-XU4
 * **Versatile**: oCam supports the M12 lens format of various focal lengths for different needs
