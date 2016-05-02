@@ -18,18 +18,20 @@ The newly released oCam-5CRO-U is an enhanced version of oCam-5CR-U3 with the fo
 Type | Description |
 ------|------|
 **Sensor** | OmniVision OV5640 CMOS Image sensor |
-**Interface** | USB 3.0 |
-**Lens** | Standard M12 Lens with focal length of 3.6mm (optional – 4mm, 8mm, 12mm) | 
-**Supported OS** | Windows7, Windows8, Windows10, Linux, Plug-and play by UVC(USB Video Class) compliant | 
+**Interface** | USB 3.0 Super-Speed |
+**Lens** | Standard M12 Lens with focal length of 3.6mm | 
+**Supported OS** | Windows7/8/10, Linux, Plug-and play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/290mA |
+**Rating** | DC 5V/240mA |
 **Shutter** | Electric Rolling Shutter |
 **Field Of View(FOV)** | 65deg. |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
-**Frame Rate** | **YUV** 2592x1944@7\.5fps, 1920x1080@15fps, 1280x720@30fps, 640x480@30fps, etc.<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps<br/> **※ For further details, please refer the release note at [this page](Firmware)** | 
-**Weight** | 30.5g | 
-**Size** | 42mm x 42mm | 
+**Frame Rate** | **YUV** 2592x1944@7\.5fps, 1920x1080@15fps, 1280x960@30fps, 1280x720@30fps, 640x480@120fps, 320x240@120fps etc.<br/> **MJPEG** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps<br/> **※ For further details, please refer the release note at [this page](Firmware)** | 
+**Weight** | 33.5 gram approx.(Including protective case) | 
+**PCB Size** | 39mm x 39mm | 
+**Case Size** | 42mm x 42mm x 17mm |
+**Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
 ##oCam Packaging and Labeling
 ![ScreenShot](images/oCam_unpacking.png)
