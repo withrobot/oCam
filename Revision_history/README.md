@@ -1,3 +1,3 @@
-#oCam - 5MP USB 3.0 Color Board Camera
+#oCam - Past version
 
-###oCam-5CR-U3 (As of January, 2016)
+####oCam-5CR-U3 (As of January, 2016)
