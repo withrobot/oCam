@@ -9,7 +9,7 @@
 * **Good for embedded system**: oCam is verified with the Odroid-XU4 embedded board from HardKernel™
 
 ##Board Detail
-![ScreenShot](images/oCam_layout.png)
+![ScreenShot](../../images/oCam_layout.png)
 
 
 ##Specifications
@@ -29,36 +29,3 @@ Type | Description |
 **Weight** | 30.5g | 
 **Size** | 42mm x 42mm | 
 
-##oCam Packaging and Labeling
-![ScreenShot](images/oCam_unpacking.png)
-
-
-##oCam-Viewer (for Linux)
-[![ScreenShot](images/oCam_viewer.png)](https://youtu.be/3x4ODTUOSds)
-Detailed description is [here](oCam_viewer).
-
-##Application: HandGesture
-[![ScreenShot](images/oCam_handgesture.png)](https://youtu.be/qt8iNjDMUUo)
-Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
-
-#### modifications
-* Change color based hand segmentation method to background difference method
-* Add a trackbar for the threshold value of difference image
-* Add an exception process for the empty data frame
-* Add an exception process for the no-palm detection
-* Comment out saving result image
- 
-#### How to build
-* Refer to the attached [Makefile](HandGesture/Makefile)
-
-##MotionEye OS - Video surveillance system
-* MotionEye OS(oCam + odroid XU4) 
-[![ScreenShot](images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/ePXZSQPnM0Q)
-
-* MotionEye OS(oCam + raspberryPi2) 
-[![ScreenShot](images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/ImZ8hTkd2R8)
-
-Detailed description is [here](https://github.com/ccrisan/motioneyeos)
-
-##Tutorial
-Detailed description is [here](Tutorial)
