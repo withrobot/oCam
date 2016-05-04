@@ -1,6 +1,7 @@
 #Release Note
 ##Ver. 1604(April 2016)
-oCam is updated to support various frame rates.
+oCam firmware is updated to support more frame rates up to 120 fps.
+New frame rates for 640 (H) x  480 (V) pixels and 320 (H) x  240 (V) pixels are;
 
 ###USB 3.0
 **YUV format**</br>
