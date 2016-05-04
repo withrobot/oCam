@@ -1,5 +1,6 @@
 #Release Note
 ##Ver. 1604(April 2016)
+oCam is updated to support various frame rates.
 
 ###USB 3.0
 **YUV format**</br>
