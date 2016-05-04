@@ -1,4 +1,17 @@
 #Release Note
+##Ver. 1604(April 2016)
+
+###USB 3.0
+**YUV format**</br>
+ 640 (H) x  480 (V) pixels   120, 90, 60 fps</br>
+ 320 (H) x  240 (V) pixels   120, 90, 60 fps</br>
+
+###USB 2.0
+**YUV format**</br>
+ 640 (H) x  480 (V) pixels   60 fps </br>
+ 320 (H) x  240 (V) pixels   120, 90, 60 fps</br>
+
+
 
 ##Ver. 1602(February 2016)
 oCam is updated to support more resolutions and frame rates
