@@ -9,7 +9,7 @@
 ![ScreenShot](../images/3_driver_setup.jpg)
 ###Step 6. Run again the *[UpdateFW.exe]*.
 
-![ScreenShot](../images/4_UpdateFW_restart.jpg)
+![ScreenShot](../images/4_UpdateFW.jpg)
 ###Step 7. Click *[Write FW]* to select the firmware image file (*.img). After selecting a new firmware, UpdateFW will write the new firmware to oCam. On successful writing, a message window will pop up as shown below.
 ![ScreenShot](../images/5_Firmware_Update.JPG)
 ###Step 8. Disconnect and reconnect the USB cable to complete the firmware update procedure.
