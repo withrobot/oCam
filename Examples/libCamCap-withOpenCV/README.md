@@ -17,7 +17,7 @@ Requirements
 3.Unzip oCam-master.zip in YOUR_WORKING_DIRECTORY
 4.Open the MS Visual Studio solution file(libCamCap_withOpenCV.sln) in the following folder.
 ```
-YOUR_WORKING_DIRECTORY\oCam-master\ <GitHub °æ·Î¸í>
+YOUR_WORKING_DIRECTORY\oCam-master\Examples\libCamCap-withOpenCV
 ```
 
 5.Set up the project in MS Visual C++ 2010
