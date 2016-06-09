@@ -11,7 +11,7 @@ Requirements
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
-$ svn export https://github.com/withrobot/oCam/trunk/oCam_viewer
+$ svn export https://github.com/withrobot/oCam/trunk/software/oCam_viewer_Linux
 ```
 
 2.Download and install from linux package manager(e.g. apt).
