@@ -10,7 +10,7 @@ Requirements
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
-$ svn export https://github.com/withrobot/oCam/trunk/oCam_opencv_example    <확인 필요>
+$ svn export https://github.com/withrobot/oCam/trunk/Examples/opencv-basic
 ```
 
 2.Download and install OpenCV 2.4.11 
@@ -30,7 +30,7 @@ $ sudo apt-get install libopencv-dev
 
 3.Build.
 ```
-$ cd ./oCam_opencv_example
+$ cd ./opencv-basic
 $ make all
 ```
 
@@ -38,7 +38,7 @@ $ make all
 ```
 $ cd OCAM_VIEWER_BUILD_DIRECTORY
 $ cd ./build/bin/
-$ ./oCam_opencv_example
+$ ./opencv-basic
 ```
 
 ## Windows
@@ -56,7 +56,7 @@ Requirements
 3.Unzip oCam-master.zip in YOUR_WORKING_DIRECTORY
 4.Open the MS Visual Studio solution file(VC2010.sln) in the following folder.
 ```
-YOUR_WORKING_DIRECTORY\oCam-master\oCam_opencv_example\VC2010\
+YOUR_WORKING_DIRECTORY\oCam-master\Examples\opencv-basic\VC2010\
 ```
 
 5.Set up the project in MS Visual C++ 2010
