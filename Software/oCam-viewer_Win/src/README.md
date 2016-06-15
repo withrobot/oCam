@@ -5,4 +5,4 @@
 
 ## How to build
 1. open the `oCam_viewer.sln` from the Microsoft Visual C++ 2010.
-2. Build Soluition.
+2. Build Solution.
