@@ -43,5 +43,6 @@ YOUR_WORKING_DIRECTORY\oCam-master\Examples\libCamCap-withOpenCV
 - Press Ok and Apply.
 
 6.Build Solution</br>
+
 7.Start Debugging or Start Without Debugging
 
