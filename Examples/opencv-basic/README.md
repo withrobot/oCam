@@ -81,6 +81,7 @@ YOUR_WORKING_DIRECTORY\oCam-master\Examples\opencv-basic\VC2010\
 - Change "PATH=%PATH%;C:\dev\opencv\2.4.11\build\x86\vc10\bin" to "PATH=%PATH%;<YOUR_OPENCV_BINARY_PATH>"
 - Press Ok and Apply.
 
-6.Build Solution
+6.Build Solution</br>
+
 7.Start Debugging or Start Without Debugging
 
