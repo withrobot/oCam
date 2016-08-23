@@ -5,10 +5,10 @@
 
 #[oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Camera)- sales website
 
-![ScreenShot](images/oCam-5CRO-U_model.jpg)
+![ScreenShot](images/oCam-1MGN-U_model.jpg)
 
 
 #[oCam-TM](Products/oCam-TM) (Tripod Mount for oCam camera) - sales website
 
 
-![ScreenShot](images/oCam-5CRO-U_model.jpg)
+![ScreenShot](images/oCam-TM_model.jpg)
