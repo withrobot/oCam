@@ -24,7 +24,7 @@ Type | Description |
 **Supported OS** | Linux, Plug-and play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/240mA |
+**Rating** | DC 5V/180mA |
 **Shutter** | Electric Global Shutter |
 **Field Of View(FOV)** | 65 degrees at full resolution of 1280 x 960 (Images of less resolutions are copped from the full resolution image to have less FOV accordingly.) |
 **Camera Control** | Brightness, Exposure | 
