@@ -31,15 +31,26 @@
 #include <iostream>
 #include <stdio.h>
 
-#if 0
-#define DBG_PRINT(...) { fflush(stdout); std::cout << "DBG: [" << __FILE__ << ", " << __LINE__ << ", " << __func__ << "] " << __VA_ARGS__ << std::endl; fflush(stdout);}
+#include <stdio.h>
+#include <stdarg.h>
 
-#define DBG_PRINTF(...) { fflush(stdout); printf("DBG: [%s, %d, %s] ", __FILE__, __LINE__, __func__); fflush(stdout); printf(__VA_ARGS__); printf("\n"); fflush(stdout);}
+//#define PRINT_DEBUG_MSG
+
+#ifdef PRINT_DEBUG_MSG
+
+#define DBG_PRINTF(...) {\
+    fprintf(stdout, "DBG: [%s, %d, %s] ", __FILE__, __LINE__, __FUNCTION__); \
+    fprintf(stdout, __VA_ARGS__); fprintf(stdout, "\n"); fflush(stdout); \
+}
+
+#define DBG_PRINTF_MSG(...) { fprintf(stdout, __VA_ARGS__); fflush(stdout); }
+
 #else
-#define DBG_PRINT(...) {}
-#define DBG_PRINTF(...) {}
-#endif
 
+#define DBG_PRINTF(...)
+#define DBG_PRINTF_MSG(...)
+
+#endif /* PRINT_DEBUG_MSG */
 
 #define DBG_PERROR(...) { fflush(stdout); printf("DBG_ERR: [%s, %d, %s] ", __FILE__, __LINE__, __func__); fflush(stdout); perror(__VA_ARGS__); fflush(stdout); }
 

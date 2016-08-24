@@ -58,7 +58,9 @@
 #define DEFAULT_WINDOW_GEO_WIDTH    1024
 #define DEFAULT_WINDOW_GEO_HEIGHT   768
 
-#define STATIC_QTIMER_RATE          10  /**< undefine 되면, 카메라 설정에 따라 이미지 그리는 스레드가 동작한다. */
+#define STATIC_QTIMER_RATE          1  /**< undefine 되면, 카메라 설정에 따라 이미지 그리는 스레드가 동작한다. */
+
+//#define NO_DRAW	/**< DEBUG: define 되면, 영상 출력은 안하고, fps 만 계산한다. */
 
 
 namespace Ui {

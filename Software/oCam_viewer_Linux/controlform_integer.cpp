@@ -29,7 +29,8 @@ bool ControlFormInteger::value_changed() {
 
 const char* ControlFormInteger::get_name()
 {
-    return ui->lblControlName->text().toStdString().c_str();
+    //return ui->lblControlName->text().toStdString().c_str();      // fix the locale issue -20160801 gnohead
+    return ui->lblControlName->text().toLocal8Bit().constData();
 }
 
 int ControlFormInteger::get_value()

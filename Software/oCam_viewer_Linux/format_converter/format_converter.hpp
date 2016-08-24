@@ -76,6 +76,18 @@ public:
 		yuyv_to_rgb(rgb, yuyv_buffer);
 	}
 
+    void grey_to_rgb(unsigned char* rgb, unsigned char* grey) {
+        init_buffers();
+        grey_to_yuyv(yuyv_buffer, grey, w, h);
+        yuyv_to_rgb(rgb, yuyv_buffer);
+    }
+
+    void grey_to_bgr(unsigned char* bgr, unsigned char* grey) {
+        init_buffers();
+        grey_to_yuyv(yuyv_buffer, grey, w, h);
+        yuyv_to_bgr(bgr, yuyv_buffer);
+    }
+
 private:
 	void init_buffers() {
 		if (yuyv_buffer == 0) {

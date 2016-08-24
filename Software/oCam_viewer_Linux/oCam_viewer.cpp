@@ -28,6 +28,8 @@
 
 #define PIX_FORMAT_MJPEG    0x47504A4D
 #define PIX_FORMAT_YUYV     0x56595559
+#define PIX_FORMAT_GREY     0x59455247
+#define PIX_FORMAT_UNKNOWN  0x00000000
 
 oCam::oCam(QWidget *parent) :
     QMainWindow(parent), ui(new Ui::oCam), ui_default_contents_margin(3,3,3,3), frame_interval("Frame Interval", 5)
@@ -113,6 +115,7 @@ void oCam::update_gui()
     /* get frame */
     int frame_size = ocam->get_frame(frame_buffer, format.image_size, 1);
     if (frame_size != -1) {
+#ifndef NO_DRAW
         /* convert format */
         switch (format.pixformat) {
         case PIX_FORMAT_YUYV:
@@ -125,12 +128,18 @@ void oCam::update_gui()
             format_converter->jpeg_to_rgb(rgb_buffer, frame_buffer, frame_size);
             break;
 
+        case PIX_FORMAT_GREY:
+            /* convert grey to rgb */
+            format_converter->grey_to_rgb(rgb_buffer, frame_buffer);
+            break;
+
         default:
             break;
         }
 
         /* show image */
         ui->lblImage->setPixmap(QPixmap::fromImage(QImage(rgb_buffer, format.width, format.height, QImage::Format_RGB888)));
+#endif
         ui->dockControls->setWindowTitle(("   " + title + " " + Withrobot::to_string<double>(round(1.0 / frame_interval.restart())) + " fps").c_str());
     }
     else {
@@ -179,7 +188,7 @@ bool oCam::start()
     if (ocam) {
         return false;
     }
-    DBG_PRINT(fmt_name);
+    DBG_PRINTF(fmt_name.c_str());
 
     /* Camera instance */
     dev_node = dev_list[ui->cbbDeviceList->currentIndex()].dev_node;

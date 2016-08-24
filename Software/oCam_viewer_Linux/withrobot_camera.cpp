@@ -623,6 +623,8 @@ bool Camera::get_control(camera_control& ctrl)
     ctrl.default_value  = v4l2_s.queryctrl.default_value;
     ctrl.value          = control.value;
 
+    ctrl.dbg_print();
+
     /* control type: menu */
     if (v4l2_s.queryctrl.type == CAM_CTRL_TYPE_MENU) {
         camera_control_menu m;
