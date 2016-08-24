@@ -1,7 +1,7 @@
 #oCam - 1MP USB 3.0 Mono Camera
 ###Model No. oCam-1MGN-U - sales website
 
-![ScreenShot](../../images/oCam-1MGN-U_model.jpg)
+![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
 
 
 The newly released oCam-1MGN-U is a global shutter mono camera with the following features.
@@ -11,7 +11,7 @@ The newly released oCam-1MGN-U is a global shutter mono camera with the followin
 * Changeable standard M12 lens
 
 ##Board Detail
-![ScreenShot](../../images/oCam-5CRO-U_layout.jpg)
+![ScreenShot](../../images/oCam-1MGN-U_layout.jpg)
 
 
 ##Specifications
