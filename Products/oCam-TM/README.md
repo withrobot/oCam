@@ -10,5 +10,5 @@
 
 ## How to Assemble Tripod Mount for oCam
 
-![ScreenShot](../../images/oCam-TM_assemble_1.png)</br></br>
+![ScreenShot](../../images/oCam-TM_assemble_1.png)</br></br></br></br>
 ![ScreenShot](../../images/oCam-TM_assemble_2.png)
