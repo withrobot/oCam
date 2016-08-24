@@ -11,7 +11,7 @@ The newly released oCam-1MGN-U is a global shutter mono camera with the followin
 * Changeable standard M12 lens
 
 ##Board Detail
-![ScreenShot](../../images/oCam-1MGN-U_layout.jpg)
+![ScreenShot](../../images/oCam-1MGN-U_layout.png)
 
 
 ##Specifications
