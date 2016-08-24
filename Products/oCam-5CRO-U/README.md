@@ -64,5 +64,3 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
 Detailed description is [here](https://github.com/ccrisan/motioneyeos)
 
-##Tutorial
-TBD
