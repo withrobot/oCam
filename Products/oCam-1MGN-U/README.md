@@ -34,3 +34,6 @@ Type | Description |
 **Case Size** | 42mm x 42mm x 17mm |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
+##Softwares
+* 160722_oCam-1MGN-U_R1607.img
+* 160822_oCam_viewer_Linux.zip
