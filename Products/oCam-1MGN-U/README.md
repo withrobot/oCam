@@ -35,5 +35,5 @@ Type | Description |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
 ##Softwares
-* 160722_oCam-1MGN-U_R1607.img
-* 160822_oCam_viewer_Linux.zip
+* [160722_oCam-1MGN-U_R1607.img](../../Firmware)
+* [oCam_viewer_Linux.zip](../../Software/oCam_viewer_Linux)
