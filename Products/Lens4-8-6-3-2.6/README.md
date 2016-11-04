@@ -13,60 +13,15 @@ The Lens4-8-6-3-2.6  is a set of four M12 lenses which is an ideal choice to be 
 
 Type | Description |
 ------|------|
-**Focal Length** | * 8020PL002: 8 mm * 6020PL001: 6 mm * 3018PL002: 3 mm * 26519PL002: 2.65 mm |
-**Sensor Size** | 1/3 inch |
-**Interface** | USB 3.0 Super-Speed |
-**Lens** | Standard M12 Lens with focal length of 3.6mm | 
-**Supported OS** | Linux, Plug-and play by UVC(USB Video Class) protocol | 
-**Power** | USB Bus Power | 
-**Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/180mA |
-**Shutter** | Electric Global Shutter |
-**Field Of View(FOV)** | 65 degrees at full resolution of 1280 x 960 (Images of less resolutions are copped from the full resolution image to have less FOV accordingly.) |
-**Camera Control** | Brightness, Exposure | 
-**Frame Rate** | 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps | 
-**Weight** | 33.5 gram approx.(Including protective case) | 
-**PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
+**Focal Length** | * 8020PL002: 8 mm</br> * 6020PL001: 6 mm</br> * 3018PL002: 3 mm</br> * 26519PL002: 2.65 mm</br> |
+**Iris** | Fixed |
+**Image Sensor Size** | * 8020PL002: 1/2.9 inch</br> * 6020PL001: 1/3 inch</br> * 3018PL002: 1/2.9 inch</br> * 26519PL002: 1/3 inch</br> |
+**Mount(Thread)** | M12 x P0.5 | 
+**Angle of View** | * 8020PL002: 21° x 39° x 45° @ 1/2.9inch</br> * 6020PL001: 35° x 49° x 60° @ 1/3inch</br> * 3018PL002: 65° x 111° x 126° @ 1/2.9inch</br> * 26519PL002: 74°x 110° x 150° @ 1/3inch</br> | 
+**Housing** | Metal | 
+**Optics** | Glass with IR cut filter (650nm) or Glass without IR cut filter |
+**Package** | Box of 4 lenses contained in soft sponge |
 
+##External Looks
 
-#oCam - 1MP USB 3.0 Mono Camera
-###Model No. oCam-1MGN-U - sales website
-
-![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
-
-
-The newly released oCam-1MGN-U is a global shutter mono camera with the following features.
-* Global shutter
-* High speed up to 160 frames-per-second at the 320 x 240 resolution
-* UVC compliance
-* Changeable standard M12 lens
-
-##Board Detail
-![ScreenShot](../../images/oCam-1MGN-U_layout.png)
-
-
-##Specifications
-Type | Description |
-------|------|
-**Sensor** | OnSemi MT9M031 CMOS image sensor |
-**Sensor Size** | 1/3 inch |
-**Interface** | USB 3.0 Super-Speed |
-**Lens** | Standard M12 Lens with focal length of 3.6mm | 
-**Supported OS** | Linux, Plug-and play by UVC(USB Video Class) protocol | 
-**Power** | USB Bus Power | 
-**Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/180mA |
-**Shutter** | Electric Global Shutter |
-**Field Of View(FOV)** | 65 degrees at full resolution of 1280 x 960 (Images of less resolutions are copped from the full resolution image to have less FOV accordingly.) |
-**Camera Control** | Brightness, Exposure | 
-**Frame Rate** | 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps | 
-**Weight** | 33.5 gram approx.(Including protective case) | 
-**PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
-
-##Softwares
-* [160722_oCam-1MGN-U_R1607.img](../../Firmware)
-* [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
+![ScreenShot](../../images/Lens4-8-6-3-2.6.jpg)
