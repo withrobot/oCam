@@ -10,5 +10,8 @@
 
 #[oCam-TM](Products/oCam-TM) (Tripod Mount for oCam camera) - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147320796853)
 
-
 ![ScreenShot](images/oCam-TM_model.jpg)
+
+#[Lens4-8-6-3-2.6](Products/Lens4-8-6-3-2.6) (M12 Lens set) - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
+
+![ScreenShot](images/Lens4_set.jpg)
