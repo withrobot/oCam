@@ -1,4 +1,10 @@
 #Release Note
+##Ver. 1611(November 2016)
+oCam firmware is updated (161109_oCam-1MGN-U_R1611.img) to support Win 10 as well as Win 7 and Win 8.
+It can be used with the Windows libraries of libCamCap.
+(Please refer “Software/oCam-viewer_Win” and “Example/libCamCap-withOpenCV” for how to use the libCamCap)
+
+
 ##Ver. 1604(April 2016)
 oCam firmware is updated to support more frame rates up to 120 fps.</br>
 New frame rates for 640 (H) x  480 (V) pixels and 320 (H) x  240 (V) pixels are;
