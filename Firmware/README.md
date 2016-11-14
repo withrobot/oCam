@@ -1,8 +1,8 @@
 #Release Note
 ##Ver. 1611(November 2016)
-oCam firmware is updated (161109_oCam-1MGN-U_R1611.img) to support Win 10 as well as Win 7 and Win 8.
-It can be used with the Windows libraries of libCamCap.
-(Please refer “Software/oCam-viewer_Win” and “Example/libCamCap-withOpenCV” for how to use the libCamCap)
+oCam firmware is updated (161109_oCam-1MGN-U_R1611.img) to support Win 10 as well as Win 7 and Win 8.</br>
+It can be used with the Windows libraries of libCamCap.</br>
+(Please refer “Software/oCam-viewer_Win” and “Example/libCamCap-withOpenCV” for how to use the libCamCap)</br>
 
 
 ##Ver. 1604(April 2016)
