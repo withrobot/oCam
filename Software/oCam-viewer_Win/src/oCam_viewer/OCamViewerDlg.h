@@ -1,58 +1,74 @@
 
-// OCamViewerDlg.h : 헤더 파일
+// OCamViewerDlg.h : header file
 //
 
 #pragma once
 
-#include "wDisplay.h"
 #include "wImage.h"
-#include "afxwin.h"
-
+#include "wDisplay.h"
+#include "DlgCamCtrl.h"
 #include "libCamCap.h"
 
-// COCamViewerDlg 대화 상자
+// COCamViewerDlg dialog
 class COCamViewerDlg : public CDialogEx
 {
-// 생성입니다.
+// Construction
 public:
-	COCamViewerDlg(CWnd* pParent = NULL);	// 표준 생성자입니다.
+	COCamViewerDlg(CWnd* pParent = NULL);	// standard constructor
 	
+    void		UpdateFPS();
+    void		CopyImage(void *Data);
+
+// Dialog Data
+	enum { IDD = IDD_OCAMVIEWER_DIALOG };
+
+	CDlgCamCtrl	m_DlgCamCtrl;
+
+    CAMPTR		m_pCam;
+	CString		m_CamModel;
+	CString		m_CamSN;
+	CString		m_UsbType;
+	CString		m_FW;
+
+	int			m_CamSel;
     int			m_CamID;
 	int			m_Width;
 	int			m_Height;
-    double		m_Fps;
+	int			m_Count;
+    double		m_FPS;
+    double		m_CurrFPS;
+	DWORD		m_StartTime;
 
+	CComboBox	m_cbCam;
 	CComboBox	m_cbResolution;
 
     wImage		m_Image;
+    wImage		m_ImageYUV;
     wDisplay	m_Display;
 
-    CAMPTR		ptrCam;
-
-    void		CallbackProc(void* data);
-    void		DisplayFPS();
-
-// 대화 상자 데이터입니다.
-	enum { IDD = IDD_OCAMVIEWER_DIALOG };
-
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 
 
-// 구현입니다.
+// Implementation
 protected:
 	HICON m_hIcon;
 
-	// 생성된 메시지 맵 함수
+	// Generated message map functions
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+
 public:
+	afx_msg void OnBnClickedButtonCamCtrl();
 	afx_msg void OnBnClickedButtonPlay();
 	afx_msg void OnBnClickedButtonStop();
+	afx_msg void OnCbnSelchangeComboCam();
 	afx_msg void OnCbnSelchangeComboResolution();
 	afx_msg void OnBnClickedButtonSaveImage();
 	afx_msg void OnDestroy();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg LRESULT CallbackProc(WPARAM wParam, LPARAM lParam);
 };

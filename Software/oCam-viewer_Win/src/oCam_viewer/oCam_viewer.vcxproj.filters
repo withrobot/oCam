@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Library">
-      <UniqueIdentifier>{a1c2f3de-b76d-4ee0-881b-4c125fa91931}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -51,6 +48,9 @@
     <ClInclude Include="ImgProc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DlgCamCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OCamViewerDlg.cpp">
@@ -68,7 +68,10 @@
     <ClCompile Include="ImgProc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OCamViewer.cpp">
+    <ClCompile Include="oCamViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCamCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,10 +79,5 @@
     <ResourceCompile Include="OCamViewer.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="libCamCap-x86.lib">
-      <Filter>Library</Filter>
-    </Library>
   </ItemGroup>
 </Project>

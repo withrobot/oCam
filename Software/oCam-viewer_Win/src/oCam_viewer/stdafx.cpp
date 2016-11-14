@@ -1,7 +1,7 @@
 
-// stdafx.cpp : 표준 포함 파일만 들어 있는 소스 파일입니다.
-// OCamViewer.pch는 미리 컴파일된 헤더가 됩니다.
-// stdafx.obj에는 미리 컴파일된 형식 정보가 포함됩니다.
+// stdafx.cpp : source file that includes just the standard includes
+// OCamViewer.pch will be the pre-compiled header
+// stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"
 
