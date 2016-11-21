@@ -1,7 +1,7 @@
 # The oCam-viewer for the windows.
 ## The Directory descriptions
 bin : The binary of the oCam-viewer for the windows.
-- tested on windows 7
+- tested on windows 7/8/10
     
 src : The MFC source code of the oCam-viewer for the windows.
 - Requirements
