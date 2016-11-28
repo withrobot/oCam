@@ -1,13 +1,26 @@
 #oCam Lens set - M12 Lens4 set
 ###Model No. Lens4-8-6-3-2.6 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
-![ScreenShot](../../images/Lens4_set.jpg)
-
-The Lens4-8-6-3-2.6  is a set of four M12 lenses which is an ideal choice to be used with oCam series cameras with the following features.
+The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used with oCam series cameras with the following features.
 
 * Compatible with oCam series cameras
-* Various focal lengths for different applications: 8 mm, 6 mm, 3 mm and 2.6 mm
+* Various focal lengths for different applications
 * Standard M12 mount
+
+![ScreenShot](../../images/Lens4_set.jpg)
+![ScreenShot](../../images/Lens4-8-6-3-2.6.jpg)
+
+###Nomenclature
+
+Lens Set: Len4-A-B-C-D
+* A, B, C and D are codes to represent the focal length of each lens
+* Variations of focal length codes;
+** 8: 8 mm
+
+
+
+
+
 
 ##Key Specifications
 
@@ -24,4 +37,4 @@ Type | Description |
 
 ##External Looks
 
-![ScreenShot](../../images/Lens4-8-6-3-2.6.jpg)
+
