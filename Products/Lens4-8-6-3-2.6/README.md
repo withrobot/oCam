@@ -33,7 +33,7 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
  * 1: 14 mm (Diameter)
  * 2: 15 mm (Diameter)</br>
 Ex) 8020PL101 -> focal length of 8 mm, With IR cut filter and 15 mm (Diameter)
-
+</br>
 ##Model No. Lens4-8-6-3-2.6 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
 ###Key Specifications
@@ -48,7 +48,7 @@ Type | Description |
 **Housing** | Metal | 
 **Optics** | Glass without IR cut filter |
 **Package** | Box of 4 lenses contained in soft sponge |
-
+</br>
 ##Model No. Lens4-8-6-3-2.6-IRcut - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
 ###Key Specifications
