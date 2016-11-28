@@ -33,7 +33,7 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
 * V Variations of head size code C;
  * 1: 14 mm (Diameter)
  * 2: 15 mm (Diameter)
-
+EX) 8020PL101 -> focal length of 8 mm, With IR cut filter and 15 mm (Diameter)
 
 
 
