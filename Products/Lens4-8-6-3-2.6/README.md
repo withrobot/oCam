@@ -20,8 +20,19 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
  * 3: 3mm
  * 2.6: 2.6mm
 
-Lens Set: Len4-A-B-C-D
-
+####Lens: APLB0C
+* A, B and C are codes to represent the characteristics of a lens
+* Variations of focal length code A;
+ * 80: focal length of 8 mm
+ * 60: focal length of 6 mm
+ * 30: focal length of 3 mm
+ * 265: focal length of 2.65 mm
+* Variations of view angle code B;
+ * 0: Without IR cut filter
+ * 1: With IR cut filter
+* V Variations of head size code C;
+ * 1: 14 mm (Diameter)
+ * 2: 15 mm (Diameter)
 
 
 
