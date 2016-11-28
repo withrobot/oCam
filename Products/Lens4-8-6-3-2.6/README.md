@@ -12,7 +12,7 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
 
 ###Nomenclature
 
-Lens Set: Len4-A-B-C-D
+####Lens Set: Len4-A-B-C-D
 * A, B, C and D are codes to represent the focal length of each lens
 * Variations of focal length codes;</br>
  * 8: 8mm
@@ -20,7 +20,7 @@ Lens Set: Len4-A-B-C-D
  * 3: 3mm
  * 2.6: 2.6mm
 
-
+Lens Set: Len4-A-B-C-D
 
 
 
