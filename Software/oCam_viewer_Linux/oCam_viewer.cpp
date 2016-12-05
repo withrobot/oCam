@@ -86,7 +86,7 @@ void oCam::update_gui()
 
     for (unsigned int i=0; i < integer_control_form_list.size(); i++) {
         strcpy(ctrl.name, integer_control_form_list[i]->get_name());
-        ocam->get_control(ctrl);
+        //ocam->get_control(ctrl);
         integer_control_form_list[i]->set_enabled(ctrl.flags != Withrobot::CAM_CTRL_FLAG_INACTIVE);
 
         if (!integer_control_form_list[i]->value_changed()) {
