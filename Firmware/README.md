@@ -21,7 +21,7 @@ oCam firmware(oCam-1MGN-U_R1607_160722.img) supports resolutions and frame rates
  320 (H) x  240 (V) pixels   160 fps</br>
 
 ##oCam-5CRO-U_R1607(December 2016)
-The firmware for the oCam-5CRO series cameras is updated to be compatible with the latest oCam-viewer and the Windows libraries of libCamCap released on November to support Win 10.
+The firmware for the oCam-5CRO series cameras is updated to be compatible with the latest oCam-viewer and the Windows libraries of libCamCap released on November to support Win 10.</br>
 
 ##oCam-5CRO-U_R1604(April 2016)
 oCam firmware(oCam-5CRO-U_R1604_160419.img) is updated to support more frame rates up to 120 fps.</br>
