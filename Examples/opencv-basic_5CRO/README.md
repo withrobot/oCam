@@ -6,7 +6,7 @@ OpenCV Example
 Requirements
 - OpenCV 2.4.11 (`http://opencv.org/downloads.html`)
 
-1.Download source three from github.
+1.Download all the sources from github.
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
