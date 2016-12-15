@@ -15,7 +15,7 @@ Requirements
 - libudev       (udev, the device manager for the Linux kernel)
 - libopencv-dev (development files for OpenCV)
 
-1.Download source three from github.
+1.Download all the sources from github.
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
