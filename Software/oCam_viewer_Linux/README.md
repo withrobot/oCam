@@ -7,7 +7,7 @@ Requirements
 - libv4l  (video for linux Two)
 - libudev (udev, the device manager for the Linux kernel)
 
-1.Download source three from github.
+1.Download all the sources from github.
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
