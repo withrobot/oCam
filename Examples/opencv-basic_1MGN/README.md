@@ -19,7 +19,7 @@ Requirements
 - using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY
-$ svn export <경로 수정 필요>
+$ svn export https://github.com/withrobot/oCam/trunk/Examples/opencv-basic_1MGN
 ```
 
 2.Download and install from linux package manager(e.g. apt).
@@ -29,11 +29,11 @@ $ sudo apt-get install libv4l-dev libudev-dev libopencv-dev
 
 3.Build.
 ```
-$ cd ./eg-oCam-1MGN-opencv-basic
+$ cd ./opencv-basic_1MGN
 $ make all
 ```
 
 ## How to run
 ```
-$ ./build/bin/eg-oCam-1MGN-opencv-basic
+$ ./build/bin/opencv-basic_1MGN
 ```
