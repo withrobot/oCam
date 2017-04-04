@@ -1,5 +1,8 @@
 # Release Note
 
+## oCam-1MGN-U_R1703(March 2017)
+Bug Fixed; When first start the oCam-viewer does not display images.</br>
+
 ## oCam-1MGN-U_R1611(November 2016)
 oCam firmware(oCam-1MGN-U_R1611_161109.img) is updated to support Win 10 as well as Win 7 and Win 8.</br>
 It can be used with the Windows libraries of libCamCap.</br>
