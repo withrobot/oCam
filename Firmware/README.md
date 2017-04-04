@@ -1,4 +1,4 @@
-#Release Note
+# Release Note
 
 ##oCam-1MGN-U_R1611(November 2016)
 oCam firmware(oCam-1MGN-U_R1611_161109.img) is updated to support Win 10 as well as Win 7 and Win 8.</br>
