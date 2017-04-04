@@ -1,5 +1,5 @@
-#oCam - 5MP USB 3.0 Color Board Camera
-###Model No. oCam-5CR-U3
+# oCam - 5MP USB 3.0 Color Board Camera
+### Model No. oCam-5CR-U3
 
 ![ScreenShot](../../images/oCam_model.jpg)
 
@@ -8,11 +8,11 @@
 * **Low CPU usage**: oCam supports USB 3.0 with direct memory access, allowing data to be written to main memory without going through the CPU
 * **Good for embedded system**: oCam is verified with the Odroid-XU4 embedded board from HardKernel™
 
-##Board Detail
+## Board Detail
 ![ScreenShot](../../images/oCam_layout.png)
 
 
-##Specifications
+## Specifications
 Type | Description |
 ------|------|
 **Sensor** | OmniVision OV5640 CMOS Image sensor |

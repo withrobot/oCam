@@ -1,4 +1,4 @@
-#oCam Lens set - M12 Lens4 set
+# oCam Lens set - M12 Lens4 set
 
 The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used with oCam series cameras with the following features.
 
@@ -9,9 +9,9 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
 ![ScreenShot](../../images/Lens4_set.jpg)
 ![ScreenShot](../../images/Lens4-8-6-3-2.6.jpg)
 
-###Nomenclature
+### Nomenclature
 
-####Lens Set: Len4-A-B-C-D
+#### Lens Set: Len4-A-B-C-D
 * A, B, C and D are codes to represent the focal length of each lens
 * Variations of focal length codes;</br>
  * 8: 8mm
@@ -19,7 +19,7 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
  * 3: 3mm
  * 2.6: 2.6mm
 
-####Lens: APLB0C
+#### Lens: APLB0C
 * A, B and C are codes to represent the characteristics of a lens
 * Variations of focal length code A;
  * 80: focal length of 8 mm
@@ -35,9 +35,9 @@ The M12 Lens4 is a set of four M12 lenses which is an ideal choice to be used wi
 Ex) 8020PL101 -> focal length of 8 mm, With IR cut filter and 15 mm (Diameter)</br>
 </br>
 
-##Model No. Lens4-8-6-3-2.6 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
+## Model No. Lens4-8-6-3-2.6 - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
-###Key Specifications
+### Key Specifications
 
 Type | Description |
 ------|------|
@@ -50,9 +50,9 @@ Type | Description |
 **Optics** | Glass without IR cut filter |
 **Package** | Box of 4 lenses contained in soft sponge |
 </br>
-##Model No. Lens4-8-6-3-2.6-IRcut - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
+## Model No. Lens4-8-6-3-2.6-IRcut - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
-###Key Specifications
+### Key Specifications
 
 Type | Description |
 ------|------|

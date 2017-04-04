@@ -11,7 +11,7 @@ Requirements
 
 1.Download and install OpenCV 2.4.11
 - Refer to "opencv.org > Documentation > quick start > Installation in Windows"
-    Link: `http://docs.opencv.org/3.0-last-rst/doc/tutorials/introduction/windows_install/windows_install.html#windowssetpathandenviromentvariable`
+    Link: `http://docs.opencv.org/3.0-last-rst/doc/tutorials/introduction/windows_install/windows_install.html# windowssetpathandenviromentvariable`
 
 2.Download oCam master branch to zip
 3.Unzip oCam-master.zip in YOUR_WORKING_DIRECTORY

@@ -1,5 +1,5 @@
-#oCam - 5MP USB 3.0 Color Camera
-###Model No. oCam-5CRO-U - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
+# oCam - 5MP USB 3.0 Color Camera
+### Model No. oCam-5CRO-U - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
 
 ![ScreenShot](../../images/oCam-5CRO-U_model.jpg)
 
@@ -10,11 +10,11 @@ The newly released oCam-5CRO-U is an enhanced version of oCam-5CR-U3 with the fo
 * Plastic protective case is provided without any additional cost
 * The USB connector is moved to back side for easier connection to host system. With the protective case this new vertical USB connector makes it easy to put the camera anywhere in a vertical orientation without any additional fixture or jig
 
-##Board Detail
+## Board Detail
 ![ScreenShot](../../images/oCam-5CRO-U_layout.jpg)
 
 
-##Specifications
+## Specifications
 Type | Description |
 ------|------|
 **Sensor** | OmniVision OV5640 CMOS Image sensor |
@@ -33,15 +33,15 @@ Type | Description |
 **Case Size** | 42mm x 42mm x 17mm |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
-##oCam Packaging and Labeling
+## oCam Packaging and Labeling
 ![ScreenShot](../../images/oCam_unpacking.png)
 
 
-##oCam-Viewer (for Linux)
+## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/3x4ODTUOSds)
 Detailed description is [here](../../Software/oCam_viewer_Linux).
 
-##Application: HandGesture
+## Application: HandGesture
 [![ScreenShot](../../images/oCam_handgesture.png)](https://youtu.be/qt8iNjDMUUo)
 Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
@@ -55,7 +55,7 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 #### How to build
 * Refer to the attached [Makefile](../../Examples/HandGesture/Makefile)
 
-##MotionEye OS - Video surveillance system
+## MotionEye OS - Video surveillance system
 * MotionEye OS(oCam + odroid XU4) 
 [![ScreenShot](../../images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/ePXZSQPnM0Q)
 
