@@ -1,12 +1,13 @@
 # Release Note
 
-##oCam-1MGN-U_R1611(November 2016)
+## oCam-1MGN-U_R1611(November 2016)
 oCam firmware(oCam-1MGN-U_R1611_161109.img) is updated to support Win 10 as well as Win 7 and Win 8.</br>
 It can be used with the Windows libraries of libCamCap.</br>
 (Please refer “Software/oCam-viewer_Win” and “Example/libCamCap-withOpenCV” for how to use the libCamCap)</br>
 
 ## oCam-1MGN-U_R1607(July 2016)
 oCam firmware(oCam-1MGN-U_R1607_160722.img) supports resolutions and frame rates as follows
+
 ### USB 3.0
 **Y800 format**</br>
 1280 (H) x  960 (V) pixels   45 fps</br>
