@@ -1,5 +1,9 @@
 # Release Note
 
+## oCam-1MGN-U_R1705(May2017)
+Bug Fixed; When first start the oCam-viewer does not display images.</br>
+Changed from cropping to binning for 640x480(80fps) resolution.
+
 ## oCam-1MGN-U_R1703(March 2017)
 Bug Fixed; When first start the oCam-viewer does not display images.</br>
 
