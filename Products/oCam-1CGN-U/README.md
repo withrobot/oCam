@@ -34,7 +34,7 @@ FOV for the following resolutions are reduced from the full resolution image due
 FOV for the following resolutions is maintained due to binning:
 - 640(H) x 480(V) |
 **Camera Control** | Gain, White Balance Blue, White Balance Red, Exposure | 
-**Frame Rate** | **USB 3.0**</br>1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps</br>**USB2.0**</br>1280x960 @22.5fps, 1280x720 @30fps, 640x480 @80fps, 320x240 @160fps | 
+**Frame Rate** | **USB 3.0**: 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps **USB2.0**: 1280x960 @22.5fps, 1280x720 @30fps, 640x480 @80fps, 320x240 @160fps | 
 **Weight** | 33.5 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm | 
 **Case Size** | 42mm x 42mm x 17mm |
