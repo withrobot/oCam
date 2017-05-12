@@ -17,7 +17,7 @@ The newly released oCam-1MGN-U is a global shutter mono camera with the followin
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi MT9M031 CMOS image sensor |
+**Sensor** | OnSemi AR0134 CMOS image sensor |
 **Sensor Size** | 1/3 inch |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Standard M12 Lens with focal length of 3.6mm | 
