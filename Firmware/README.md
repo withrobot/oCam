@@ -4,14 +4,14 @@
 oCam firmware(oCam-1CGN-U_R1705_170428.img) supports resolutions and frame rates as follows
 
 ### USB 3.0
-**Y800 format**</br>
+**Bayer GRBG format**</br>
 1280 (H) x  960 (V) pixels   45  fps</br>
 1280 (H) x  720 (V) pixels   60  fps</br>
  640 (H) x  480 (V) pixels   80  fps (binning)</br>
  320 (H) x  240 (V) pixels   160 fps (cropping)</br>
 
 ### USB 2.0
-**Y800 format**</br>
+**Bayer GRBG format**</br>
 1280 (H) x  960 (V) pixels   22.5 fps</br>
 1280 (H) x  720 (V) pixels   30  fps</br>
  640 (H) x  480 (V) pixels   80  fps (binning)</br>
