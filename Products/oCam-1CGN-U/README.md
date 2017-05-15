@@ -12,7 +12,7 @@ The newly released oCam-1CGN-U is a global shutter color camera with the followi
 * Changeable standard M12 lens
 
 ## Board Detail
-![ScreenShot](../../images/oCam-1MGN-U_layout.png)
+![ScreenShot](../../images/oCam-1CGN-U_Layout.png)
 
 
 ## Specifications
