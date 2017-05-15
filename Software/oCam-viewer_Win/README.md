@@ -1,7 +1,7 @@
 # The oCam-viewer for the windows.
 ## updates
 R1705 (May. 2017)
-    - Support for oCam-1CGN-U
+- Support for oCam-1CGN-U
 
 ## The Directory descriptions
 bin : The binary of the oCam-viewer for the windows.
