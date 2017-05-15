@@ -32,6 +32,4 @@ Type | Description |
 **크기** | 146mm x 26mm (PCB) | 
 
 ## Softwares
-* [oCam-1CGN-U_R1705_170428.img](../../Firmware)
-* [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
-* [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
+TBD
