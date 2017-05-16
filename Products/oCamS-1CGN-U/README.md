@@ -1,5 +1,5 @@
 # oCamS-1CGN-U - USB 3.0 스테레오 카메라
-### Model No. oCam-1CGN-U™ - sales website
+### Model No. oCam-1CGN-U - sales website
 
 ![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
 
