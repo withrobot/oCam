@@ -1,7 +1,7 @@
 # oCamS-1CGN-U - USB 3.0 스테레오 카메라
 ### Model No. oCamS-1CGN-U - sales website
 
-![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
+![ScreenShot](../../images/oCamS-1CGN-U.png)
 
 ## 특징
 * ROS 호환성: ROS(Robot Operating System)와 호환되므로 적은 노력으로 ROS의 풍부하고 강력한 기능을 활용할 수 있습니다.
@@ -11,7 +11,7 @@
 * 경제성: 동급 제품에 대비하여 매우 합리적인 가격으로 스테레오 영상을 제공합니다.
 
 ## Board Detail
-![ScreenShot](../../images/oCam-1CGN-U_Layout.PNG)
+![ScreenShot](../../images/oCamS-1CGN-U Layout.PNG)
 
 
 ## 사양
@@ -30,6 +30,8 @@ Type | Description |
 **이미지 전송률** | 2560x960 @45fps, 2560x720 @60fps, 1280x480 @45fps | 
 **무게** | 약 30 g(렌즈 포함) | 
 **크기** | 146mm x 26mm (PCB) | 
+
+![ScreenShot](../../images/oCamS-1CGN-U_poster.jpg)
 
 ## Softwares
 TBD
