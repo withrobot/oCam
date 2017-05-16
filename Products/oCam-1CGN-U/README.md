@@ -1,4 +1,4 @@
-# oCam - 1MP USB 3.0 Color Camera
+# oCam - 1MP USB 3.0 Color Global Shutter Camera
 ### Model No. oCam-1CGN-U - sales website
 
 ![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
