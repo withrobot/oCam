@@ -1,3 +1,7 @@
+# [oCamS-1CGN-U](Products/oCamS-1CGN-U) (USB 3.0 Stereo Camera)- [sales website]
+
+![ScreenShot](images/oCamS-1CGN-U.png)
+
 # [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website]
 
 ![ScreenShot](images/oCam-1MGN-U_model.jpg)
