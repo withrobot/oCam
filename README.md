@@ -1,4 +1,4 @@
-# [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Camera)- [sales website]
+# [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website]
 
 ![ScreenShot](images/oCam-1MGN-U_model.jpg)
 
@@ -8,7 +8,7 @@
 ![ScreenShot](images/oCam-5CRO-U_model.jpg)
 
 
-# [oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147245683619)
+# [oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Global Shutter Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147245683619)
 
 ![ScreenShot](images/oCam-1MGN-U_model.jpg)
 
