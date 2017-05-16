@@ -11,8 +11,7 @@
 * 경제성: 동급 제품에 대비하여 매우 합리적인 가격으로 스테레오 영상을 제공합니다.
 
 ## Board Detail
-
-![ScreenShot](../../images/oCamS-1CGN-U Layout.PNG)
+![ScreenShot](../../images/oCamS-1CGN-U_Layout.PNG)
 
 
 ## 사양
