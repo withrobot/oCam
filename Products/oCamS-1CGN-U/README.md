@@ -25,7 +25,7 @@ Type | Description |
 **동작 온도** | 0°C ~ + 70°C |
 **소모 전력** | DC 5V/240mA |
 **셔터** | 글로벌 셔터(Electric Global Shutter) |
-**Field Of View(FOV)** | - 65 degrees at full resolution of 1280(H) x 960(V)</br> - FOV for the following resolutions are reduced from the full resolution image due to cropping: 1280(H) x 720(V), 320(H) x 240(V)</br> - FOV for the following resolutions is maintained due to binning: 640(H) x 480(V) |
+**Field Of View(FOV)** | - 65 degrees at full resolution of 1280(H) x 960(V)</br> - FOV for the following resolutions are reduced from the full resolution image due to cropping: 1280(H) x 720(V)</br> - FOV for the following resolutions is maintained due to binning: 640(H) x 480(V) |
 **제어 기능** | Brightness, Exposure, Color Gain(Red, Blue) | 
 **이미지 전송률** | 2560x960 @45fps, 2560x720 @60fps, 1280x480 @45fps | 
 **무게** | 약 30 g(렌즈 포함) | 
