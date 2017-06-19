@@ -38,8 +38,6 @@ Type | Description |
 ## Global Shutter vs. Rolling Shutter
 [![ScreenShot](../../images/GlobalvsRolling.png)](https://youtu.be/gBfj4_foWdk)
 
-https://youtu.be/gBfj4_foWdk
-
 ## Softwares
 * [oCam-1CGN-U_R1705_170428.img](../../Firmware)
 * [oCam_viewer_Linux](../../Software/oCam_viewer_Linux_1705)
