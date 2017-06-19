@@ -1,4 +1,4 @@
-# oCamS-1CGN-U - USB 3.0 Stereo Camera [Korean](/Korean)
+# oCamS-1CGN-U - USB 3.0 Stereo Camera - [(Korean)](Korean/README.md)
 ### Model No. oCamS-1CGN-U - sales website
 
 ![ScreenShot](../../images/oCamS-1CGN-U.png)
