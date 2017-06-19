@@ -34,7 +34,10 @@ Type | Description |
 
 ![ScreenShot](../../images/oCamS-1CGN-U_poster.jpg)
 
-## Movies
+## Tutorials and Applications
+* [Simultaneous Localization and Mapping(SLAM)](https://youtu.be/Zq3pChn_P1Y)
+
+
 
 ## Softwares
 * [oCamS_ROS_Package](../../Software/oCamS_ROS_Package)
