@@ -1,14 +1,14 @@
 # Release Note
 
 ## oCam-5CRO-U_R1707(Jul 2017)
-Bug Fixed; oCam somtimes stops on ODROID board.
-Color uniformity improved.
+Bug Fixed; oCam somtimes stops on ODROID board</br>
+Color uniformity improved
 
 ## oCam-1MGN-U_R1707(Jul 2017)
-Bug Fixed; oCam somtimes stops on ODROID board.
+Bug Fixed; oCam somtimes stops on ODROID board
 
 ## oCam-1CGN-U_R1707(Jul 2017)
-Bug Fixed; oCam somtimes stops on ODROID board.
+Bug Fixed; oCam somtimes stops on ODROID board
 
 ## oCamS-1CGN-U_R1705(May 2017)
 oCam firmware(oCamS-1CGN-U_R1705_170523.img) supports resolutions and frame rates as follows
