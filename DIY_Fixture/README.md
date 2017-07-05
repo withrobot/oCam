@@ -1,39 +1,23 @@
-# The Example of the Withrobot oCam-1MGN-U API using with OpenCV. (Linux only.)
-This example shows how to get image from the oCam-1MGN using the Withrobot camera API. And also shows how to control the oCam-1MGN using the Withrobot camera API. Please refer to the comments in `main.cpp` for details.
+## Fixture 1706_1
+![ScreenShot](images/oCam Fixture_1706_1_All.PNG)
 
-## Sample code configuration
-- main.cpp : example source file
-- withrobot_camera.hpp : withrobot camera API header file
-- withrobot_camera.cpp : withrobot camera API source file
-- withrobot_utility.hpp: withrobot utility API source file
-- Makefile : The Makefile for build this example.
-- README.md : This file.
 
-## How to build on linux
-Requirements
-- libv4l       (video for linux Two)
-- libudev       (udev, the device manager for the Linux kernel)
-- libopencv-dev (development files for OpenCV)
+## BOM
+* Front Panel : oCam Fixture_1706_1_Front.stl
+* Side Panel x 2: oCam Fixture_1706_1_Side.stl
+* Base Panel: oCam Fixture_1706_1_Base.stl
+* M3 screw: 6
+* M3 nut: 6
 
-1.Download all the sources from github.
-- using SVN checkout
-```
-$ cd YOUR_WORKING_DIRECTORY
-$ svn export https://github.com/withrobot/oCam/trunk/Examples/opencv-basic_1MGN
-```
 
-2.Download and install from linux package manager(e.g. apt).
-```
-$ sudo apt-get install libv4l-dev libudev-dev libopencv-dev
-```
+## 3D Printouts
+![ScreenShot](images/oCam Fixture_1706_1_Up.jpg)
+![ScreenShot](images/oCam Fixture_1706_1_Down.jpg)
+![ScreenShot](images/oCam Fixture_1706_1_Flat_1.jpg)
+![ScreenShot](images/oCam Fixture_1706_1_Flat_Back.jpg)
 
-3.Build.
-```
-$ cd ./opencv-basic_1MGN
-$ make all
-```
+## 3D Viewer
+https://skfb.ly/68YRC 
 
-## How to run
-```
-$ ./build/bin/opencv-basic_1MGN
-```
+## 3D CAD (Autodesk 123D Design Format)
+* [oCam Fixture_1706.123dx](oCam Fixture_1706.123dx)
