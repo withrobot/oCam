@@ -2,14 +2,12 @@
 
 ![ScreenShot](../images/oCam Fixture_1706_1_All.PNG)
 
-
 ## BOM
 * Front Panel : oCam Fixture_1706_1_Front.stl
 * Side Panel x 2: oCam Fixture_1706_1_Side.stl
 * Base Panel: oCam Fixture_1706_1_Base.stl
 * M3 screw: 6
 * M3 nut: 6
-
 
 ## 3D Printouts
 ![ScreenShot](../images/oCam Fixture_1706_1_Up.jpg)
