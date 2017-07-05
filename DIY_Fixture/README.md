@@ -1,7 +1,8 @@
 # DIY Fixture
 
 ## Fixture 1706_1
-![ScreenShot](../../images/oCam Fixture_1706_1_All.PNG)
+![ScreenShot](../images/oCam-1MGN-U_layout.png)
+![ScreenShot](../images/oCam Fixture_1706_1_All.PNG)
 
 ## BOM
 * Front Panel : oCam Fixture_1706_1_Front.stl
