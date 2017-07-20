@@ -10,8 +10,7 @@ oCam control program
 - libudev (udev, the device manager for the Linux kernel)
 
 ## ROS & oCam ROS Package installation
-**1. ROS install**
-(If ROS is already installed on your PC, just skip it.)
+**1. ROS install**(If ROS is already installed on your PC, just skip it.)</br>
 * refer to the following tutorial.
 * We recommend you to install ROS kinetic version
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
