@@ -1,5 +1,10 @@
 # Release Note
 
+## oCamS-1CGN-U_R1707(Jul 2017)
+Support oCamS-1CGN-U IMU.</br>
+Auto-Exposure.</br>
+Added 640x360 resolution and more frame rates.
+
 ## oCam-5CRO-U_R1707(Jul 2017)
 Bug Fixed; oCam sometimes stops on ODROID board.</br>
 Color uniformity improved.
