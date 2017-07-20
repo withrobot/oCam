@@ -34,7 +34,7 @@ $ cd YOUR_CATKIN_WORKSPACE
 $ catkin_make
 $ source devel/setup.bash
 ```
-***3. Run***
+***3. Run***</br>
 oCamS-1CGN-U sends IMU data through Virtual COM port.
 So, user needs to write following rules into udev rule file like below.
 ```
