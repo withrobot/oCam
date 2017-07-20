@@ -35,7 +35,7 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 ***3. Run***</br>
-oCamS-1CGN-U sends IMU data through Virtual COM port.
+oCamS-1CGN-U sends IMU data through Virtual COM port.</br>
 So, user needs to write following rules into udev rule file like below.
 ```
 $ sudo vi /etc/udev/rules.d/99-ttyacms.rules
