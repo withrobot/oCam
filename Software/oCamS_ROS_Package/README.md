@@ -34,3 +34,16 @@ $ cd YOUR_CATKIN_WORKSPACE
 $ catkin_make
 $ source devel/setup.bash
 ```
+***3. Run***
+oCamS-1CGN-U sends IMU data through Virtual COM port.
+So, user needs to write following rules into udev rule file like below.
+```
+$ sudo vi /etc/udev/rules.d/99-ttyacms.rules
+ATTRS{idVendor}=="04b4" ATTRS{idProduct}=="00f9", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+ATTRS{idVendor}=="04b4" ATTRS{idProduct}=="00f8", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+$ sudo udevadm control –reload-rules
+```
+And, run...
+```
+$ roslaunch ocams disparity.launch
+```
