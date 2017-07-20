@@ -9,16 +9,10 @@ oCam control program
 - libv4l  (video for linux Two)
 - libudev (udev, the device manager for the Linux kernel)
 
+## ROS & oCam ROS Package installation
+** 1. ROS install
+(If ROS is already installed on your PC, just skip it.)
+* refer to the following tutorial.
+* We recommend you to install ROS kinetic version
+http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
-
-1.Download source three from github.
-- using SVN checkout
-``
-$ cd YOUR_WORKING_DIRECTORY
-$ svn export https://github.com/withrobot/oCam/trunk/Software/oCamS_ROS_Package/ocams
-``
-
-2.Download and install from linux package manager(e.g. apt).
-```
-$ sudo apt-get install libv4l-dev libudev-dev
-```
