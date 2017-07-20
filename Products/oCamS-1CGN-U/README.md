@@ -44,4 +44,4 @@ Type | Description |
 * [oCamS_ROS_Package](../../Software/oCamS_ROS_Package)
 
 ## Firmware
-
+* [oCamS-1CGN-U_R1707_170719.img](../../Firmware)
