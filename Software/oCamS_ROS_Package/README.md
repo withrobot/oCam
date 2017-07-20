@@ -6,7 +6,7 @@ oCamS ROS control program
 * Support oCamS-1CGN-U IMU.
 * Auto-Exposure.
 * Added 640x360 resolution and more frame rates.
-* Camera controller.
+* Camera controller.</br>
 ***2017.05.23***
 * Support for the oCamS-1CGN-U.
 
