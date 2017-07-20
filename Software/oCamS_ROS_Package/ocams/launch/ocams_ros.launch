@@ -1,0 +1,27 @@
+<!-- ... -->
+<launch>
+  <arg name="pi/2" value="1.5707963267948966" />
+  <arg name="optical_rotate" value="0 0.06 0 0 0 0 1" />
+
+  <node pkg="ocams" type="ocams" name="ocams" output="screen">
+    <param name="resolution"    value="2"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 -->
+    <param name="frame_rate"    value="30"/>
+    <param name="exposure"      value="100"/>
+    <param name="gain"          value="50"/>
+    <param name="wb_blue"       value="200"/>
+    <param name="wb_red"        value="160"/>
+    <param name="auto_exposure" value="false"/>
+    <param name="show_image"    value="false"/>
+    <param name="port"          value="/dev/ttyACM0" /> <!-- imu port-->
+
+    <param name="left_frame_id" value="left_frame"/>
+    <param name="right_frame_id" value="right_frame"/>
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="ocams_base_link1"
+    args="0 0 0 0 0 0 1 map base_link" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="ocams_base_link2"
+    args="0 0.06 0 -$(arg pi/2) 0 -$(arg pi/2) base_link left_frame" />
+
+</launch>
