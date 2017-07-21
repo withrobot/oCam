@@ -1,9 +1,21 @@
 # Release Note
 
 ## oCamS-1CGN-U_R1707(Jul 2017)
-Support oCamS-1CGN-U IMU.</br>
-Auto-Exposure.</br>
-Added 640x360 resolution and more frame rates.
+oCam firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rates as follows.</br>
+###USB 3.0
+**Bayer GRBG format**</br>
+1280 (H) x  960 (V) pixels   45, 30, 25, 20, 15, 10  fps </br>
+1280 (H) x  720 (V) pixels   60, 50, 45, 30, 25, 20, 15, 10  fps</br>
+ 640 (H) x  480 (V) pixels   45, 30, 25, 20, 15, 10  fps (binning)</br>
+ 640 (H) x  360 (V) pixels   60, 50, 45, 30, 25, 20, 15, 10  fps (binning)</br>
+
+###USB 2.0
+**Bayer GRBG format**</br>
+ 640 (H) x  480 (V) pixels   45, 30, 25, 20, 15, 10  fps (binning)</br>
+ 640 (H) x  360 (V) pixels   60, 50, 45, 30, 25, 20, 15, 10  fps (binning)</br>
+ 
+- Support oCamS-1CGN-U IMU
+- Auto-Exposure
 
 ## oCam-5CRO-U_R1707(Jul 2017)
 Bug Fixed; oCam sometimes stops on ODROID board.</br>
