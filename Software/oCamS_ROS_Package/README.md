@@ -12,8 +12,8 @@ oCamS ROS control program
 * Support for the oCamS-1CGN-U
 
 ## Requirements
-- ROS     (Kinetic)
-- Ubuntu  (16.04)
+- ROS
+- Linux OS
 - libv4l  (Video for Linux Two)
 - libudev (udev, the device manager for the Linux kernel)
 
