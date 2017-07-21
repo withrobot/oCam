@@ -23,7 +23,7 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
 **2. oCamS ROS Package download and install**
 
-### 2.1 Download and install required library from linux package manager(e.g. apt)
+##### 2.1 Download and install required library from linux package manager(e.g. apt)
 ```
 $ sudo apt-get install libv4l-dev libudev-dev
 ```
