@@ -3,13 +3,13 @@ oCamS ROS control program
 
 ## Release Note
 ***2017.07.19***
-* Support oCamS-1CGN-U IMU.
-* Auto-Exposure.
-* Added 640x360 resolution and more frame rates.
-* Camera controller.</br>
+* Support for oCamS-1CGN-U R1707 firmware
+* Auto-Exposure
+* Added 640x360 resolution and more frame rates
+* Camera controller
 
 ***2017.05.23***
-* Support for the oCamS-1CGN-U.
+* Support for the oCamS-1CGN-U
 
 ## Requirements
 - libv4l  (video for linux Two)
