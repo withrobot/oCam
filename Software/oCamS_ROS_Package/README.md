@@ -56,7 +56,7 @@ $ sudo udevadm control –reload-rules
 ```
 And, run...
 ```
-$ roslaunch ocams disparity.launch
+$ roslaunch ocams ocams_ros.launch
 ```
 
 ## Update Firmware
