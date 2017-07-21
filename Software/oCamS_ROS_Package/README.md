@@ -16,14 +16,14 @@ oCamS ROS control program
 - libudev (udev, the device manager for the Linux kernel)
 
 ## ROS & oCam ROS Package installation
-***1. ROS install*** (If ROS is already installed on your PC, just skip it.)</br>
+**1. ROS install** (If ROS is already installed on your PC, just skip it.)</br>
 * Refer to the following tutorial.
 * We recommend you to install ROS kinetic version.</br>
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
-***2. oCamS ROS Package download and install***
+**2. oCamS ROS Package download and install**
 
-**2.1 Download and install required library from linux package manager(e.g. apt)**
+###2.1 Download and install required library from linux package manager(e.g. apt)###
 ```
 $ sudo apt-get install libv4l-dev libudev-dev
 ```
@@ -39,7 +39,7 @@ $ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
 $ source devel/setup.bash
 ```
-***3. Run***</br>
+**3. Run**</br>
 oCamS-1CGN-U sends IMU data through Virtual COM port.</br>
 So, user needs to write following rules into udev rule file like below.
 ```
