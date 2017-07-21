@@ -14,7 +14,7 @@ oCamS firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rat
  640 (H) x  480 (V) pixels   45, 30, 25, 20, 15, 10  fps (binning)</br>
  640 (H) x  360 (V) pixels   60, 50, 45, 30, 25, 20, 15, 10  fps (binning)</br>
  
-- Support oCamS-1CGN-U IMU
+- IMU data output
 - Auto-Exposure
 
 ## oCam-5CRO-U_R1707(Jul 2017)
