@@ -33,7 +33,7 @@ $ sudo apt-get install libv4l-dev libudev-dev
 $ cd YOUR_WORKING_DIRECTORY (ex. $ cd ~/catkin_ws/src/)
 $ svn export https://github.com/withrobot/oCam/trunk/Software/oCamS_ROS_Package/ocams
 ```
-**2.3 Build Source**
+**2.3 Build**
 ```
 $ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
@@ -52,3 +52,12 @@ And, run...
 ```
 $ roslaunch ocams disparity.launch
 ```
+
+## Update Firmware
+**1. Firmware update on Windows OS</br>
+- You can find the latest firmware at</br>
+https://github.com/withrobot/oCam/tree/master/Firmware
+
+- You can find the firmware writing program at</br>
+https://github.com/withrobot/oCam/tree/master/Firmware/Update_FW
+
