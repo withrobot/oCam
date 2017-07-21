@@ -3,7 +3,7 @@ oCamS ROS control program
 
 ## Release Note
 ***2017.07.19***
-* Support for oCamS-1CGN-U_R1707
+* Support for the oCamS-1CGN-U_R1707
 * Auto-Exposure
 * Added 640x360 resolution and more frame rates
 * Camera controller
