@@ -35,8 +35,7 @@ $ svn export https://github.com/withrobot/oCam/trunk/Software/oCamS_ROS_Package/
 ```
 **2.3 Build Source**
 ```
-$ cd YOUR_CATKIN_WORKSPACE
-(ex. $ cd ~/catkin_ws/)
+$ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
 $ source devel/setup.bash
 ```
