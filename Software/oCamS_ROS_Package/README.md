@@ -7,7 +7,6 @@ oCamS ROS control program
 * Auto-Exposure.
 * Added 640x360 resolution and more frame rates.
 * Camera controller.</br></br>
-
 ***2017.05.23***
 * Support for the oCamS-1CGN-U.
 
