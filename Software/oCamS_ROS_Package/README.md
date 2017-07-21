@@ -27,13 +27,13 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 ```
 $ sudo apt-get install libv4l-dev libudev-dev
 ```
-**2.2 Download source tree from github**
+##### 2.2 Download source tree from github
 * using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY (ex. $ cd ~/catkin_ws/src/)
 $ svn export https://github.com/withrobot/oCam/trunk/Software/oCamS_ROS_Package/ocams
 ```
-**2.3 Build**
+##### 2.3 Build
 ```
 $ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
