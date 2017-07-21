@@ -17,8 +17,8 @@ oCamS ROS control program
 
 ## ROS & oCam ROS Package installation
 ***1. ROS install*** (If ROS is already installed on your PC, just skip it.)</br>
-* refer to the following tutorial.
-* We recommend you to install ROS kinetic version</br>
+* Refer to the following tutorial.
+* We recommend you to install ROS kinetic version.</br>
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
 ***2. oCamS ROS Package download and install***
