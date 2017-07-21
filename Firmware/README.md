@@ -1,7 +1,7 @@
 # Release Note
 
 ## oCamS-1CGN-U_R1707(Jul 2017)
-oCam firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rates as follows.</br>
+oCamS firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rates as follows.</br>
 ### USB 3.0
 **Bayer GRBG format**</br>
 1280 (H) x  960 (V) pixels   45, 30, 25, 20, 15, 10  fps </br>
