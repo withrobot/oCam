@@ -23,17 +23,17 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
 **2. oCamS ROS Package download and install**
 
->#### 2.1 Download and install required library from linux package manager(e.g. apt)
+##### 2.1 Download and install required library from linux package manager(e.g. apt)
 ```
 $ sudo apt-get install libv4l-dev libudev-dev
 ```
->#### 2.2 Download source tree from github
+##### 2.2 Download source tree from github
 * using SVN checkout
 ```
 $ cd YOUR_WORKING_DIRECTORY (ex. $ cd ~/catkin_ws/src/)
 $ svn export https://github.com/withrobot/oCam/trunk/Software/oCamS_ROS_Package/ocams
 ```
->#### 2.3 Build
+##### 2.3 Build
 ```
 $ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
