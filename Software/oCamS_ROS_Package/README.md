@@ -23,7 +23,7 @@ oCamS ROS control program
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 * We recommend you to install ROS kinetic version.
 
-
+</br>
 **2. oCamS ROS Package download and install**
 
 ##### 2.1 Download and install required library from linux package manager(e.g. apt)
@@ -42,7 +42,7 @@ $ cd YOUR_CATKIN_WORKSPACE (ex. $ cd ~/catkin_ws/)
 $ catkin_make
 $ source devel/setup.bash
 ```
-
+</br>
 **3. Run**</br>
 oCamS-1CGN-U sends IMU data through Virtual COM port.</br>
 So, user needs to write following rules into udev rule file like below.
