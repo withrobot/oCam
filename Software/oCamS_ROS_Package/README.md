@@ -54,10 +54,12 @@ $ roslaunch ocams disparity.launch
 ```
 
 ## Update Firmware
-**1. Firmware update on Windows OS</br>
+**1. Firmware update on Windows OS**</br>
 - You can find the latest firmware at</br>
 https://github.com/withrobot/oCam/tree/master/Firmware
-
+-- Correct file for the oCamS-1CGN-U should be selected for the firmware update
 - You can find the firmware writing program at</br>
 https://github.com/withrobot/oCam/tree/master/Firmware/Update_FW
-
+-- Uncompress the downloaded “UpdateFW.zip”
+-- Follow the instruction described at
+https://github.com/withrobot/oCam/tree/master/Firmware
