@@ -1,8 +1,12 @@
 # The oCam-viewer for the windows.
 ## updates
-R1705 (May. 2017)
-- Support for oCam-1CGN-U
+R1705 (Jul. 2017)
+    - Bug fix for wrong whitebalance components reading when the viewer initialize.
 
+R1705 (May. 2017)
+    - Support for oCam-1CGN-U
+  
+   
 ## The Directory descriptions
 bin : The binary of the oCam-viewer for the windows.
 - tested on windows 7/8/10
