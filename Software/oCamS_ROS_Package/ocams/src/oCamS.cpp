@@ -19,8 +19,6 @@
 #include "withrobot_camera.hpp"
 #include "myahrs_plus.hpp"
 
-//#define USE_TIMESTAMP
-
 class StereoCamera
 {
     Withrobot::Camera* camera;
