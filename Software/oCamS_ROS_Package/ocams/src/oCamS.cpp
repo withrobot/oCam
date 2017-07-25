@@ -520,7 +520,6 @@ int main (int argc, char **argv)
     if(sensor.initialize() == false)
     {
       ROS_ERROR("%s\n", "Initialize() returns false, please check your devices.");
-      return 0;
     }
 
     oCamStereoROS ocams_ros;
