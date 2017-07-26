@@ -325,7 +325,7 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	int settingValueRed = static_cast<int>(round(scaleRed * FLOAT_SCALER));
 	int settingValueBlue = static_cast<int>(round(scaleBlue * FLOAT_SCALER));
 
-	DBG_PRINTF("scaleRed: %f(%d), scaleBlue: %f(%d)\n", scaleRed, settingValueRed, scaleBlue, settingValueBlue);
+	DBG_PRINTF(L"scaleRed: %f(%d), scaleBlue: %f(%d)\n", scaleRed, settingValueRed, scaleBlue, settingValueBlue);
 
 	/* White Balance Red/Blue setting */
 	m_scWbBlue.SetPos(settingValueBlue);
