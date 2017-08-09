@@ -30,7 +30,7 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
 
   ##### 2.1 Download and install required library from linux package manager(e.g. apt)
   ```
-  $ sudo apt-get install libv4l-dev libudev-dev
+  $ sudo apt-get install libv4l-dev libudev-dev ros-kinetic-rtabmap*
   ```
   ##### 2.2 Download source tree from github
   * using SVN checkout
