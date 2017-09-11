@@ -1,4 +1,4 @@
-# [oCamS-1CGN-U](Products/oCamS-1CGN-U) (USB 3.0 Stereo Camera)- [sales website]</br></br>
+# [oCamS-1CGN-U](https://github.com/withrobot/oCamS) (USB 3.0 Stereo Camera)- [sales website]</br></br>
 
 ![ScreenShot](images/oCamS-1CGN-U.png)
 
