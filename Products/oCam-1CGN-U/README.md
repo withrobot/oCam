@@ -40,5 +40,5 @@ Type | Description |
 
 ## Softwares
 * [oCam-1CGN-U_R1705_170428.img](../../Firmware)
-* [oCam_viewer_Linux](../../Software/oCam_viewer_Linux_1705)
+* [oCam_viewer_Linux](../../oCam/Software/oCam_viewer_Linux)
 * [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
