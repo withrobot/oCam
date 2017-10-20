@@ -50,6 +50,7 @@ Type | Description |
 **Optics** | Glass without IR cut filter |
 **Package** | Box of 4 lenses contained in soft sponge |
 </br>
+
 ## Model No. Lens4-8-6-3-2.6-IRcut - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
 ### Key Specifications
