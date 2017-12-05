@@ -117,7 +117,7 @@ Currently supported resolutions and frame rates are;
  640 (H) x  480 (V) pixels   30, 15 fps</br>
  320 (H) x  240 (V) pixels   30, 15 fps</br>
  
-**MJPEG format(Supported Linux, Windows7)**</br>
+**MJPEG format(Supported OS: Linux, Windows7)**</br>
 1920 (H) x 1080 (V) pixels   30, 15 fps </br>
 1280 (H) x  720 (V) pixels   45, 30, 15 fps </br>
  640 (H) x  480 (V) pixels   30, 15 fps </br>
