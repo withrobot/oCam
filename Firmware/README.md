@@ -15,6 +15,22 @@ oCam firmware supports resolutions and frame rates as follows
 1280 (H) x  720 (V) pixels   30, 25, 15 fps</br>
  640 (H) x  480 (V) pixels   100, 90, 60, 50, 30, 25, 15 fps (binning)</br>
  320 (H) x  240 (V) pixels   180, 150, 120, 100, 60, 50 fps (cropping)</br>
+ 
+ ## oCam-1CGN-U_R1803(Mar 2018)
+oCam firmware supports resolutions and frame rates as follows
+### USB 3.0
+**Bayer GRBG format**</br>
+1280 (H) x  960 (V) pixels   54, 50, 30, 25, 15 fps</br>
+1280 (H) x  720 (V) pixels   60, 50, 30, 25, 15 fps</br>
+ 640 (H) x  480 (V) pixels   100, 90, 60, 50, 30, 25, 15 fps (binning)</br>
+ 320 (H) x  240 (V) pixels   180, 150, 120, 100, 60, 50 fps (cropping)</br>
+
+### USB 2.0
+**Bayer GRBG format**</br>
+1280 (H) x  960 (V) pixels   30, 25, 15 fps</br>
+1280 (H) x  720 (V) pixels   30, 25, 15 fps</br>
+ 640 (H) x  480 (V) pixels   100, 90, 60, 50, 30, 25, 15 fps (binning)</br>
+ 320 (H) x  240 (V) pixels   180, 150, 120, 100, 60, 50 fps (cropping)</br>
 
 
 ## oCam-1MGN-U_R1709(Sep 2017)
@@ -67,7 +83,7 @@ oCam firmware(oCam-1CGN-U_R1705_170428.img) supports resolutions and frame rates
 ## oCam-1MGN-U_R1611(November 2016)
 oCam firmware(oCam-1MGN-U_R1611_161109.img) is updated to support Win 10 as well as Win 7 and Win 8.</br>
 It can be used with the Windows libraries of libCamCap.</br>
-(Please refer ¡°Software/oCam-viewer_Win¡± and ¡°Example/libCamCap-withOpenCV¡± for how to use the libCamCap)</br>
+(Please refer Â¡Â°Software/oCam-viewer_WinÂ¡Â± and Â¡Â°Example/libCamCap-withOpenCVÂ¡Â± for how to use the libCamCap)</br>
 
 
 ## oCam-1MGN-U_R1607(July 2016)
