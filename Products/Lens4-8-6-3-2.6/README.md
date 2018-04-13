@@ -50,6 +50,7 @@ Type | Description |
 **Optics** | Glass without IR cut filter |
 **Package** | Box of 4 lenses contained in soft sponge |
 </br>
+
 ## Model No. Lens4-8-6-3-2.6-IRcut - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
 
 ### Key Specifications
@@ -58,7 +59,7 @@ Type | Description |
 ------|------|
 **Focal Length** | * 8020PL102: 8 mm</br> * 6020PL101: 6 mm</br> * 3018PL101: 3 mm</br> * 26519PL102: 2.65 mm</br> |
 **Iris** | Fixed |
-**Image Sensor Size** | * 8020PL102: 1/2.9 inch</br> * 6020PL101: 1/3 inch</br> * 3018PL101: 1/2.9 inch</br> * 26519PL102: 1/3 inch</br> |
+**Image Sensor Size** | * 8020PL102: 1/2.9 inch</br> * 6020PL101: 1/3 inch</br> * 3018PL102: 1/2.9 inch</br> * 26519PL102: 1/3 inch</br> |
 **Mount(Thread)** | M12 x P0.5 | 
 **Angle of View** | * 8020PL102: 21° x 39° x 45° @ 1/2.9inch</br> * 6020PL101: 35° x 49° x 60° @ 1/3inch</br> * 3018PL101: 65° x 111° x 126° @ 1/2.9inch</br> * 26519PL102: 74°x 110° x 150° @ 1/3inch</br> | 
 **Housing** | Metal | 

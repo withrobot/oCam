@@ -1,7 +1,3 @@
-# [oCamS-1CGN-U](https://github.com/withrobot/oCamS) (USB 3.0 Stereo Camera)- [sales website]</br></br>
-
-![ScreenShot](images/oCamS-1CGN-U.png)
-
 # [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website]
 
 ![ScreenShot](images/oCam-1MGN-U_model.jpg)
