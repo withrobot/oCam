@@ -27,7 +27,7 @@ Type | Description |
 **Shutter** | Electric Rolling Shutter |
 **Field Of View(FOV)** | 65deg. |
 **Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
-**Frame Rate** | **YUV** 2592x1944@7\.5fps, 1920x1080@15fps, 1280x960@30fps, 1280x720@30fps, 640x480@120fps, 320x240@120fps etc.<br/> **MJPEG(Supported OS: Linux, Windows7)** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps<br/> **※ For further details, please refer the release note at [this page](../../Firmware)** | 
+**Frame Rate** | **YUV** 2592x1944@7\.5fps, 1920x1080@15fps, 1280x960@30fps, 1280x720@30fps, 640x480@120fps, 320x240@120fps etc.<br/> **MJPEG(Supported OS: Linux)** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps<br/> **※ For further details, please refer the release note at [this page](../../Firmware)** | 
 **Weight** | 33.5 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm | 
 **Case Size** | 42mm x 42mm x 17mm |
