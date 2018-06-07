@@ -1,13 +1,13 @@
-# oCam - 2MP Sony USB 3.0 Color Camera
+# oCam - 2MP USB 3.0 Color Wide Dynamic Range Camera
 ### Model No. oCam-2WRS-U - sales website
 
 ![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
 
 
-The newly released oCam-2WRS-U is a rolling shutter color camera with the following features.
-* Global shutter
-* High speed up to 160 frames-per-second at the 320 x 240 resolution
-* UVC compliance
+The oCam-2WRS-U is 2 mega pixel color camera with wide dynamic range (WDR) functionality to provide a superb image quality under various light conditions.
+* Wide Dynamic Range (WDR)
+* Full HD image resolution
+* UVC compliant
 * Changeable standard M12 lens
 
 ## Board Detail
@@ -21,18 +21,17 @@ Type | Description |
 **Sensor Size** | 1/3 inch |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Standard M12 Lens with focal length of 3.6mm | 
-**Supported OS** | Linux, Plug-and play by UVC(USB Video Class) protocol | 
+**Supported OS** | Windows 7/8/10, Linux, Plug-and play by UVC(USB Video Class) Protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/180mA |
-**Shutter** | Electric Global Shutter |
-**Field Of View(FOV)** | 65 degrees at full resolution of 1280 x 960 (Images of less resolutions are copped from the full resolution image to have less FOV accordingly.) |
-**Camera Control** | Brightness, Exposure | 
-**Frame Rate** | 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps | 
-**Weight** | 33.5 gram approx.(Including protective case) | 
-**PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
+**Rating** | DC 5V/250mA |
+**Shutter** | Rolling Shutter |
+**Field Of View(FOV)** | 50˚(V) X 92.8˚(H) X 110˚(D) @ 1/2.9inch |
+**Camera Control** | WDR On/Off | 
+**Frame Rate** | 15fps, 30fps @1920x1080 | 
+**Weight** | 27 gram approx.(Including protective case) | 
+**PCB Size** | 39mm x 39mm(PCB) | 
+**Case Size** | 49mm x 53mm x 20mm (Including Tripod Mount) |
 
 ## Softwares
 * [oCam-1MGN-U_R1705_170420.img](../../Firmware)
