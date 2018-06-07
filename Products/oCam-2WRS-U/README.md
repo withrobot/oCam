@@ -34,6 +34,6 @@ Type | Description |
 **Case Size** | 49mm x 53mm x 20mm (Including Tripod Mount) |
 
 ## Softwares
-* [oCam-2WRS-U_R1806](../../Firmware)
+* [oCam-2WRS-U_R1806]
 * [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
 * [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
