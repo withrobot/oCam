@@ -2,7 +2,7 @@
 ### Model No. oCam-2WRS-U - sales website
 
 ![ScreenShot](../../images/oCam-2WRS-U.png)
-
+![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
 
 The oCam-2WRS-U is 2 mega pixel color camera with wide dynamic range (WDR) functionality to provide a superb image quality under various light conditions.
 * Wide Dynamic Range (WDR)
@@ -11,7 +11,7 @@ The oCam-2WRS-U is 2 mega pixel color camera with wide dynamic range (WDR) funct
 * Changeable standard M12 lens
 
 ## Board Detail
-![ScreenShot](../../images/oCam-1MGN-U_layout.png)
+![ScreenShot](../../images/oCam-2WRS-U_layout.png)
 
 
 ## Specifications
