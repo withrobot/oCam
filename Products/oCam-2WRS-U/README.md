@@ -1,7 +1,7 @@
 # oCam - 2MP USB 3.0 Color Wide Dynamic Range Camera
 ### Model No. oCam-2WRS-U - sales website
 
-![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
+![ScreenShot](../../images/oCam-2WRS-U.pngg)
 
 
 The oCam-2WRS-U is 2 mega pixel color camera with wide dynamic range (WDR) functionality to provide a superb image quality under various light conditions.
