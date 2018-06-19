@@ -1,7 +1,7 @@
 # oCam - 1MP USB 3.0 Color Global Shutter Camera
 ### Model No. oCam-1CGN-U - sales website
 
-![ScreenShot](../../images/oCam-1MGN-U_model_new.jpg)
+![ScreenShot](../../images/oCam-1CGN-U.png)
 
 
 The newly released oCam-1CGN-U is a global shutter color camera with the following key features.
@@ -18,7 +18,7 @@ The newly released oCam-1CGN-U is a global shutter color camera with the followi
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi AR0134 CMOS image sensor |
+**Sensor** | OnSemi AR0135 CMOS image sensor |
 **Sensor Size** | 1/3 inch |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Standard M12 Lens (Changeable) | 
