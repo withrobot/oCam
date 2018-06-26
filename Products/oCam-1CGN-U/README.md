@@ -3,6 +3,8 @@
 
 ![ScreenShot](../../images/oCam-1CGN-U.png)
 
+![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
+
 
 The newly released oCam-1CGN-U is a global shutter color camera with the following key features.
 * Color output of Bayer GRBG format
