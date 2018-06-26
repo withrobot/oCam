@@ -14,7 +14,7 @@
 
 # [oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Global Shutter Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147245683619)
 
-![ScreenShot](images/oCam-1MGN-U_model.jpg)
+![ScreenShot](images/oCam-1MGN-U.png)
 
 
 # [oCam-TM](Products/oCam-TM) (Tripod Mount for oCam camera) - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147320796853)
