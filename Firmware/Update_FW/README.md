@@ -4,7 +4,7 @@
 ### Step 2. Click *[Erase FW]* to erase the installed firmware of oCam.
 ### Step 3. Check *[Device Manager]* to see if oCam appears as a WestBridge device with unknown device driver as shown below.
 ![ScreenShot](../../images/2_device_change.jpg)
-### Step 4. Install the device driver of the WestBridge device using the driver in the *[drv_1.2.3.10]* directory.
+### Step 4. Install the device driver of the WestBridge device using the driver in the *[Drivers for FX3.zip]* directory.
 ### Step 5. Check *[Device Manager]* to see if oCam appears as a Cypress USB BootLoader device as shown below.
 ![ScreenShot](../../images/3_driver_setup.jpg)
 ### Step 6. Run again the *[UpdateFW.exe]*.
