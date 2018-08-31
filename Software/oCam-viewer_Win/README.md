@@ -1,5 +1,8 @@
 # The oCam-viewer for the windows.
 ## updates
+R1808 (Aug. 2018)
+    - Performance Stabilization
+
 R1705 (Jul. 2017)
     - Bug fix for wrong whitebalance components reading when the viewer initialize.
 
