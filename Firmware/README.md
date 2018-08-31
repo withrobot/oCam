@@ -1,5 +1,11 @@
 # Release Note
 
+## oCam-1CGN-U_R1808(Aug 2018)
+Performance Stabilization
+
+## oCam-1MGN-U_R1808(Aug 2018)
+Performance Stabilization
+
 ## oCam-1MGN-U_R1803(Mar 2018)
 oCam firmware supports resolutions and frame rates as follows
 ### USB 3.0
