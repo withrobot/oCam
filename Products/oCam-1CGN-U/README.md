@@ -38,7 +38,7 @@ Type | Description |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
 ## Global Shutter vs. Rolling Shutter
-[![ScreenShot](../../images/GlobalvsRolling.png)](https://youtu.be/gBfj4_foWdk)
+[![ScreenShot](../../images/GlobalvsRolling.png)](https://youtu.be/OxbYWC3tylM)
 
 ## Softwares
 * [oCam-1CGN-U_R1803_180404.img](../../Firmware)
