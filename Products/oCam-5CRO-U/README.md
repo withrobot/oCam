@@ -38,11 +38,11 @@ Type | Description |
 
 
 ## oCam-Viewer (for Linux)
-[![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/3x4ODTUOSds)
+[![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
 Detailed description is [here](../../Software/oCam_viewer_Linux_1705).
 
 ## Application: HandGesture
-[![ScreenShot](../../images/oCam_handgesture.png)](https://youtu.be/qt8iNjDMUUo)
+[![ScreenShot](../../images/oCam_handgesture.png)](https://youtu.be/-S4rLRJTN6w)
 Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
 #### modifications
@@ -57,10 +57,10 @@ Detailed description is [here](https://www.youtube.com/watch?v=th8hUD7Ajg4)
 
 ## MotionEye OS - Video surveillance system
 * MotionEye OS(oCam + odroid XU4) 
-[![ScreenShot](../../images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/ePXZSQPnM0Q)
+[![ScreenShot](../../images/motionEyeOs-odroidXU4.JPG)](https://youtu.be/2noqEafpVPA)
 
 * MotionEye OS(oCam + raspberryPi2) 
-[![ScreenShot](../../images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/ImZ8hTkd2R8)
+[![ScreenShot](../../images/motionEyeOs-RaspberryPi2.JPG)](https://youtu.be/UF2lI0pNpB0)
 
 Detailed description is [here](https://github.com/ccrisan/motioneyeos)
 
