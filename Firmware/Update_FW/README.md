@@ -11,7 +11,7 @@
 
 ### Step 3. Erase the current firmware
 * Download the update program from [here]()<br/>
-** Run UpdateFW.exe
+  * Run UpdateFW.exe
 
 ![ScreenShot]()
 
