@@ -1,5 +1,5 @@
-# oCam - 1MP USB 3.0 Mono Trigger Global Shutter Camera
-### Model No. oCam-1MGN-U-T - sales website
+# oCam - 1MP USB 3.0 Color Trigger Global Shutter Camera
+### Model No. oCam-1CGN-U-T - sales website
 
 ![ScreenShot](../../images/oCam-1MGN-U.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
@@ -19,7 +19,7 @@ oCam-1CGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi AR0135 CMOS Mono image sensor |
+**Sensor** | OnSemi AR0135 CMOS Color image sensor |
 **Sensor Size** | 1/3 inch |
 **Output Format** | BayerRGB |
 **Interface** | USB 3.0 Super-Speed |
