@@ -14,7 +14,7 @@
   * Run UpdateFW.exe
 
 ![ScreenShot]()
-*
+* <br/>
   * Click [Erase FW]
   * On successful erasure, a message window will popup as shown next.
 
