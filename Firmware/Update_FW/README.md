@@ -11,27 +11,26 @@
 
 ### Step 3. Erase the current firmware
 * Download the update program from [here]()<br/>
-  * Run UpdateFW.exe
+* Run UpdateFW.exe
 
 ![ScreenShot]()
-* <br/>
-  * Click [Erase FW]
-  * On successful erasure, a message window will popup as shown next.
+* Click [Erase FW]
+* On successful erasure, a message window will popup as shown next.
 
 ![ScreenShot]()
 
 * Disconnect and connect the oCam camera
-  * You can check if the firmware was successfully erased by checking if oCam appears as "Cypress FX3 USB BootLoader Device" on Device Manager.
+* You can check if the firmware was successfully erased by checking if oCam appears as "Cypress FX3 USB BootLoader Device" on Device Manager.
+* Disconnect and reconnect the USB cable to complete the firmware update procedure.
+
+### Step 4. Install the firmware
+* Run again the UpdateFW.exe.
+* Click [Write FW] to select the firmware image file (*.img). On selecting a new firmware, UpdateFW will write the new firmware to oCam
+* On successful writing, a message window will pop up as shown next.
 
 
+### Step 5. Check if the firmware successfully downloaded to oCam (this step is optional)
+* Open Device Manager.
+* If the firmware was successfully downloaded, it should appear as a camera (on Windows 10) or an imaging device (on Windows 7).
+* If the oCam camera model appears as different from what is actually connected, right click and remove oCam device on Device Manager, then disconnect and connect the oCam camera again. Correct model name should appear on Device Manager.
 
-
-### Step 4. Install the device driver of the WestBridge device using the driver in the *[Drivers for FX3.zip]* directory.
-### Step 5. Check *[Device Manager]* to see if oCam appears as a Cypress USB BootLoader device as shown below.
-![ScreenShot](../../images/3_driver_setup.jpg)
-### Step 6. Run again the *[UpdateFW.exe]*.
-
-![ScreenShot](../../images/4_UpdateFW.jpg)
-### Step 7. Click *[Write FW]* to select the firmware image file (*.img). After selecting a new firmware, UpdateFW will write the new firmware to oCam. On successful writing, a message window will pop up as shown below.
-![ScreenShot](../../images/5_Firmware_Update.JPG)
-### Step 8. Disconnect and reconnect the USB cable to complete the firmware update procedure.
