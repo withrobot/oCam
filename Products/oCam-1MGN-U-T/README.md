@@ -35,6 +35,7 @@ Type | Description |
 **Weight** | 약 27.2 그램(케이스 포함) | 
 **PCB Size** | 39mm x 39mm | 
 **외형 크기** | 49mm x 53mm x 20mm |
+* oCamViewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
 
 ## Softwares
 * [oCam-1MGN-U_R1803_180404.img](../../Firmware)
