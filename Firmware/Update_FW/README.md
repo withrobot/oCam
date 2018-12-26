@@ -15,10 +15,10 @@
 
 ![ScreenShot]()
 
-** Click [Erase FW].
+** Click [Erase FW]
 ** On successful erasure, a message window will popup as shown next.
 
-![ScreenShot](../../images/2_device_change.jpg)
+![ScreenShot]()
 
 * Disconnect and connect the oCam camera
 ** You can check if the firmware was successfully erased by checking if oCam appears as "Cypress FX3 USB BootLoader Device" on Device Manager.
