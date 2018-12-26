@@ -4,7 +4,7 @@
 ![ScreenShot](../../images/oCam-1MGN-U.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
 
-oCam-1CGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽셀급의 글로벌 셔터 칼라 카메라로 다음과 같은 특징을 갖고 있습니다.
+oCam-1MGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽셀급의 글로벌 셔터 칼라 카메라로 다음과 같은 특징을 갖고 있습니다.
 * 외부 트리거(External Trigger) 지원: 영상 취득의 Timing을 임의로 조절할 수 있어 다수의 카메라의 동기 촬영과 외부 조명과 동기화 가능
 * 인터페이스: USB3.0 SuperSpeed, 최대 160 FPS(320 × 240 해상도 기준)
 * UVC 1.1 표준 지원으로 리눅스 및 윈도우 OS에서 별도의 드라이버 설치가 불필요
@@ -44,7 +44,7 @@ Type | Description |
 •	트리거 신호 (3V ~ 5V): 트리거 신호가 3V에서 5V 레벨일 때 이 핀으로 입력합니다.<br/>
 •	GND: 트리거 신호의 접지선을 이 핀으로 입력합니다.<br/>
 카메라의 트리거 신호 입력 회로는 아래와 같습니다.<br/>
-트리거 입력 핀과 oCam-1CGN-U-T의 회로는 Photo Coupler를 통하여 격리되어 있으므로 트리거 신호 핀에 2mA 이상의 전류를 공급해야 트리거 신호가 안정적으로 카메라에 전달될 수 있습니다.
+트리거 입력 핀과 oCam-1MGN-U-T의 회로는 Photo Coupler를 통하여 격리되어 있으므로 트리거 신호 핀에 2mA 이상의 전류를 공급해야 트리거 신호가 안정적으로 카메라에 전달될 수 있습니다.
 
 #### 트리거 신호 입력 회로
 ![ScreenShot](../../images/trigger.png)
