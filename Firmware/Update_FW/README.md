@@ -11,7 +11,7 @@
 
 ### Step 3. Erase the current firmware
 * Download the update program from [here]()<br/>
-  * Run UpdateFW.exe
+ * Run UpdateFW.exe
 
 ![ScreenShot]()
 
@@ -21,7 +21,7 @@
 ![ScreenShot]()
 
 * Disconnect and connect the oCam camera
-  * You can check if the firmware was successfully erased by checking if oCam appears as "Cypress FX3 USB BootLoader Device" on Device Manager.
+ * You can check if the firmware was successfully erased by checking if oCam appears as "Cypress FX3 USB BootLoader Device" on Device Manager.
 
 
 
