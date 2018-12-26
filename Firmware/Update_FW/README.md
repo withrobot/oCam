@@ -1,5 +1,16 @@
-# How to update the firmware of oCam
-### Step 1. Run *[UpdateFW.exe]*
+# How to update the firmware of oCam Cameras
+### Step 1. Check the current status (this step is optional)
+Open Device Manager.
+If the oCam camera has a firmware and is working normally as a UVC camera, it should appear as a camera (on Windows 10) or an imaging device (on Windows 7).
+Go to step 3 to erase the current firmware.
+
+
+
+
+
+
+
+
 ![ScreenShot](../../images/1_Run_UpdateFW.jpg)
 ### Step 2. Click *[Erase FW]* to erase the installed firmware of oCam.
 ### Step 3. Check *[Device Manager]* to see if oCam appears as a WestBridge device with unknown device driver as shown below.
