@@ -25,11 +25,17 @@
 
 ### Step 4. Install the firmware
 * Run again the UpdateFW.exe.
+
 ![ScreenShot](../../images/updatafw_3.png)
+
 * Click [Write FW] to select the firmware image file (*.img). On selecting a new firmware, UpdateFW will write the new firmware to oCam
+
 ![ScreenShot](../../images/updatafw_4.png)
+
 * On successful writing, a message window will pop up as shown next.
+
 ![ScreenShot](../../images/updatafw_5.png)
+
 * Disconnect and reconnect the USB cable to complete the firmware update procedure.
 
 
