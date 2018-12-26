@@ -10,7 +10,7 @@
 * Right click on "WestBridge" device and update the driver using the downloaded driver according to the type of host system.
 
 ### Step 3. Erase the current firmware
-* Download the update program from [here]()<br/>
+* Download the update program from [here](https://github.com/withrobot/oCam/blob/master/Firmware/Update_FW/181112_UpdateFW.zip)<br/>
 * Run UpdateFW.exe
 
 ![ScreenShot]()
