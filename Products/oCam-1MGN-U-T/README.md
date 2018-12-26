@@ -1,5 +1,5 @@
 # oCam - 1MP USB 3.0 Mono Global Shutter Camera
-### Model No. oCam-1MGN-U - sales website
+### Model No. oCam-1MGN-U-T - sales website
 
 ![ScreenShot](../../images/oCam-1MGN-U.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
