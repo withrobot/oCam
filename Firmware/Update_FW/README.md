@@ -5,7 +5,7 @@
 * Go to step 3 to erase the current firmware.
 
 ### Step 2. Install the USB driver (this step is optional)
-* Download the USB driver from https://goo.gl/SGzpk2.
+* Download the USB driver from [here](https://github.com/withrobot/oCam/blob/master/Firmware/Update_FW/Drivers%20for%20FX3.zip)
 * Open Device Manager.
 * Right click on "WestBridge" device and update the driver using the downloaded driver according to the type of host system.
 
