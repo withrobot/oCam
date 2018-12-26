@@ -10,10 +10,10 @@
 * Right click on "WestBridge" device and update the driver using the downloaded driver according to the type of host system.
 
 ### Step 3. Erase the current firmware
-* Download the update program from [here]()
+* Download the update program from [here]()<br/>
 ** Run UpdateFW.exe
 
-![ScreenShot](../../images/2_device_change.jpg)
+![ScreenShot]()
 
 ** Click [Erase FW].
 ** On successful erasure, a message window will popup as shown next.
