@@ -1,8 +1,8 @@
 # How to update the firmware of oCam Cameras
 ### Step 1. Check the current status (this step is optional)
-Open Device Manager.
-If the oCam camera has a firmware and is working normally as a UVC camera, it should appear as a camera (on Windows 10) or an imaging device (on Windows 7).
-Go to step 3 to erase the current firmware.
+* Open Device Manager.
+* If the oCam camera has a firmware and is working normally as a UVC camera, it should appear as a camera (on Windows 10) or an imaging device (on Windows 7).
+* Go to step 3 to erase the current firmware.
 
 
 
