@@ -54,7 +54,7 @@ Type | Description |
 트리거 신호는 인가되는 형태에 따라 다음과 같은 3가지의 모드로 사용할 수 있습니다.
 
 #### 원 샷 모드(One Shot Mode)
-1회의 영상을 취득할 경우에 사용됩니다. 트리거 신호의 Low Level 지속 시간(T1)은 1 msec 이상이어야 합니다.
+1회의 영상을 취득할 경우에 사용됩니다. 트리거 신호의 Low Level 지속 시간(T1)은 1 msec 이상이어야 합니다.<br/>
 <br/>
 ![ScreenShot](../../images/oneshot.png)
 
