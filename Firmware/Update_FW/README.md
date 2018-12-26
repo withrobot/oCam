@@ -4,15 +4,14 @@
 * If the oCam camera has a firmware and is working normally as a UVC camera, it should appear as a camera (on Windows 10) or an imaging device (on Windows 7).
 * Go to step 3 to erase the current firmware.
 
+### Step 2. Install the USB driver (this step is optional)
+* Download the USB driver from https://goo.gl/SGzpk2.
+* Open Device Manager.
+* Right click on "WestBridge" device and update the driver using the downloaded driver according to the type of host system.
 
 
 
 
-
-
-
-![ScreenShot](../../images/1_Run_UpdateFW.jpg)
-### Step 2. Click *[Erase FW]* to erase the installed firmware of oCam.
 ### Step 3. Check *[Device Manager]* to see if oCam appears as a WestBridge device with unknown device driver as shown below.
 ![ScreenShot](../../images/2_device_change.jpg)
 ### Step 4. Install the device driver of the WestBridge device using the driver in the *[Drivers for FX3.zip]* directory.
