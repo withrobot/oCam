@@ -1,17 +1,13 @@
-# oCam - 1MP USB 3.0 Color Global Shutter Camera
-### Model No. oCam-1CGN-U - sales website
+# mTrigger - 트리거 신호 생성 보드
+### Model No. mTrigger - sales website
 
 ![ScreenShot](../../images/oCam-1CGN-U.png)
 
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
 
+mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (External Trigger)를 지원하는 위드로봇㈜의 oCam-1CGN-U-T 및 oCam-1MGN-U-T카메라들에 적합한 트리거 신호를 제공하는데 사용할 수 있습니다.<br/>
+트리거 신호는 총 4가지 모드로 출력할 수 있습니다.
 
-The newly released oCam-1CGN-U is a global shutter color camera with the following key features.
-* Color output of Bayer GRBG format
-* Global shutter
-* High speed up to 160 frames-per-second at the 320 x 240 resolution
-* UVC compliant
-* Changeable standard M12 lens
 
 ## Board Detail
 ![ScreenShot](../../images/oCam-1CGN-U_Layout_180620.png)
