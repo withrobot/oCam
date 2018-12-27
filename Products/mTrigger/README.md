@@ -17,7 +17,7 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 
 ### Cascade 연결 구성
 
-다수 mTrigger 보드들을 Cascade 방식으로 연결할 수 있으며, 연결 구성을 아래와 같습니다.
+다수 mTrigger 보드들을 Cascade 방식으로 연결할 수 있으며, 연결 구성은 아래와 같습니다.
 
 ![ScreenShot](../../images/mtrigger_cascade.png)
 
@@ -39,10 +39,3 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 **트리거 출력 신호의 수(N)** | 0 ~ 30,000 |
 
 
-## Global Shutter vs. Rolling Shutter
-[![ScreenShot](../../images/GlobalvsRolling.png)](https://youtu.be/OxbYWC3tylM)
-
-## Softwares
-* [oCam-1CGN-U_R1808_180815.img](../../Firmware)
-* [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
-* [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
