@@ -13,25 +13,18 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 ![ScreenShot](../../images/oCam-1CGN-U_Layout_180620.png)
 
 
-## Specifications
-Type | Description |
+## 주요 사양
+항목 | 사양 |
 ------|------|
-**Sensor** | OnSemi AR0135 CMOS image sensor |
-**Sensor Size** | 1/3 inch |
-**Interface** | USB 3.0 Super-Speed |
-**Lens** | Standard M12 Lens (Changeable) | 
-**Supported OS** | Plug-and play by UVC(USB Video Class) protocol | 
-**Power** | USB Bus Power | 
-**Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/180mA |
-**Shutter** | Electric Global Shutter |
-**Field Of View(FOV)** | - 65 degrees at full resolution of 1280(H) x 960(V)</br> - FOV for the following resolutions are reduced from the full resolution image due to cropping: 1280(H) x 720(V), 320(H) x 240(V)</br> - FOV for the following resolutions is maintained due to binning: 640(H) x 480(V) |
-**Camera Control** | Gain, White Balance Blue, White Balance Red, Exposure | 
-**Frame Rate** | **USB 3.0**: 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps</br>**USB 2.0**: 1280x960 @22.5fps, 1280x720 @30fps, 640x480 @80fps, 320x240 @160fps | 
-**Weight** | 27.2 gram approx.(Including protective case and Lens) | 
-**PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
+**출력 포트의 수** | 보드 당 8개 |
+**출력 레벨** | Low Level: 0V / High Level: 5V |
+**외부 입력 레벨** | Low Level: 0V / High Level: 5V |
+**동기 트리거 모드에서 출력 신호들 사이의 동기 정확도** | 3 μsec 이내 | 
+**동기 트리거 출력 신호들의 간격(F)** | 5 msec ~ 30,000 msec | 
+**비동기 트리거 출력 신호들의 간격(T)** | 0 msec ~ 30,000 msec | 
+**트리거 출력 신호의 폭(W)** | 5 msec ~ 30,000 msec |
+**트리거 출력 신호의 수(N)** | 0 ~ 30,000 |
+
 
 ## Global Shutter vs. Rolling Shutter
 [![ScreenShot](../../images/GlobalvsRolling.png)](https://youtu.be/OxbYWC3tylM)
