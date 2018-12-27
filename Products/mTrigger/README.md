@@ -15,16 +15,11 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 **외부** | 동기 | 외부 비동기 트리거 모드<br/>(External Synchronous) | 외부 신호를 기준으로 8개의 트리거 신호를 동시에 발생 |
 || 비동기 | 외부 비동기 트리거 모드<br/>(External Asynchronous) | 외부 신호를 기준으로 8개의 트리거 신호를  발생 |
 
+### Cascade 연결 구성
 
+다수 mTrigger 보드들을 Cascade 방식으로 연결할 수 있으며, 연결 구성을 아래와 같습니다.
 
-
-
-
-
-
-
-
-
+![ScreenShot](../../images/mtrigger_cascade.png)
 
 
 ## Board Detail
