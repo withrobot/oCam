@@ -2,7 +2,7 @@
 ### Model No. mTrigger - sales website
 
 
-[![ScreenShot](../../images/trigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
+[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
 
 
 
