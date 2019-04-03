@@ -1,12 +1,10 @@
 # oCam - 1MP USB 3.0 Color Trigger Global Shutter Camera
 ### Model No. oCam-1CGN-U-T - sales website
 
-
-[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
-
-
 ![ScreenShot](../../images/oCam-1MGN-U.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
+
+[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
 
 oCam-1CGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽셀급의 글로벌 셔터 칼라 카메라로 다음과 같은 특징을 갖고 있습니다.
 * 외부 트리거(External Trigger) 지원: 영상 취득의 Timing을 임의로 조절할 수 있어 다수의 카메라의 동기 촬영과 외부 조명과 동기화 가능
