@@ -1,6 +1,6 @@
 # [oCam-2WRS-U](Products/oCam-2WRS-U) (2MP USB 3.0 Color Wide Dynamic Range Camera)- [sales website]
 
-// ![ScreenShot](images/oCam-2WRS-U.png)
+<!-- ![ScreenShot](images/oCam-2WRS-U.png) -->
 
 # [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G150091011568)
 
