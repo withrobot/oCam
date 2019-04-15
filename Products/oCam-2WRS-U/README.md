@@ -33,6 +33,9 @@ Type | Description |
 **PCB Size** | 39mm x 39mm(PCB) | 
 **Case Size** | 49mm x 53mm x 20mm (Including Tripod Mount) |
 
+## User Manual
+* [oCam-2WRS-U User Manual](oCam-2WRS-U_UserManual.pdf)
+
 ## Softwares
 * [oCam-2WRS-U_R1806]
 * [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
