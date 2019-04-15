@@ -42,8 +42,8 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 ## How to connect mTrigger Board
 [![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/Ubj83hFQjHM)
 
-## oCam-1XGN-U-T + mTrigger
-[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
+## oCam-1XGN-U-T + mTrigger Demo
+[![ScreenShot](../../images/mtrigger_ocam_demo.png)](https://youtu.be/37N3-lrL4lY)
 
 
 
