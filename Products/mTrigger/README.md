@@ -1,21 +1,11 @@
 # mTrigger - 트리거 신호 생성 보드
 ### Model No. mTrigger - sales website
 
-
-[![ScreenShot](../../images/mtrigger_ocam.png)]
-
-
-
 ![ScreenShot](../../images/mTrigger.jpg)
 
 
 mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (External Trigger)를 지원하는 위드로봇㈜의 oCam-1CGN-U-T 및 oCam-1MGN-U-T카메라들에 적합한 트리거 신호를 제공하는데 사용할 수 있습니다.<br/>
 
-
-
-
-
-(https://youtu.be/37N3-lrL4lY)
 
 ### 트리거 신호 출력 모드
 
@@ -48,5 +38,12 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 **비동기 트리거 출력 신호들의 간격(T)** | 0 msec ~ 30,000 msec | 
 **트리거 출력 신호의 폭(W)** | 5 msec ~ 30,000 msec |
 **트리거 출력 신호의 수(N)** | 0 ~ 30,000 |
+
+### How to connect mTrigger Board
+[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/Ubj83hFQjHM)
+
+### oCam-1XGN-U-T + mTrigger
+[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
+
 
 
