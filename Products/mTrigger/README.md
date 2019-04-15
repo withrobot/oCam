@@ -46,5 +46,5 @@ mTrigger는 트리거 신호를 발생하는 보드로 특히 외부 트리거 (
 [![ScreenShot](../../images/mtrigger_ocam_demo.png)](https://youtu.be/37N3-lrL4lY)
 
 ## User Manual
-
+* [mTrigger User Manual](mTrigger_UserManual.pdf)
 
