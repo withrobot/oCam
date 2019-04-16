@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oCam_viewer", "oCamViewer\oCam_viewer.vcxproj", "{AB00CCD3-EBB7-4B9A-A80A-A88C17705FDA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oCam_viewer", "oCam_viewer\oCam_viewer.vcxproj", "{AB00CCD3-EBB7-4B9A-A80A-A88C17705FDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0015362F-BC52-4489-9148-C468C3EF064C}
+		SolutionGuid = {C1D41F27-026B-47FD-A92B-FA5E3BF870E3}
 	EndGlobalSection
 EndGlobal
