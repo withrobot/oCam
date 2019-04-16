@@ -87,6 +87,99 @@ void YUV2Gray(const unsigned char* Src, unsigned char* Dst, int Size, int Y)
 		Dst[i] = Src[i*2+Y];
 	}
 }
+void BayerIR2RGB(char *BayerIR, char *Dst, int Width, int Height)
+{
+	unsigned char *bayer = (unsigned char*)BayerIR;
+	bayer[0] = bayer[1 * Width + 1];
+	int i;
+	for (i = 2; i < Height; i += 2) {
+		bayer[(i)*Width] = (bayer[(i - 1)*Width + 1] + bayer[(i + 1)*Width + 1]) / 2;
+		bayer[i] = (bayer[(1)*Width + (i - 1)] + bayer[(1)*Width + (i + 1)]) / 2;
+	}
+	for ( ; i < Width; i += 2) {
+		bayer[i] = (bayer[(1)*Width + (i - 1)] + bayer[(1)*Width + (i + 1)]) / 2;
+	}
+	for (int i = 2; i < Height; i+=2) {
+		for (int j = 2; j < Width; j+=2) {
+				bayer[(i)*Width + (j)] = (bayer[(i - 1)*Width + (j - 1)]  + bayer[(i - 1)*Width + (j + 1)] + bayer[(i + 1)*Width + (j - 1)] + bayer[(i + 1)*Width + (j + 1)])>>2;
+		}
+	}
+	Bayer2RGB(BayerIR, Dst, Width, Height, BayerGR2RGB);
+	//green-light control
+	for (int i = 1; i < Width*Height * 3; i+=3) {
+		Dst[i] = (unsigned char)Dst[i]>>1;
+	}
+}
+
+void BayerIR2IR(char *BayerIR, char *Dst, int Width, int Height) {
+	unsigned char *calIR_space = (unsigned char*)BayerIR;
+	int Height_last_line = Height - 1;
+	int Width_last_line = Width - 1;
+
+	//step 1~3
+	int i = 0, j = 0;
+	for (i = 0; i < Height_last_line-1; i += 2) {
+		for (j = 0; j <Width_last_line; j += 8) {
+			calIR_space[i*Width + (j+1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+			calIR_space[(i+1)*Width + j] = (calIR_space[i*Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+			calIR_space[(i+1)*Width + (j+2)] = (calIR_space[i *Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+			calIR_space[(i+1)*Width + (j+1)] = (calIR_space[(i + 1)*Width + j] + calIR_space[(i + 1)*Width + (j + 2)]) >> 1;
+			calIR_space[i*Width + (j+3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+			calIR_space[(i+1)*Width + (j+4)] = (calIR_space[i*Width + (j + 4)] + calIR_space[(i + 2)*Width + (j + 4)]) >> 1;
+			calIR_space[(i+1)*Width + (j+3)] = (calIR_space[(i + 1)*Width + (j + 2)] + calIR_space[(i + 1)*Width + (j + 4)]) >> 1;
+			calIR_space[i*Width + (j+5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+			calIR_space[(i+1)*Width + (j+6)] = (calIR_space[i*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 6)]) >> 1;
+			calIR_space[(i+1)*Width + (j+5)] = (calIR_space[(i + 1)*Width + (j + 4)] + calIR_space[(i + 1)*Width + (j + 6)]) >> 1;
+			calIR_space[i*Width + (j+7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)]) >> 1;
+			//printf("%d:%d\n", i, j);
+			calIR_space[(i+1)*Width + (j+7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)] + calIR_space[(i + 2)*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 8)]) >> 2;
+		}
+
+		calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+		calIR_space[(i + 1)*Width + j] = (calIR_space[i*Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 2)] = (calIR_space[i *Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 1)] = (calIR_space[(i + 1)*Width + j] + calIR_space[(i + 1)*Width + (j + 2)]) >> 1;
+		calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 4)] = (calIR_space[i*Width + (j + 4)] + calIR_space[(i + 2)*Width + (j + 4)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 3)] = (calIR_space[(i + 1)*Width + (j + 2)] + calIR_space[(i + 1)*Width + (j + 4)]) >> 1;
+		calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 6)] = (calIR_space[i*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 6)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 5)] = (calIR_space[(i + 1)*Width + (j + 4)] + calIR_space[(i + 1)*Width + (j + 6)]) >> 1;
+		calIR_space[i*Width + (j + 7)] = calIR_space[i*Width + (j + 6)];
+		calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[(i + 1)*Width + (j + 6)];
+	}
+
+	for (j = 0; j < Width_last_line; j += 8) {
+		calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+		calIR_space[(i + 1)*Width + j] = calIR_space[i*Width + j];
+		calIR_space[(i + 1)*Width + (j + 2)] = calIR_space[i*Width + (j + 2)];
+		calIR_space[(i + 1)*Width + (j + 1)] = calIR_space[i*Width + (j + 1)];
+		calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 4)] = calIR_space[i*Width + (j + 4)];
+		calIR_space[(i + 1)*Width + (j + 3)] = calIR_space[i*Width + (j + 3)];
+		calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 6)] = calIR_space[i*Width + (j + 6)];
+		calIR_space[(i + 1)*Width + (j + 5)] = calIR_space[i*Width + (j + 5)];
+		calIR_space[i*Width + (j + 7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)]) >> 1;
+		calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[i*Width + (j + 7)];
+	}
+
+	calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+	calIR_space[(i + 1)*Width + j] = calIR_space[i*Width + j];
+	calIR_space[(i + 1)*Width + (j + 2)] = calIR_space[i*Width + (j + 2)];
+	calIR_space[(i + 1)*Width + (j + 1)] = calIR_space[i*Width + (j + 1)];
+	calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+	calIR_space[(i + 1)*Width + (j + 4)] = calIR_space[i*Width + (j + 4)];
+	calIR_space[(i + 1)*Width + (j + 3)] = calIR_space[i*Width + (j + 3)];
+	calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+	calIR_space[(i + 1)*Width + (j + 6)] = calIR_space[i*Width + (j + 6)];
+	calIR_space[(i + 1)*Width + (j + 5)] = calIR_space[i*Width + (j + 5)];
+	calIR_space[i*Width + (j + 7)] = calIR_space[i*Width + (j + 6)];
+	calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[i*Width + (j + 7)];
+
+
+	memcpy(Dst, calIR_space, (Width)*(Height));
+}
 
 void Bayer2RGB( char* Bayer, char *Dst, int Width, int Height, int Code )
 {
@@ -104,6 +197,7 @@ void Bayer2RGB( char* Bayer, char *Dst, int Width, int Height, int Code )
 
     for( ; Height-- > 0; Bayer += bayer_step, Dst += dst_step )
     {
+		//Sleep(1);
         int t0, t1;
         unsigned char* bayer = (unsigned char *)Bayer;
         unsigned char* dst = (unsigned char *)Dst;

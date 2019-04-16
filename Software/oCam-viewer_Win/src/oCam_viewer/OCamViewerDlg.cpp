@@ -22,7 +22,8 @@
 #define MAX_NUM_LIST_RESOLUTION	32	//by SDKIM 상수를 DEFINE으로 변경 20을 32으로 증가시킴
 int g_Resolution[MAX_NUM_LIST_RESOLUTION][3];
 //int g_Resolution_Test[MAX_NUM_LIST_RESOLUTION]; //by SDKIM 사용하지 않으므로 삭제
-
+int g_cam_start_flag = 0;
+int g_change_when_stop_flag = 0;
 int g_5CRO_U3[][3] = {		// default
 	{2592, 1944, 375},
 	{2592, 1944, 750},
@@ -155,19 +156,14 @@ int g_1CGN_U2[][3] =
 	{ 320,240,  6000 },
 	{ 320,240,  5000 },
 };
+int g_1CGN_Flag;
 // by SDKIM 1MCG, 1CGN FPS 리스트 변경 20180221
-
+// 1CGN Flag 추가 20190325
 // sdkim 2WRS 추가 20180220
 int g_2WRS_U3[][3] =
 {
+	{ 1920,1080, 1500 },
 	{ 1920,1080, 3000 },
-    { 1920,1080, 1500 },
-	{ 1280,720, 6000 },
-	{ 1280,720, 1500 },
-	{ 960,540, 10000 },
-	{ 960,540, 1500 },
-	{ 640,360, 20000 },
-	{ 640,360, 1500 },
 };
 
 int g_2WRS_U2[][3] =
@@ -175,10 +171,69 @@ int g_2WRS_U2[][3] =
 	{ 0, 0, 0 },
 };
 int g_2WRS_Flag = 0;
-// sdkim 2WRS 추가 20180220
+
+// sdkim 4IRO 추가 20181103
+int g_4IRO_U3[][3] =
+{
+	{ 2688,1520, 1000 },
+	{ 2688,1520, 2000 },
+	{ 1920,1080, 1000 },
+	{ 1920,1080, 1500 },
+	{ 1920,1080, 3000 },
+	{ 1280,720, 1000 },
+	{ 1280,720, 1500 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 6000 },
+	{ 672,380, 1000 },
+	{ 672,380, 1500 },
+	{ 672,380, 3000 },
+	{ 672,380, 6000 },
+};
+
+int g_4IRO_U2[][3] =
+{
+	{ 1280,720, 1000 },
+	{ 1280,720, 1500 },
+	{ 1280,720, 3000 },
+	{ 672,380, 1000 },
+	{ 672,380, 1500 },
+	{ 672,380, 3000 },
+};
+// konan91 4IRO 추가 20190319
+char g_IR_check = 0;
+int g_4IRO_Flag = 0;
+
+//konan91 18CRN 추가 20190325
+int g_18CRN_U3[][3] =
+{
+	{ 4896,3672, 1000 },
+	{ 4896,3672, 500 },
+	{ 4320,3240, 1000 },
+	{ 4320,3240, 500 },
+	{ 3840,2160, 2000 },
+	{ 3840,2160, 1000 },
+	{ 2048,1152, 6000 },
+	{ 2048,1152, 3000 },
+	{ 1920,1440, 6000 },
+	{ 1920,1440, 3000 },
+	{ 1920,1080, 6000 },
+	{ 1920,1080, 3000 },
+	{ 1280,1024, 12000 },
+	{ 1280,1024, 6000 },
+	{ 1280,720, 12000 },
+	{ 1280,720, 6000 },
+	{ 1024,768, 12000 },
+	{ 1024,768, 6000 },
+	{ 640,480, 24000 },
+	{ 640,480, 12000 },
+};
+int g_18CRN_U2[][3] =
+{
+	{ 0,0,0 },
+};
+int g_18CRN_Flag;
 
 // CAboutDlg dialog used for App About
-
 class CAboutDlg : public CDialogEx
 {
 public:
@@ -254,25 +309,26 @@ BEGIN_MESSAGE_MAP(COCamViewerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_CAM_CTRL, &COCamViewerDlg::OnBnClickedButtonCamCtrl)
 	ON_WM_DESTROY()
 	ON_WM_TIMER()
-	ON_MESSAGE(WM_CALLBACK, &COCamViewerDlg::CallbackProc)
+	//ON_MESSAGE(WM_CALLBACK, &COCamViewerDlg::CallbackProc)
 END_MESSAGE_MAP()
 
 // COCamViewerDlg message handlers
 void CallbackFunction(void *Para, void *Data) 
 {
     if (Para != NULL)
-	{
+	{  
 		((COCamViewerDlg *)Para)->CopyImage(Data);
-		((COCamViewerDlg *)Para)->PostMessage(WM_CALLBACK, (WPARAM)0, (LPARAM)0);
+		((COCamViewerDlg *)Para)->CallbackProc((WPARAM)0, (LPARAM)0);
+		//((COCamViewerDlg *)Para)->PostMessage(WM_CALLBACK, (WPARAM)0, (LPARAM)0);
 	}
 }
 
 BOOL COCamViewerDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-
+	
 	// Add "About..." menu item to system menu.
-
+	m_cbCam.ResetContent();
 	// IDM_ABOUTBOX must be in the system command range.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
@@ -295,7 +351,6 @@ BOOL COCamViewerDlg::OnInitDialog()
 	//  when the application's main window is not a dialog
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
-
 	// TODO: Add extra initialization here
 
 #ifdef _DEBUG
@@ -327,7 +382,6 @@ BOOL COCamViewerDlg::OnInitDialog()
 	GetDlgItem(IDC_BUTTON_STOP)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_CAM_CTRL)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_SAVE_IMAGE)->EnableWindow(FALSE);
-	
 	m_StartTime = timeGetTime();
 
 	SetTimer(1, 1000, NULL);
@@ -432,7 +486,6 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 {
 	//************ 이미지 획득을 위한 Callback 함수 **************************
 	m_Count++;
-
 #ifdef FOR_LOWSPEED_MACHINE_BY_SDKIM
 	if (m_forLowSpeedMachine_DevideCnt > 0)
 	{
@@ -444,15 +497,31 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 	}
 #endif
 
-	
+
 	BYTE* src = (BYTE*)m_ImageSrc.GetPtr1D();
 	BYTE* dst = (BYTE*)m_Image.GetPtr1D();
-
-	if (m_CamModel == "oCam-1CGN-U") {
+	if (m_CamModel == "oCam-4IRO-U")
+	{
+		if (g_IR_check == 0) {
+			//Bayer2RGB((char*)src, (char*)dst, m_Width, m_Height, BayerGR2RGB);
+			BayerIR2RGB((char*)src, (char*)dst, m_Width, m_Height);
+			m_Display.Display(m_Image);
+		}
+		else {
+			BYTE* irdst = (BYTE*)m_IrImage.GetPtr1D();
+			BayerIR2IR((char*)src, (char*)irdst ,m_Width, m_Height);
+			m_Display.Display(m_IrImage);
+		}
+	}
+	else if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" ) {
 		Bayer2RGB((char*)src, (char*)dst, m_Width, m_Height, BayerGR2RGB);
 		m_Display.Display(m_Image);
 	}
-	else if (m_CamModel == "oCam-1MGN-U") {
+	else if (m_CamModel == "oCam-18CRN-U") {
+		Bayer2RGB((char*)src, (char*)dst, m_Width, m_Height, BayerGB2RGB);
+		m_Display.Display(m_Image);
+	}
+	else if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T") {
 		m_Display.Display(m_ImageSrc);
 	}
 	else {
@@ -462,20 +531,25 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-
 void COCamViewerDlg::OnBnClickedButtonPlay()
 {
 #ifdef FOR_LOWSPEED_MACHINE_BY_SDKIM
-	m_forLowSpeedMachine_Devide = (int)(m_FPS / 30.0);
+	m_forLowSpeedMachine_Devide = (int)(m_FPS / 15.0);
 #endif
-
+	g_cam_start_flag = 1;
+	g_IR_check = 0;
     // TODO: Add your control notification handler code here
     m_pCam = CamOpen(m_CamSel, m_Width, m_Height, m_FPS, CallbackFunction, this);
 	m_DlgCamCtrl.UpdateCamCtrl(m_pCam, m_Width, m_Height);
 
-	if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1CGN-U")
+	if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-1MGN-U-T"|| m_CamModel == "oCam-18CRN-U")
 	{
 	    m_ImageSrc.Alloc(m_Width, m_Height, MV_Y8);
+	}
+	else if (m_CamModel == "oCam-4IRO-U") 
+	{
+		m_ImageSrc.Alloc(m_Width, m_Height, MV_Y8);
+		m_IrImage.Alloc(m_Width, m_Height, MV_Y8);
 	}
 	else
 	{
@@ -504,6 +578,7 @@ void COCamViewerDlg::OnBnClickedButtonPlay()
 void COCamViewerDlg::OnBnClickedButtonStop()
 {
 	// TODO: Add your control notification handler code here
+	g_cam_start_flag = 0;
 	GetDlgItem(IDC_BUTTON_PLAY)->EnableWindow(TRUE);
 	GetDlgItem(IDC_BUTTON_STOP)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_CAM_CTRL)->EnableWindow(FALSE);
@@ -518,13 +593,20 @@ void COCamViewerDlg::OnBnClickedButtonStop()
 
 	m_DlgCamCtrl.ShowWindow(SW_HIDE);
 	m_CurrFPS = 0;
+
+	if (g_change_when_stop_flag == 1) {
+		COCamViewerDlg::OnInitDialog();
+		COCamViewerDlg::OnCbnSelchangeComboCam();
+		Invalidate(FALSE);
+		g_change_when_stop_flag = 0;
+	}
 }
 
 void COCamViewerDlg::OnCbnSelchangeComboCam()
 {
 	// TODO: Add your control notification handler code here
 	m_CamSel = m_cbCam.GetCurSel();
-
+	m_cbResolution.ResetContent();
 	m_CamModel = CamGetDeviceInfo(m_CamSel, INFO_MODEL_NAME);
 	m_CamSN	   = CamGetDeviceInfo(m_CamSel, INFO_SERIAL_NUM);
 	m_UsbType  = CamGetDeviceInfo(m_CamSel, INFO_USB_TYPE);
@@ -536,7 +618,12 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 	SetDlgItemText(IDC_STATIC_FW, m_FW);
 
 	int num_list;
-	if (m_CamModel == "oCam-1CGN-U") {
+	g_2WRS_Flag = 0;
+	g_4IRO_Flag = 0;
+	g_1CGN_Flag = 0;
+	g_18CRN_Flag = 0;
+	if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T") {
+		g_1CGN_Flag = 1;
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_1CGN_U2, sizeof(g_1CGN_U2));
@@ -548,7 +635,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 			num_list = sizeof(g_1CGN_U3) / 12;
 		}
 	}
-	else if (m_CamModel == "oCam-1MGN-U") {
+	else if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T") {
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_1MGN_U2, sizeof(g_1MGN_U2));
@@ -576,7 +663,36 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 		}
 	}
 	// sdkim 2WRS 추가 20180220
-	else {		// oCam-5CRO-U
+	// sdkim 2WRS 추가 20180220
+	else if (m_CamModel == "oCam-4IRO-U") {
+		g_4IRO_Flag = 1;
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_4IRO_U2, sizeof(g_4IRO_U2));
+			num_list = sizeof(g_4IRO_U2) / 12;
+			num_list = 0;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_4IRO_U3, sizeof(g_4IRO_U3));
+			num_list = sizeof(g_4IRO_U3) / 12;
+		}
+	}
+	else if (m_CamModel == "oCam-18CRN-U") {
+		g_18CRN_Flag = 1;
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_18CRN_U2, sizeof(g_18CRN_U2));
+			num_list = sizeof(g_18CRN_U2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_18CRN_U3, sizeof(g_18CRN_U3));
+			num_list = sizeof(g_18CRN_U3) / 12;
+		}
+	}
+	// sdkim 2WRS 추가 20180220
+	else{
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_5CRO_U2, sizeof(g_5CRO_U2));
@@ -625,8 +741,11 @@ void COCamViewerDlg::OnBnClickedButtonSaveImage()
 {
 	// TODO: Add your control notification handler code here
 	wImage image;
-	if (m_CamModel == "oCam-1MGN-U") {
+	if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T") {
 		image = m_ImageSrc;
+	}
+	else if (m_CamModel == "oCam-4IRO-U" && g_IR_check == 1) {
+		image = m_IrImage;
 	}
 	else {
 		image = m_Image;
@@ -657,6 +776,21 @@ void COCamViewerDlg::OnTimer(UINT_PTR nIDEvent)
 	UpdateFPS();
 
 	SetDlgItemInt(IDC_STATIC_FPS, (int)(m_CurrFPS+0.5));
-
 	CDialogEx::OnTimer(nIDEvent);
+}
+//@konan91 2019-01-09 = usb 상태에 따른 refresh code 추가
+LRESULT COCamViewerDlg::DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
+{
+	// TODO: 여기에 특수화된 코드를 추가 및/또는 기본 클래스를 호출합니다.
+	if (message == WM_DEVICECHANGE && g_cam_start_flag==0) {
+		
+		COCamViewerDlg::OnInitDialog();
+		COCamViewerDlg::OnCbnSelchangeComboCam();
+		Invalidate(FALSE);
+		//AfxMessageBox("USB 연결 상태에 변화가 생겼습니다.");
+	}
+	else if (message == WM_DEVICECHANGE && g_cam_start_flag == 1) {
+		g_change_when_stop_flag = 1;
+	}
+	return CDialogEx::DefWindowProc(message, wParam, lParam);
 }

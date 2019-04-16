@@ -14,5 +14,8 @@
 void YUV2RGB(const unsigned char* Src, unsigned char* Dst, int Size, int Y0=1, int U=0, int Y1=3, int V=2);
 void YUV2Gray(const unsigned char* Src, unsigned char* Dst, int Size, int Y=1);
 void Bayer2RGB( char* Bayer, char *Dst, int Width, int Height, int Code );
+void BayerIR2RGB(char *BayerIR, char *Dst, int Width, int Height);
+void BayerIR2IR(char *BayerIR,char *Dst, int Width, int Height);
+void ProcessWindowMessage();
 
 #endif /*IMG_PROC_H_*/

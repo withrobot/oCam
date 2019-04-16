@@ -45,4 +45,6 @@ public:
 	afx_msg void OnBnClickedButtonCamColorCorrection();
 	afx_msg void OnBnClickedCheck1();
 	CButton check_WDR_ctrl;
+	afx_msg void OnBnClickedCheck2();
+	CButton check_IR_ctrl;
 };

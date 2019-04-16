@@ -44,8 +44,9 @@ public:
 
     wImage		m_Image;
     wImage		m_ImageSrc;
+	wImage		m_IrImage;
     wDisplay	m_Display;
-
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 
@@ -69,6 +70,7 @@ public:
 	afx_msg void OnCbnSelchangeComboResolution();
 	afx_msg void OnBnClickedButtonSaveImage();
 	afx_msg void OnDestroy();
-	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg LRESULT CallbackProc(WPARAM wParam, LPARAM lParam);
+	virtual LRESULT DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+	afx_msg void OnStnClickedStaticSn();
 };

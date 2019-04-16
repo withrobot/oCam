@@ -3,13 +3,14 @@
 
 #include "stdafx.h"
 #include "wDisplay.h"
+#include <cmath>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
 static char THIS_FILE[] = __FILE__;
 #endif
-
+ 
 /////////////////////////////////////////////////////////////////////////////
 // wDisplay
 int wDisplay::Count;
@@ -45,7 +46,7 @@ wDisplay::wDisplay()
 	CDC *pDC = GetDC();
 	m_MemDC.CreateCompatibleDC(pDC);
 	ReleaseDC(pDC);
-
+	SetStretchBltMode(m_MemDC.m_hDC, COLORONCOLOR);
 	// Bmp Information
 	static BYTE ptr[sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD)*256];
 
@@ -124,12 +125,19 @@ END_MESSAGE_MAP()
 */
 void wDisplay::Display(wImage& Img)
 {
-	int i, depth, type, width, height;
+	
+	int i,ratio, depth, type, width, height;
 	width  = Img.GetWidth();
 	height = Img.GetHeight();
 	depth  = Img.GetDepth();
 	type   = Img.GetType();
-
+	CRect rectWin;
+	GetWindowRect(&rectWin);
+	float window_width = (float)rectWin.Width() - 16;
+	float window_height = (float)rectWin.Height() - 39;
+	ratio = (int)floor((((float)width / window_width) + ((float)height / window_height)) / 2 + 0.5);
+	BYTE* src = (BYTE*)Img.GetPtr1D();
+	
 	if (type==MV_RGB16)
 	{
 		__int16 *img = (__int16 *)Img.GetPtr1D();
@@ -154,14 +162,11 @@ void wDisplay::Display(wImage& Img)
 	{
 		m_Width  = width;
 		m_Height = height;
-
-		// 타이틀바의 크기를 구한다. 
+		// 타이틀바의 크기를 구한다.
 		// 위젯에 따라 타이틀바의 크기가 다르기 때문에 고정된 값을 사용할 수 없다. 
 		CRect rect;
 		GetClientRect(&rect);
 
-		CRect rectWin;
-		GetWindowRect(&rectWin);
 		int offset_x = rectWin.Width()-rect.Width();
 		int offset_y = rectWin.Height()-rect.Height();
 		
@@ -175,6 +180,7 @@ void wDisplay::Display(wImage& Img)
 	pBmpInfoHdr->biBitCount		= 8*depth;
 	pBmpInfoHdr->biSizeImage	= width*depth;
 
+#if 0
 	for (i=0; i<height; i++) 
 	{
 		::SetDIBitsToDevice(m_MemDC.m_hDC,
@@ -190,10 +196,29 @@ void wDisplay::Display(wImage& Img)
 			   m_pBmpInfo,			// lpBitsInfo
 			   DIB_RGB_COLORS);		// wUsage
 	}
-
+#else
+	//2019-03-22 @konan91 화면 크기 조절 시 이미지 크기 조절로 변경
+	for (i = 0; i < height; i+= ratio) {
+		::StretchDIBits(m_MemDC.m_hDC,	// hdc
+			0,						// XDest
+			i/ratio,				// YDest
+			width/ratio,			// nDestWidth
+			1,						// nDestHeight
+			0,						// XSrc
+			0,   					// YSrc
+			width,					// nSrcWidth
+			1,						// nSrcHeight
+			data + i * width*depth,	// lpBits
+			m_pBmpInfo,				// lpBitsInfo
+			DIB_RGB_COLORS,			// iUsage
+			SRCCOPY);				// dwRop
+	}
+#endif
 	CDC *pDC = GetDC();
-	pDC->BitBlt(0, 0, width, height, &m_MemDC, 0, 0, SRCCOPY);
-	ReleaseDC(pDC);
+	if (pDC != NULL){
+		pDC->BitBlt(0, 0, width, height, &m_MemDC, 0, 0, SRCCOPY);
+		ReleaseDC(pDC);
+	}
 }
 
 void wDisplay::DrawRect(RECT Rect, COLORREF Color, int Num)

@@ -4,6 +4,7 @@
 // 들어 있는 포함 파일입니다.
 
 #pragma once
+//#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
 
 #ifndef _SECURE_ATL
 #define _SECURE_ATL 1

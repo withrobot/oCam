@@ -19,6 +19,12 @@
 #endif
 
 extern int g_2WRS_Flag;
+extern int g_4IRO_Flag;
+extern char g_IR_check;
+
+//konan91 1CGN, 18CRN 구분 flag 추가 20190315
+extern int g_1CGN_Flag;
+extern int g_18CRN_Flag;
 
 // CDlgCamCtrl dialog
 
@@ -48,6 +54,7 @@ void CDlgCamCtrl::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SLIDER_WB_BLUE, m_scWbBlue);
 	DDX_Control(pDX, IDC_SLIDER_WB_RED, m_scWbRed);
 	DDX_Control(pDX, IDC_CHECK1, check_WDR_ctrl);
+	DDX_Control(pDX, IDC_CHECK2, check_IR_ctrl);
 }
 
 
@@ -57,6 +64,7 @@ BEGIN_MESSAGE_MAP(CDlgCamCtrl, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_CAM_CC_RESET, &CDlgCamCtrl::OnBnClickedButtonCamCcReset)
 	ON_BN_CLICKED(IDC_BUTTON_CAM_COLOR_CORRECTION, &CDlgCamCtrl::OnBnClickedButtonCamColorCorrection)
 	ON_BN_CLICKED(IDC_CHECK1, &CDlgCamCtrl::OnBnClickedCheck1)
+	ON_BN_CLICKED(IDC_CHECK2, &CDlgCamCtrl::OnBnClickedCheck2)
 END_MESSAGE_MAP()
 
 
@@ -83,12 +91,19 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 	GetDlgItem(IDC_BUTTON_CAM_CC_RESET)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(FALSE);
 	GetDlgItem(IDC_CHECK1)->EnableWindow(FALSE);
+	GetDlgItem(IDC_CHECK2)->EnableWindow(FALSE);
 	
 	if (g_2WRS_Flag == 1)
 	{
 		CamGetCtrl(ptrCam, CTRL_BACKLIGHTCOMPENSATION, &pos);
 		GetDlgItem(IDC_CHECK1)->EnableWindow(TRUE);
 		check_WDR_ctrl.SetCheck(pos);
+	}
+	if (g_4IRO_Flag == 1) {
+		
+		GetDlgItem(IDC_CHECK2)->EnableWindow(TRUE);
+		check_IR_ctrl.SetCheck(0);
+
 	}
 		
 
@@ -215,6 +230,7 @@ void CDlgCamCtrl::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 		CString temp;
 		temp.Format("%d=%.1fms", pos, pow(2.0,pos)*1000); 
 		SetDlgItemText(IDC_STATIC_EXPOSURE, temp);
+
 	}
 
 	if ((CSliderCtrl *)pScrollBar == &m_scGain)
@@ -327,8 +343,13 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	/*
 	 *  calculate the white balance
 	 */
-	Bayer2RGB((char*)src.GetPtr1D(), (char*)dst.GetPtr1D(), width, height, BayerGR2RGB);
-
+	//konan91 1CGN, 18CRN color correction 구분 20190325
+	if (g_1CGN_Flag == 1) {
+		Bayer2RGB((char*)src.GetPtr1D(), (char*)dst.GetPtr1D(), width, height, BayerGR2RGB);
+	}
+	else if (g_18CRN_Flag == 1) {
+		Bayer2RGB((char*)src.GetPtr1D(), (char*)dst.GetPtr1D(), width, height, BayerGB2RGB);
+	}
 	double normList[3];
 	calNormOfImage(normList, (unsigned char*)dst.GetPtr1D(), width, height);
 
@@ -353,7 +374,6 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	* save trigger
 	*/
 	control_command(SAVE_SCALE);
-
 	// 껏다키는방법
 	CamStop(ptrCam);
 	CamStart(ptrCam);
@@ -423,4 +443,17 @@ void CDlgCamCtrl::OnBnClickedCheck1()
 	else {
 		CamSetCtrl(ptrCam, CTRL_BACKLIGHTCOMPENSATION, 0);
 	}
+}
+
+
+void CDlgCamCtrl::OnBnClickedCheck2()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (check_IR_ctrl.GetCheck()) {
+		g_IR_check = 1;
+	}
+	else {
+		g_IR_check = 0;
+	}
+	
 }
