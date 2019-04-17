@@ -15,7 +15,7 @@ oCam-1MGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽
  
 
 ## Board Detail
-![ScreenShot](../../images/oCam-1MGN-U_Layout_180620.png)
+![ScreenShot](../../images/oCam-1XGN-U-T_layout.png)
 
 
 ## Specifications
