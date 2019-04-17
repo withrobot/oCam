@@ -1,7 +1,7 @@
 # oCam - 1MP USB 3.0 Mono Trigger Global Shutter Camera
 ### Model No. oCam-1MGN-U-T - sales website
 
-![ScreenShot](../../images/oCam-1MGN-U.png)
+![ScreenShot](../../images/oCam-1XGN-U-T.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
 
 [![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
