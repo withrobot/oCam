@@ -136,7 +136,7 @@ void wDisplay::Display(wImage& Img)
 	float window_width = (float)rectWin.Width() - 16;
 	float window_height = (float)rectWin.Height() - 39;
 	ratio = (int)floor((((float)width / window_width) + ((float)height / window_height)) / 2 + 0.5);
-    if(ratio==0) ratio=1;
+	if (ratio == 0) ratio = 1;
 	BYTE* src = (BYTE*)Img.GetPtr1D();
 	
 	if (type==MV_RGB16)

@@ -669,8 +669,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_4IRO_U2, sizeof(g_4IRO_U2));
-			num_list = sizeof(g_4IRO_U2) / 12;
-			num_list = 0;
+			num_list = sizeof(g_4IRO_U2) / 12;			
 		}
 		else
 		{
