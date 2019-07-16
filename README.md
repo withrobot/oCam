@@ -1,4 +1,8 @@
+# [oCam-5CRO-U-M](Products/oCam-5CRO-U-M) (5MP USB 3.0 Color Camera) - [sales website]
+![ScreenShot](images/oCam-5CRO-U-M.png)
+
 # [oCam-1CGN-U-T](Products/oCam-1CGN-U-T) (1MP USB 3.0 Color Trigger Global Shutter Camera) - [sales website](https://www.amazon.com/Global-Shutter-Camera-Trigger-oCam-1CGN-U-T/dp/B07RB4GYHZ/ref=sr_1_4?keywords=ocam-1&qid=1563261850&s=gateway&sr=8-4)
+
 # [oCam-1MGN-U-T](Products/oCam-1MGN-U-T) (1MP USB 3.0 Mono Trigger Global Shutter Camera) - [sales website](https://www.amazon.com/Global-Shutter-Camera-Trigger-oCam-1MGN-U-T/dp/B07R7TBK5Z/ref=sr_1_5?keywords=ocam-1&qid=1563261788&s=gateway&sr=8-5)
 
 # [oCam-2WRS-U](Products/oCam-2WRS-U) (2MP USB 3.0 Color Wide Dynamic Range Camera)- [sales website](https://www.amazon.com/IMX290-Color-Dynamic-Camera-oCam-2WRS-U/dp/B07RBNP7KY/ref=sr_1_1?keywords=ocam-2&qid=1563261903&s=gateway&sr=8-1)
