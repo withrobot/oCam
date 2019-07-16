@@ -1,7 +1,6 @@
 # [oCam-1CGN-U-T](Products/oCam-1CGN-U-T) (1MP USB 3.0 Color Trigger Global Shutter Camera)
 
-# [oCam-1MGN-U-T](Products/oCam-1MGN-U-T) (1MP USB 3.0 Mono Trigger Global Shutter Camera)
-
+# [oCam-1MGN-U-T](Products/oCam-1MGN-U-T) (1MP USB 3.0 Mono Trigger Global Shutter Camera) - [sales website](https://www.amazon.com/Global-Shutter-Camera-Trigger-oCam-1MGN-U-T/dp/B07R7TBK5Z/ref=sr_1_5?keywords=ocam-1&qid=1563261788&s=gateway&sr=8-5)
 
 # [oCam-2WRS-U](Products/oCam-2WRS-U) (2MP USB 3.0 Color Wide Dynamic Range Camera)- [sales website]
 
