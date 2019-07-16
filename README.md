@@ -7,7 +7,7 @@
 
 ![ScreenShot](images/oCam-2WRS-U.png)
 
-# [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G150091011568)
+# [oCam-1CGN-U](Products/oCam-1CGN-U) (1MP USB 3.0 Color Global Shutter Camera)- [sales website](https://www.hardkernel.com/shop/ocam-1cgn-u-plus-1mp-usb-3-0-color-global-shutter-camera/)
 
 ![ScreenShot](images/oCam-1CGN-U.png)
 
@@ -17,15 +17,13 @@
 ![ScreenShot](images/oCam-5CRO-U_model.jpg)
 
 
-# [oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Global Shutter Camera)- [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147245683619)
+# [oCam-1MGN-U](Products/oCam-1MGN-U) (1MP USB 3.0 Mono Global Shutter Camera)- [sales website](https://www.hardkernel.com/shop/ocam-1mgn-u-plus-1mp-usb3-0-mono-global-shutter/)
 
 ![ScreenShot](images/oCam-1MGN-U.png)
 
 
-# [oCam-TM](Products/oCam-TM) (Tripod Mount for oCam camera) - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147320796853)
+# [oCam-TM](Products/oCam-TM) (Tripod Mount for oCam camera) - [sales website](https://www.hardkernel.com/shop/tripod-mount-for-ocam-camera/)
 
-![ScreenShot](images/Mounted.jpg)
-
-# [oCam Lens Set](Products/Lens4-8-6-3-2.6) (M12 Lens4) - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G147305973926)
+# [oCam Lens Set](Products/Lens4-8-6-3-2.6) (M12 Lens4) - [sales website](https://www.hardkernel.com/shop/m12-lens-set-8-6-3-2-65mm-with-ir-cut-filter650/)
 
 ![ScreenShot](images/Lens4_set.jpg)
