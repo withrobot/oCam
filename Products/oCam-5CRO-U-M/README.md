@@ -23,15 +23,14 @@ Type | Description |
 **Supported OS** | Windows7/10, Linux, Plug-and play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/240mA |
+**Rating** | DC 5V/180mA |
 **Shutter** | Electric Rolling Shutter |
-**Field Of View(FOV)** | 65deg. |
-**Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
+**Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (3.6mm lens) |
+**Camera Control** | Brightness, Contrast, Hue, Saturation, Exposure | 
 **Frame Rate** | **YUV** 2592x1944@15fps, 1920x1080@30fps, 1280x960@45fps, 1280x720@60fps, 640x480@90fps, 320x240@120fps etc.<br/>  **※ For further details, please refer the release note at [this page](../../Firmware)** | 
-**Weight** | 33.5 gram approx.(Including protective case) | 
+**Weight** | 27.2 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
+**Case Size** | 49mm x 53mm x 20mm |
 
 ## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
