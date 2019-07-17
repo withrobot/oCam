@@ -30,7 +30,7 @@ Type | Description |
 **Frame Rate** | **YUV** 2592x1944@15fps, 1920x1080@30fps, 1280x960@45fps, 1280x720@60fps, 640x480@90fps, 320x240@120fps etc.<br/>  **※ For further details, please refer the release note at [this page](../../Firmware)** | 
 **Weight** | 27.2 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm | 
-**Case Size** | 49mm x 53mm x 20mm |
+**Case Size** | 49mm x 53mm x 20mm (Including tripod mount, Excluding lens) |
 
 ## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
