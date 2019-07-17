@@ -35,7 +35,7 @@ Type | Description |
 
 ## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
-Detailed description is [here](../../Software/oCam_viewer_Linux_1705).
+Detailed description is [here](../../Software/oCam_viewer_Linux).
 
 ## Application: HandGesture
 [![ScreenShot](../../images/oCam_handgesture.png)](https://youtu.be/-S4rLRJTN6w)
