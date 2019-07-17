@@ -33,10 +33,6 @@ Type | Description |
 **Case Size** | 42mm x 42mm x 17mm |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
-## oCam Packaging and Labeling
-![ScreenShot](../../images/oCam_unpacking.png)
-
-
 ## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
 Detailed description is [here](../../Software/oCam_viewer_Linux_1705).
