@@ -1,17 +1,17 @@
 # oCam - 5MP USB 3.0 Color Camera
-### Model No. oCam-5CRO-U - [sales website](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145231889365)
+### Model No. oCam-5CRO-U-M - [sales website]
 
-![ScreenShot](../../images/oCam-5CRO-U_model.jpg)
+![ScreenShot](../../images/oCam-5CRO-U-M.png)
 
 The oCam supports plug-and-play by UVC compliant adapting the standard M12 lens with focal length of 3.6mm.</br>
 Direct memory access via USB 3.0 allows data to be written to main memory without going through the CPU. It reduces the CPU work load significantly.</br></br>
-The newly released oCam-5CRO-U is an enhanced version of oCam-5CR-U3 with the following new features.
+The newly released oCam-5CRO-U-M is an enhanced version of oCam-5CR-U3 with the following new features.
 * Improved hardware stability with the single board design
 * Plastic protective case is provided without any additional cost
 * The USB connector is moved to back side for easier connection to host system. With the protective case this new vertical USB connector makes it easy to put the camera anywhere in a vertical orientation without any additional fixture or jig
 
 ## Board Detail
-![ScreenShot](../../images/oCam-5CRO-U_layout.jpg)
+![ScreenShot](../../images/oCam-5CRO-U-M_layout.png)
 
 
 ## Specifications
@@ -20,26 +20,21 @@ Type | Description |
 **Sensor** | OmniVision OV5640 CMOS Image sensor |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Standard M12 Lens with focal length of 3.6mm | 
-**Supported OS** | Windows7/8/10, Linux, Plug-and play by UVC(USB Video Class) protocol | 
+**Supported OS** | Windows7/10, Linux, Plug-and play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V/240mA |
+**Rating** | DC 5V/180mA |
 **Shutter** | Electric Rolling Shutter |
-**Field Of View(FOV)** | 65deg. |
-**Camera Control** | Brightness, Contrast, Hue, Saturation, White Balance | 
-**Frame Rate** | **YUV** 2592x1944@7\.5fps, 1920x1080@15fps, 1280x960@30fps, 1280x720@30fps, 640x480@120fps, 320x240@120fps etc.<br/> **MJPEG(Supported OS: Linux)** 1920x1080@30fps, 1280x720@45fps, 640x480@30fps<br/> **※ For further details, please refer the release note at [this page](../../Firmware)** | 
-**Weight** | 33.5 gram approx.(Including protective case) | 
+**Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (3.6mm lens) |
+**Camera Control** | Brightness, Contrast, Hue, Saturation, Exposure | 
+**Frame Rate** | **YUV** 2592x1944@15fps, 1920x1080@30fps, 1280x960@45fps, 1280x720@60fps, 640x480@90fps, 320x240@120fps etc.<br/>  **※ For further details, please refer the release note at [this page](../../Firmware)** | 
+**Weight** | 27.2 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
-**Depth** | 30-35 mm (Variable length for Manual Focusing) |
-
-## oCam Packaging and Labeling
-![ScreenShot](../../images/oCam_unpacking.png)
-
+**Case Size** | 49mm x 53mm x 20mm (Including tripod mount, Excluding lens) |
 
 ## oCam-Viewer (for Linux)
 [![ScreenShot](../../images/oCam_viewer.png)](https://youtu.be/wqLTuag7j-Q)
-Detailed description is [here](../../Software/oCam_viewer_Linux_1705).
+Detailed description is [here](../../Software/oCam_viewer_Linux).
 
 ## Application: HandGesture
 [![ScreenShot](../../images/oCam_handgesture.png)](https://youtu.be/-S4rLRJTN6w)
