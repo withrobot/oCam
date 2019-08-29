@@ -24,7 +24,7 @@ Type | Description |
 **Sensor Size** | 1/3 inch |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Standard M12 Lens (Changeable) | 
-**Supported OS** | Plug-and play by UVC(USB Video Class) protocol | 
+**Supported OS** | Linux / Windows 7, 10 / Plug-and play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
 **Rating** | DC 5V/180mA |
