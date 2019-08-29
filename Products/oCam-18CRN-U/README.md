@@ -1,10 +1,7 @@
 # oCam - 18MP USB 3.0 C-MOUNT Color Camera
 ### Model No. oCam-18CRN-U - sales website
 
-![ScreenShot](../../images/)
-
-![ScreenShot](../../images/)
-
+![ScreenShot](../../images/oCam-18CRN-U.png)
 
 The newly released oCam-18CGN-U is a C-MOUNT color camera with the following key features.
 
@@ -16,7 +13,7 @@ The newly released oCam-18CGN-U is a C-MOUNT color camera with the following key
 
 
 ## Board Detail
-![ScreenShot](../../images/)
+![ScreenShot](../../images/oCam-18CRN-U_Layout.png)
 
 
 ## Specifications
