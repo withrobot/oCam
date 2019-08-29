@@ -28,7 +28,6 @@ Type | Description |
 **Operation Temperature** | 0°C ~ + 70°C |
 **Rating** | DC 5V/190mA |
 **Shutter** | Electric Rolling Shutter |
-**Field Of View(FOV)** | - 65 degrees at full resolution of 1280(H) x 960(V)</br> - FOV for the following resolutions are reduced from the full resolution image due to cropping: 1280(H) x 720(V), 320(H) x 240(V)</br> - FOV for the following resolutions is maintained due to binning: 640(H) x 480(V) |
 **Camera Control** | Gain, White Balance Blue, White Balance Red, Exposure | 
 **Frame Rate** | 4896 × 3672 @10fps, 4320 × 3240 @10fps, 3840 × 2160 @20fps, 2048 × 1152 @60fps, 1920 × 1440 @60fps, 1920 × 1080 @60fps, 1280 × 1024 @120fps, 1280 × 720 @120fps, 1024 × 768 @120fps, 640 × 480 @240fps</br> | 
 **Weight** | 87 gram approx.(Including protective case) | 
