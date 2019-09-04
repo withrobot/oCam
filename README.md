@@ -1,5 +1,5 @@
 # [oCam-18CRN-U](Products/oCam-18CRN-U) (18MP USB 3.0 C-MOUNT Color Camera) - [sales website]
-![ScreenShot](images/oCam-18CRN-U.png)
+![ScreenShot](images/oCam-18CRN-U_model.png)
 
 # [oCam-5CRO-U-M](Products/oCam-5CRO-U-M) (5MP USB 3.0 Color Camera) - [sales website]
 ![ScreenShot](images/oCam-5CRO-U-M.png)
