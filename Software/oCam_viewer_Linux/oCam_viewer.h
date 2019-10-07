@@ -137,7 +137,6 @@ public:
      * 화면 출력 이미지 buffer (stereo)
      */
     unsigned char* stereo_buffer;
-    unsigned char* stereo_rgb;
     /**
      * Format converter
      */
@@ -209,10 +208,6 @@ public:
      * Stereo 이미지를 Split 이미지로 보여줄지 여부
      */
     bool StereoImage;
-        /**
-     * Split 이미지를 SplitRGB 이미지로 보여줄지 여부
-     */
-    bool StereoRgb;
     
     /**
      * @todo Withrobot thread 사용하는 방법 모색

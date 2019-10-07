@@ -153,14 +153,8 @@ void oCam::update_gui()
             /* convert yuyv to rgb */
             if(StereoImage){
                 /*Split StereoImage funtion*/
-                if(StereoRgb){
-                    Split_Stereo_image(frame_buffer,stereo_buffer,format.width, format.height);
-                    Bayer2BGR(stereo_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
-                    
-                }
-                else{
-                    Split_Stereo_image(frame_buffer,rgb_buffer,format.width, format.height);
-                }
+                Split_Stereo_image(frame_buffer,stereo_buffer,format.width, format.height);
+                Bayer2BGR(stereo_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
             }
             else{
                 format_converter->yuyv_to_rgb(rgb_buffer, frame_buffer);
@@ -319,7 +313,6 @@ bool oCam::start()
         if( ocam->get_dev_name() == "oCam-4IRO-U" )
         {
             StereoImage = false;
-            StereoRgb = false;
             IRImage = true;
             ui->ckbToggleConvert->setEnabled(true);
             if(showConvertImage)
@@ -337,7 +330,6 @@ bool oCam::start()
         else
         {
             StereoImage = false;
-            StereoRgb = false;
             IRImage = false;
             ui->ckbToggleConvert->setEnabled(true);
             ui->ckbToggleConvert->setChecked(true);
@@ -407,15 +399,12 @@ bool oCam::start()
     }
     else{
         if(ocam->get_dev_name() =="oCamS-1CGN-U"){
-            StereoImage = true;
-            StereoRgb = true;
             format.width = format.width*2;
-            
+            StereoImage = true;
         }
         else if(ocam->get_dev_name() =="oCamS-1MGN-U"){
             format.width = format.width*2;
             StereoImage = true;
-            StereoRgb = false;
         }
     }
     /* change window geometry */
@@ -507,14 +496,14 @@ bool oCam::start()
 
     /* image buffer */
     frame_buffer = new unsigned char[format.height*format.width*2];
-    if(StereoRgb){
+    if(StereoImage){
         rgb_buffer = new unsigned char[format.height*format.width*6];
     }
     else{
         rgb_buffer = new unsigned char[format.height*format.width*3];
     }
     ir_buffer = new unsigned char[format.height*format.width/4];
-    stereo_buffer = new unsigned char[format.height*format.width*4];
+    stereo_buffer = new unsigned char[format.height*format.width*2];
     /* format converter initialize */
     format_converter = new GuvcviewFormatConverter(format.width, format.height);
 
