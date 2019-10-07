@@ -6,10 +6,10 @@ oCam control program
 Support for the oCamS-1XGN-U.
 
 * 20170925</br>
-- Add: Auto-Exposure Control menu.
+Add: Auto-Exposure Control menu.
 
 * 20170420</br>
-- Support for the oCam-1CGN-U.
+Support for the oCam-1CGN-U.
 
 ## How to build on linux
 Requirements
