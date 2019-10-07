@@ -3,7 +3,7 @@ oCam control program
 
 ## Release Note
 * 20191007</br>
-	Support for the oCamS-1XGN-U.
+** Support for the oCamS-1XGN-U.
 
 * 20170925</br>
 	Add: Auto-Exposure Control menu.
