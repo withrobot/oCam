@@ -24,7 +24,8 @@ SOURCES += main.cpp \
     withrobot_utility.cpp \
     withrobot_camera.cpp \
     format_converter/ConvertColor.cpp \
-    controlform_pushbtn.cpp
+    controlform_pushbtn.cpp \
+    camera_thread.cpp
 
 HEADERS += \
     controlform_boolean.h \
@@ -40,7 +41,8 @@ HEADERS += \
     withrobot_camera.hpp \
     format_converter/ConvertColor.h \
     controlform_pushbtn.h \
-    image_funcs.hpp
+    image_funcs.hpp \
+    camera_thread.h
 
 FORMS    += \
     controlform_boolean.ui \
@@ -59,4 +61,5 @@ LIBS += -ludev
 RESOURCES += \
     oCamResources.qrc
 
-
+QMAKE_CXXFLAGS+= -fopenmp
+QMAKE_LFLAGS +=  -fopenmp

@@ -34,6 +34,7 @@
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
 #include <vector>
+#include <omp.h>
 
 #include "controlform_integer.h"
 #include "controlform_menu.h"
@@ -42,7 +43,7 @@
 #include "format_tree_form.h"
 #include "format_converter/format_converter.hpp"
 #include "withrobot_camera.hpp"
-
+#include "camera_thread.h"
 /**
  * @defgroup Viewer GUI
  *
@@ -59,10 +60,9 @@
 #define DEFAULT_WINDOW_GEO_WIDTH    1024
 #define DEFAULT_WINDOW_GEO_HEIGHT   768
 
-#define STATIC_QTIMER_RATE          1  /**< undefine 되면, 카메라 설정에 따라 이미지 그리는 스레드가 동작한다. */
+//#define STATIC_QTIMER_RATE          1  /**< undefine 되면, 카메라 설정에 따라 이미지 그리는 스레드가 동작한다. */
 
 //#define NO_DRAW	/**< DEBUG: define 되면, 영상 출력은 안하고, fps 만 계산한다. */
-
 
 namespace Ui {
 class oCam;
@@ -82,12 +82,12 @@ public slots:
 private slots:
     void on_btnStart_clicked();
     void on_tbtnDevRefresh_clicked();
-    void on_ckbToggleRgbColor_toggled(bool checked);
-
     void calculate_color_correction();
     void reset_color_correction();
     void set_default_color_correction();
     void control_command(uint32_t value);
+
+    void on_ckbToggleConvert_toggled(bool checked);
 
 private:
     bool start();
@@ -95,6 +95,9 @@ private:
     void restart();
 
     void enum_dev_list();
+    void generate_IR_image(unsigned char* frame_buffer, unsigned char* ir_buffer);
+    void generate_RGB_image(unsigned char* frame_buffer, unsigned char* rgb_buffer);
+    void Split_Stereo_image(unsigned char* Src, unsigned char* Dst, int Width, int Height);
 
 private:
     Ui::oCam *ui;
@@ -111,6 +114,7 @@ private:
 
     bool no_device;
 
+public:
     /** 장치 이름 */
     std::string dev_node;
     /** 포멧 이름 */
@@ -118,16 +122,22 @@ private:
     /** 장치 이름 + 포멧 이름 */
     std::string title;
 
-    /**
-     * 카메라 출력 이미지 buffer (yuy2)
-     */
-    unsigned char* frame_buffer;
+
 
     /**
      * 화면 출력 이미지 buffer (rgb)
      */
     unsigned char* rgb_buffer;
 
+    /**
+     * 화면 출력 이미지 buffer (IR)
+     */
+    unsigned char* ir_buffer;
+        /**
+     * 화면 출력 이미지 buffer (stereo)
+     */
+    unsigned char* stereo_buffer;
+    unsigned char* stereo_rgb;
     /**
      * Format converter
      */
@@ -186,14 +196,35 @@ private:
     Withrobot::Timer frame_interval;
 
     /**
+     * bayerRGB 이미지를 RGB 이미지로 보여줄지 여부, IR 이미지로 보여줄지 여부
+     */
+    bool showConvertImage;
+
+    /**
      * bayerRGB 이미지를 RGB 이미지로 보여줄지 여부
      */
-    bool showColorImage;
+    bool IRImage;
 
+    /**
+     * Stereo 이미지를 Split 이미지로 보여줄지 여부
+     */
+    bool StereoImage;
+        /**
+     * Split 이미지를 SplitRGB 이미지로 보여줄지 여부
+     */
+    bool StereoRgb;
+    
     /**
      * @todo Withrobot thread 사용하는 방법 모색
      */
-    Withrobot::Mutex mutex;   
+    Withrobot::Mutex mutex;
+
+public:
+    /**
+     * 카메라 출력 이미지 buffer (yuy2)
+     */
+    unsigned char* frame_buffer;
+    int format_size;
 };
 
 /** @} */ // end of myCam viewer main window class

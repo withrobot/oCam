@@ -789,7 +789,6 @@ bool Camera::set_format(const char* format_description)
 int Camera::get_buffer(unsigned char* buffer, const unsigned int size)
 {
     int retval = -1;
-
     memset(&v4l2_s.buffer, 0, sizeof(v4l2_s.buffer));
 
     v4l2_s.buffer.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -798,7 +797,6 @@ int Camera::get_buffer(unsigned char* buffer, const unsigned int size)
         DBG_PERROR("VIDIOC_DQBUF");
         return retval;
     }
-
     if (v4l2_s.buffer.bytesused == size || v4l2_s.format.fmt.pix.pixelformat == V4L2_PIX_FMT_MJPEG) {
         retval = v4l2_s.buffer.bytesused;
         memcpy(buffer, buffers[v4l2_s.buffer.index].buffer, v4l2_s.buffer.bytesused);

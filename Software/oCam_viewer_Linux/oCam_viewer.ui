@@ -158,9 +158,9 @@ QPushButton:default {
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="ckbToggleRgbColor">
+     <widget class="QCheckBox" name="ckbToggleConvert">
       <property name="text">
-       <string>Show RGB color (oCam-1CGN-U only)</string>
+       <string>Toggle Menu</string>
       </property>
      </widget>
     </item>

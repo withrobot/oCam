@@ -249,12 +249,14 @@ namespace Withrobot {
         std::map<std::string, v4l2_frmivalenum> valid_ratio_list;
 
         std::vector<usb_device_info> usb_device_list;
-        struct camera_format config;
+        //struct camera_format config;
 
         bool streaming;
 
         Mutex mutex;
-
+public:
+        struct camera_format config;
+        int get_buffer(unsigned char* yuy2_buffer, const unsigned int size);
     private:
         bool get_capability();
         bool get_current_format();
@@ -269,7 +271,7 @@ namespace Withrobot {
         bool enumerate_frame_sizes(const unsigned int pixelformat, std::string& description);
         bool enumerate_frame_intervals(const unsigned int pixelformat, const unsigned int width, const unsigned int height, std::string& description);
 
-        int get_buffer(unsigned char* yuy2_buffer, const unsigned int size);
+
 
         bool remove_buffers();
 

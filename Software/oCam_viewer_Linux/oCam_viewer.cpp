@@ -23,7 +23,7 @@
  *  - 1CGN 옵션 및 기능 추가 (bayer2Rgb, color balance)
  */
 
-
+#include "time.h"
 #include "oCam_viewer.h"
 #include "ui_oCam_viewer.h"
 #include "format_converter/ConvertColor.h"
@@ -33,6 +33,7 @@
 
 #include <QGraphicsPixmapItem>
 #include <QMessageBox>
+#include <QThread>
 
 #define PIX_FORMAT_MJPEG        0x47504A4D
 #define PIX_FORMAT_YUYV         0x56595559
@@ -44,13 +45,13 @@
 #define OCAM_BAYER_RGB_NAME "oCam-1CGN"
 
 oCam::oCam(QWidget *parent) :
-    QMainWindow(parent), ui(new Ui::oCam), ui_default_contents_margin(3,3,3,3), frame_interval("Frame Interval", 5), showColorImage(false)
+    QMainWindow(parent), ui(new Ui::oCam), ui_default_contents_margin(3,3,3,3), frame_interval("Frame Interval", 5), showConvertImage(false)
 {   
     ui->setupUi(this);
     ui->centralWidget->setContentsMargins(ui_default_contents_margin);
     ui->frmImage->setContentsMargins(ui_default_contents_margin);
 
-    ui->ckbToggleRgbColor->setDisabled(true);   // for 1CGN
+    ui->ckbToggleConvert->setDisabled(true);
 
     fmt_name.clear();
     title.clear();
@@ -60,6 +61,7 @@ oCam::oCam(QWidget *parent) :
 
     frame_buffer = 0;
     rgb_buffer = 0;
+    ir_buffer = 0;
     format_converter = 0;
 
     /* initialize */
@@ -77,6 +79,7 @@ oCam::~oCam()
     delete ui;
 }
 
+
 /**
  * QTimer 주기에 따라 이미지 출력 영역과 컨트롤 값을 갱신한다
  */
@@ -86,7 +89,7 @@ void oCam::update_gui()
         return;
     }
 
-    /* foramt */
+    /* format */
     if (format_tree->is_changed()) {
         fmt_name = format_tree->get_format_name();
         if (!fmt_name.empty()) {
@@ -139,21 +142,35 @@ void oCam::update_gui()
 
         ocam->set_control(boolean_control_form_list[i]->get_name(), boolean_control_form_list[i]->get_value());
     }
-
     /* get frame */
     int frame_size = ocam->get_frame(frame_buffer, format.image_size, 1);
-    if (frame_size != -1) {        
+    if (frame_size != -1) {
 #ifndef NO_DRAW
         /* convert format */
-        switch (format.pixformat) {
+        switch (format.pixformat)
+        {
         case PIX_FORMAT_YUYV:
             /* convert yuyv to rgb */
-            format_converter->yuyv_to_rgb(rgb_buffer, frame_buffer);
+            if(StereoImage){
+                /*Split StereoImage funtion*/
+                if(StereoRgb){
+                    Split_Stereo_image(frame_buffer,stereo_buffer,format.width, format.height);
+                    Bayer2BGR(stereo_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+                    
+                }
+                else{
+                    Split_Stereo_image(frame_buffer,rgb_buffer,format.width, format.height);
+                }
+            }
+            else{
+                format_converter->yuyv_to_rgb(rgb_buffer, frame_buffer);
+            }
+            
             break;
 
         case PIX_FORMAT_MJPEG:
             /* convert mjpeg to rgb */
-            format_converter->jpeg_to_rgb(rgb_buffer, frame_buffer, frame_size);
+            //format_converter->jpeg_to_rgb(rgb_buffer, frame_buffer, frame_size);
             break;
 
         case PIX_FORMAT_GREY:
@@ -162,7 +179,7 @@ void oCam::update_gui()
             break;
 
         case PIX_FORMAT_BAYER_GBRG:
-            if (showColorImage) {
+            if (showConvertImage) {
                 /* convert bayerRGB to RGB */
                 Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGR2RGB);
             }
@@ -172,24 +189,45 @@ void oCam::update_gui()
             }
             break;
         case PIX_FORMAT_BAYER_GRBG:
-            if (showColorImage) {
-                /* convert bayerRGB to RGB */
-                Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
-            }
-            else {
-                /* convert grey to rgb */
-                format_converter->grey_to_rgb(rgb_buffer, frame_buffer);
-            }
-            break;
+            if(IRImage)
+            {
+                if (showConvertImage) {
+                    /* collect IR Pixel and fill empty pixel */
+                    generate_IR_image(frame_buffer, rgb_buffer);
+                    Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+                    //format_converter->grey_to_rgb(rgb_buffer, frame_buffer);
+                }
 
+                else {
+                    /* convert grey to rgb */
+                    generate_RGB_image(frame_buffer, rgb_buffer);
+                    //green-light control
+                    for (unsigned int i = 1; i < format.width*format.height * 3; i+=3) {
+                        rgb_buffer[i] = (unsigned char)rgb_buffer[i] * 0.7;
+                    }
+                }
+            }
+            else
+            {
+                if (showConvertImage) {
+                    /* convert bayerRGB to RGB */
+                    Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+                }
+                else {
+                    /* convert grey to rgb */
+                    format_converter->grey_to_rgb(rgb_buffer, frame_buffer);
+                }
+            }
+
+            break;
         default:
             break;
         }
-
         /* show image */
+        
         ui->lblImage->setPixmap(QPixmap::fromImage(QImage(rgb_buffer, format.width, format.height, QImage::Format_RGB888)));
-#endif
         ui->dockControls->setWindowTitle(("   " + title + " " + Withrobot::to_string<double>(round(1.0 / frame_interval.restart())) + " fps").c_str());
+#endif
     }
     else {
         if (!QDir().exists(dev_node.c_str())) {
@@ -212,20 +250,26 @@ void oCam::update_gui()
  */
 void oCam::on_btnStart_clicked()
 {
-    if (ocam) {
-        if (stop()) {
+    if (ocam)
+    {
+        if (stop())
+        {
             enum_dev_list();
-
             ui->cbbDeviceList->setDisabled(false);
             ui->btnStart->setText("Connect");
             ui->tbtnDevRefresh->setDisabled(false);
         }
-    } else {
-        if (start()) {
+    }
+    else
+    {
+        if (start())
+        {
             ui->cbbDeviceList->setDisabled(true);
             ui->btnStart->setText("Disconnect");
             ui->tbtnDevRefresh->setDisabled(true);
         }
+        //usleep(1000);
+        //format_size = format.image_size;
     }
 }
 
@@ -268,41 +312,112 @@ bool oCam::start()
             Withrobot::to_string<unsigned char>((format.pixformat >> 24) & 0xFF) + ") ";
 
     DBG_PRINTF("title: %s\n", title.c_str());
-
+    
     /* check bayer rgb sensor camera */
-//    if (format.pixformat == PIX_FORMAT_BAYER_GBRG) {
     if (format.pixformat == PIX_FORMAT_BAYER_GRBG) {
-        ui->ckbToggleRgbColor->setEnabled(true);
-        ui->ckbToggleRgbColor->setChecked(true);
+        
+        if( ocam->get_dev_name() == "oCam-4IRO-U" )
+        {
+            StereoImage = false;
+            StereoRgb = false;
+            IRImage = true;
+            ui->ckbToggleConvert->setEnabled(true);
+            if(showConvertImage)
+            {
+                ui->ckbToggleConvert->setChecked(true);
+            }
+            ui->ckbToggleConvert->setText("Show IR Image (oCam-4IRO-U Only)");
+            defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
+            ui->vLayoutMisc->addWidget(defaultPushBtn);
+            defaultPushBtn->setEnabled(true);
 
-        // add miscellaneous controls
-        /* Default Push Button */
-        defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
-        ui->vLayoutMisc->addWidget(defaultPushBtn);
-        defaultPushBtn->setEnabled(true);
+            connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
+            misc_control_form_pushBtn.push_back(defaultPushBtn);
+        }
+        else
+        {
+            StereoImage = false;
+            StereoRgb = false;
+            IRImage = false;
+            ui->ckbToggleConvert->setEnabled(true);
+            ui->ckbToggleConvert->setChecked(true);
+            ui->ckbToggleConvert->setText("Show RGB Image (oCam-1CGN-U Only)");
 
-        connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
-        misc_control_form_pushBtn.push_back(defaultPushBtn);
+            // add miscellaneous controls
+            /* Default Push Button */
+            defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
+            ui->vLayoutMisc->addWidget(defaultPushBtn);
+            defaultPushBtn->setEnabled(true);
 
-        /* Reset Push Button */
-        resetPushBtn = new ControlFormPushBtn("Reset Color correction", "Do it.");
-        ui->vLayoutMisc->addWidget(resetPushBtn);
-        resetPushBtn->setEnabled(true);
+            connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
+            misc_control_form_pushBtn.push_back(defaultPushBtn);
 
-        connect(resetPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(reset_color_correction()));
-        misc_control_form_pushBtn.push_back(resetPushBtn);
+            /* Reset Push Button */
+            resetPushBtn = new ControlFormPushBtn("Reset Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(resetPushBtn);
+            resetPushBtn->setEnabled(true);
 
-        /* Color Correction Push Button */
-        correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
-        ui->vLayoutMisc->addWidget(correctionPushBtn);
-        correctionPushBtn->setEnabled(false);
+            connect(resetPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(reset_color_correction()));
+            misc_control_form_pushBtn.push_back(resetPushBtn);
 
-        connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
-        misc_control_form_pushBtn.push_back(correctionPushBtn);
+            /* Color Correction Push Button */
+            correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(correctionPushBtn);
+            correctionPushBtn->setEnabled(false);
+
+            connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
+            misc_control_form_pushBtn.push_back(correctionPushBtn);
+        }
 
     }
 
+    if (format.pixformat == PIX_FORMAT_BAYER_GBRG) {
+        if( ocam->get_dev_name() == "oCam-18CRN-U" )
+        {
+            ui->ckbToggleConvert->setEnabled(true);
+            ui->ckbToggleConvert->setChecked(true);
+            ui->ckbToggleConvert->setText("Show RGB Image (oCam-18CRN-U Only)");
 
+            // add miscellaneous controls
+            /* Default Push Button */
+            defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
+            ui->vLayoutMisc->addWidget(defaultPushBtn);
+            defaultPushBtn->setEnabled(true);
+
+            connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
+            misc_control_form_pushBtn.push_back(defaultPushBtn);
+
+            /* Reset Push Button */
+            resetPushBtn = new ControlFormPushBtn("Reset Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(resetPushBtn);
+            resetPushBtn->setEnabled(true);
+
+            connect(resetPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(reset_color_correction()));
+            misc_control_form_pushBtn.push_back(resetPushBtn);
+
+            /* Color Correction Push Button */
+            correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(correctionPushBtn);
+            correctionPushBtn->setEnabled(false);
+
+            connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
+            misc_control_form_pushBtn.push_back(correctionPushBtn);
+        }
+
+    }
+    else{
+        if(ocam->get_dev_name() =="oCamS-1CGN-U"){
+            StereoImage = true;
+            StereoRgb = true;
+            format.width = format.width*2;
+            
+        }
+        else if(ocam->get_dev_name() =="oCamS-1MGN-U"){
+            format.width = format.width*2;
+            StereoImage = true;
+            StereoRgb = false;
+        }
+    }
     /* change window geometry */
     QRect geo = geometry();
 
@@ -392,12 +507,18 @@ bool oCam::start()
 
     /* image buffer */
     frame_buffer = new unsigned char[format.height*format.width*2];
-    rgb_buffer = new unsigned char[format.height*format.width*3];
-
+    if(StereoRgb){
+        rgb_buffer = new unsigned char[format.height*format.width*6];
+    }
+    else{
+        rgb_buffer = new unsigned char[format.height*format.width*3];
+    }
+    ir_buffer = new unsigned char[format.height*format.width/4];
+    stereo_buffer = new unsigned char[format.height*format.width*4];
     /* format converter initialize */
     format_converter = new GuvcviewFormatConverter(format.width, format.height);
 
-    /* image refresh thread */
+    //receive signal when get frame
     qtmr_timer = new QTimer(this);
     connect(qtmr_timer, SIGNAL(timeout()), this, SLOT(update_gui()));
 
@@ -405,10 +526,10 @@ bool oCam::start()
     qtmr_timer->start(STATIC_QTIMER_RATE);
 #else
     int timer_rate = (int)(1.0 / format.frame_rate * 1000.0);
+    std::cout << "Frame Rate : " << format.frame_rate << "Timer rate : " << timer_rate << std::endl;
     DBG_PRINTF("qTimer Rate: %d", timer_rate);
     qtmr_timer->start(timer_rate);
 #endif
-
     return true;
 }
 
@@ -454,25 +575,24 @@ bool oCam::stop()
     misc_control_form_pushBtn.clear();
 
 
-    ui->ckbToggleRgbColor->setDisabled(true);
-
+    ui->ckbToggleConvert->setDisabled(true);
     /* stop */
     ocam->stop();
-    qtmr_timer->stop();
-
     delete ocam;
-    delete qtmr_timer;
-
     delete[] frame_buffer;
     delete[] rgb_buffer;
+    delete[] ir_buffer;
+    delete[] stereo_buffer;
 
     delete format_converter;
 
     ocam = 0;
+    qtmr_timer->stop();
+    delete qtmr_timer;
     qtmr_timer = 0;
-
     frame_buffer = 0;
     rgb_buffer = 0;
+    ir_buffer = 0;
 
     format_converter = 0;
 
@@ -548,17 +668,18 @@ void oCam::on_tbtnDevRefresh_clicked()
     enum_dev_list();
 }
 
-void oCam::on_ckbToggleRgbColor_toggled(bool checked)
+void oCam::on_ckbToggleConvert_toggled(bool checked)
 {
     if (checked) {
-        DBG_PRINTF("Show RGB image");
-        showColorImage = true;
+        DBG_PRINTF("Show convert image");
+        showConvertImage = true;
     }
     else {
         DBG_PRINTF("Show raw image");
-        showColorImage = false;
+        showConvertImage = false;
     }
 }
+
 
 /*
  *  Color correction for 1CGN(Bayer RGB pattern)
@@ -627,7 +748,7 @@ void oCam::calculate_color_correction()
 
 void oCam::reset_color_correction()
 {
-//    correctionPushBtn->setEnabled(false);
+    //    correctionPushBtn->setEnabled(false);
 
     DBG_PRINTF("reset_color_correction called!");
 
@@ -700,4 +821,124 @@ void oCam::control_command(uint32_t value)
     ocam->set_control("Gain", cmd[6]);
     ocam->set_control("Gain", cmd[7]);
 
+}
+
+/**
+ * RGB-IR 이미지에서 IR 추출
+ */
+void oCam::generate_IR_image(unsigned char* frame_buffer, unsigned char* ir_buffer)
+{
+    unsigned char *calIR_space = (unsigned char*)frame_buffer;
+    int Width = format.width;
+    int Height = format.height;
+    int Height_last_line = Height - 1;
+    int Width_last_line = Width - 1;
+    memset(ir_buffer, 0, (Width)*(Height));
+
+    //step 1~3
+    int i = 0, j = 0;
+    for (i = 0; i < Height_last_line-1; i += 2) {
+        for (j = 0; j <Width_last_line; j += 8) {
+            calIR_space[i*Width + (j+1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+            calIR_space[(i+1)*Width + j] = (calIR_space[i*Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+            calIR_space[(i+1)*Width + (j+2)] = (calIR_space[i *Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+            calIR_space[(i+1)*Width + (j+1)] = (calIR_space[(i + 1)*Width + j] + calIR_space[(i + 1)*Width + (j + 2)]) >> 1;
+            calIR_space[i*Width + (j+3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+            calIR_space[(i+1)*Width + (j+4)] = (calIR_space[i*Width + (j + 4)] + calIR_space[(i + 2)*Width + (j + 4)]) >> 1;
+            calIR_space[(i+1)*Width + (j+3)] = (calIR_space[(i + 1)*Width + (j + 2)] + calIR_space[(i + 1)*Width + (j + 4)]) >> 1;
+            calIR_space[i*Width + (j+5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+            calIR_space[(i+1)*Width + (j+6)] = (calIR_space[i*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 6)]) >> 1;
+            calIR_space[(i+1)*Width + (j+5)] = (calIR_space[(i + 1)*Width + (j + 4)] + calIR_space[(i + 1)*Width + (j + 6)]) >> 1;
+            calIR_space[i*Width + (j+7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)]) >> 1;
+            calIR_space[(i+1)*Width + (j+7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)] + calIR_space[(i + 2)*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 8)]) >> 2;
+        }
+
+        calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+        calIR_space[(i + 1)*Width + j] = (calIR_space[i*Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 2)] = (calIR_space[i *Width + j] + calIR_space[(i + 2)*Width + j]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 1)] = (calIR_space[(i + 1)*Width + j] + calIR_space[(i + 1)*Width + (j + 2)]) >> 1;
+        calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 4)] = (calIR_space[i*Width + (j + 4)] + calIR_space[(i + 2)*Width + (j + 4)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 3)] = (calIR_space[(i + 1)*Width + (j + 2)] + calIR_space[(i + 1)*Width + (j + 4)]) >> 1;
+        calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 6)] = (calIR_space[i*Width + (j + 6)] + calIR_space[(i + 2)*Width + (j + 6)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 5)] = (calIR_space[(i + 1)*Width + (j + 4)] + calIR_space[(i + 1)*Width + (j + 6)]) >> 1;
+        calIR_space[i*Width + (j + 7)] = calIR_space[i*Width + (j + 6)];
+        calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[(i + 1)*Width + (j + 6)];
+    }
+
+    for (j = 0; j < Width_last_line; j += 8) {
+        calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+        calIR_space[(i + 1)*Width + j] = calIR_space[i*Width + j];
+        calIR_space[(i + 1)*Width + (j + 2)] = calIR_space[i*Width + (j + 2)];
+        calIR_space[(i + 1)*Width + (j + 1)] = calIR_space[i*Width + (j + 1)];
+        calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 4)] = calIR_space[i*Width + (j + 4)];
+        calIR_space[(i + 1)*Width + (j + 3)] = calIR_space[i*Width + (j + 3)];
+        calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 6)] = calIR_space[i*Width + (j + 6)];
+        calIR_space[(i + 1)*Width + (j + 5)] = calIR_space[i*Width + (j + 5)];
+        calIR_space[i*Width + (j + 7)] = (calIR_space[i*Width + (j + 6)] + calIR_space[i*Width + (j + 8)]) >> 1;
+        calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[i*Width + (j + 7)];
+    }
+
+    calIR_space[i*Width + (j + 1)] = (calIR_space[i*Width + j] + calIR_space[i*Width + (j + 2)]) >> 1;
+    calIR_space[(i + 1)*Width + j] = calIR_space[i*Width + j];
+    calIR_space[(i + 1)*Width + (j + 2)] = calIR_space[i*Width + (j + 2)];
+    calIR_space[(i + 1)*Width + (j + 1)] = calIR_space[i*Width + (j + 1)];
+    calIR_space[i*Width + (j + 3)] = (calIR_space[i*Width + (j + 2)] + calIR_space[i*Width + (j + 4)]) >> 1;
+    calIR_space[(i + 1)*Width + (j + 4)] = calIR_space[i*Width + (j + 4)];
+    calIR_space[(i + 1)*Width + (j + 3)] = calIR_space[i*Width + (j + 3)];
+    calIR_space[i*Width + (j + 5)] = (calIR_space[i*Width + (j + 4)] + calIR_space[i*Width + (j + 6)]) >> 1;
+    calIR_space[(i + 1)*Width + (j + 6)] = calIR_space[i*Width + (j + 6)];
+    calIR_space[(i + 1)*Width + (j + 5)] = calIR_space[i*Width + (j + 5)];
+    calIR_space[i*Width + (j + 7)] = calIR_space[i*Width + (j + 6)];
+    calIR_space[(i + 1)*Width + (j + 7)] = calIR_space[i*Width + (j + 7)];
+
+    memcpy(ir_buffer, calIR_space, (Width)*(Height));
+}
+
+/**
+ * RGB-IR 이미지에서 RGB 추출
+ */
+void oCam::generate_RGB_image(unsigned char* frame_buffer, unsigned char* rgb_buffer)
+{
+    unsigned char *bayer = (unsigned char*)frame_buffer;
+    int Width = format.width;
+    int Height = format.height;
+
+    for (int i = 0; i < Height; i+=2) {
+        for (int j = 0; j < Width; j+=2) {
+            if (i == 0 && j == 0) {
+                bayer[0] = bayer[1 * Width + 1];
+            }
+            else if (i == 0 && j != 0) {
+                bayer[(i)*Width + (j)] = (bayer[(i + 1)*Width + (j - 1)] + bayer[(i + 1)*Width + (j + 1)]) / 2;
+            }
+            else if (i != 0 && j == 0) {
+                bayer[(i)*Width + (j)] = (bayer[(i - 1)*Width + (j + 1)] + bayer[(i + 1)*Width + (j + 1)]) / 2;
+            }
+            else {
+                bayer[(i)*Width + (j)] = (bayer[(i - 1)*Width + (j - 1)]  + bayer[(i - 1)*Width + (j + 1)] + bayer[(i + 1)*Width + (j - 1)] + bayer[(i + 1)*Width + (j + 1)]) / 4;
+            }
+        }
+    }
+    Bayer2BGR(bayer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+}
+void oCam::Split_Stereo_image(unsigned char* Src, unsigned char* Dst, int Width, int Height)
+{
+	unsigned char* Srcimg = (unsigned char*)Src;
+	unsigned char* Dstimg = (unsigned char*)Dst;
+	memset(Dst, 0, Width * Height * sizeof(Dst[0]));
+	unsigned char temp = 0;
+	int k = 0;
+	Width = Width/2;
+	for (int i = 0; i < Height; i++) {
+		k = 0;
+		for (int j = 0; j < Width*2; j+=2) {
+			Dstimg[(i * Width*2) + (k + Width)] = Srcimg[i*Width * 2 + j];
+			Dstimg[(i * Width*2) + (k)] = Srcimg[i*Width * 2 + (j + 1)];
+			k++;
+		}
+	}
 }
