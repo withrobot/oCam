@@ -33,7 +33,7 @@ Type | Description |
 **Shutter** | Electric Global Shutter |
 **Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (기본 렌즈 기준) |
 **Camera Control** | * Manual Exposure Control<br/> * Gain Control<br/> * Maunual White Balance Red Control<br/> * Maunual White Balance Red Control<br/> * Auto White Balance Setup (by oCamViewer* Software) |
-**Frame Rate** | 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps | 
+**Frame Rate** | 1280x960 @54fps, 1280x720 @60fps, 640x480 @100fps, 320x240 @180fps | 
 **Weight** | 약 27.2 그램(케이스 포함) | 
 **PCB Size** | 39mm x 39mm | 
 **외형 크기** | 49mm x 53mm x 20mm |
