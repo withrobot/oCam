@@ -28,13 +28,13 @@ Type | Description |
 **Shutter** | Electric Global Shutter |
 **Field Of View(FOV)** | 65 degrees at full resolution of 1280 x 960 (Images of less resolutions are copped from the full resolution image to have less FOV accordingly.) |
 **Camera Control** | Brightness, Exposure | 
-**Frame Rate** | 1280x960 @45fps, 1280x720 @60fps, 640x480 @80fps, 320x240 @160fps | 
+**Frame Rate** | 1280x960 @54fps, 1280x720 @60fps, 640x480 @100fps, 320x240 @180fps | 
 **Weight** | 27.2 gram approx.(Including protective case and Lens) | 
 **PCB Size** | 39mm x 39mm | 
 **Case Size** | 42mm x 42mm x 17mm |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
 ## Softwares
-* [oCam-1GN-U_R1808_180815.img](../../Firmware)
+* [oCam-1MGN-U_R1808_180815.img](../../Firmware)
 * [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
 * [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
