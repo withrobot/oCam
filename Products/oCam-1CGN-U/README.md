@@ -34,7 +34,7 @@ Type | Description |
 **Frame Rate** | **USB 3.0**: 1280x960 @54fps, 1280x720 @60fps, 640x480 @100fps, 320x240 @180fps | 
 **Weight** | 27.2 gram approx.(Including protective case and Lens) | 
 **PCB Size** | 39mm x 39mm | 
-**Case Size** | 42mm x 42mm x 17mm |
+**Case Size** | 49mm x 49mm x 20mm |
 **Depth** | 30-35 mm (Variable length for Manual Focusing) |
 
 ## Global Shutter vs. Rolling Shutter
