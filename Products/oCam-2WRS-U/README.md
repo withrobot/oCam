@@ -31,7 +31,7 @@ Type | Description |
 **Frame Rate** | 15fps, 30fps @1920x1080 | 
 **Weight** | 27 gram approx.(Including protective case) | 
 **PCB Size** | 39mm x 39mm(PCB) | 
-**Case Size** | 49mm x 53mm x 20mm (Including Tripod Mount) |
+**Case Size** | 49mm x 49mm x 20mm |
 
 ## User Manual
 * [oCam-2WRS-U User Manual](oCam-2WRS-U_UserManual.pdf)
