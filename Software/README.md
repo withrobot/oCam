@@ -1,2 +1,2 @@
-# oCam-viewer 
-oCam control program
+# oCam software
+
