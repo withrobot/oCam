@@ -1,5 +1,21 @@
 # Release Note
 
+## oCam-1xGN-U-T_R2006(Jun 2020)
+### USB 3.0
+Performance Stabilization
+Fix resolution to 30 fps only as follows
+**Bayer GRBG format**</br>
+1280 (H) x  960 (V) pixels   30 fps</br>
+1280 (H) x  720 (V) pixels   30 fps</br>
+ 640 (H) x  480 (V) pixels   30 fps (binning)</br>
+ 320 (H) x  240 (V) pixels   30 fps (cropping)</br>
+
+### USB 2.0
+**Bayer GRBG format**</br>
+1280 (H) x  960 (V) pixels   30 fps</br>
+ 640 (H) x  480 (V) pixels   30 fps (binning)</br>
+ 320 (H) x  240 (V) pixels   30 fps (cropping)</br>
+
 ## oCam-1CGN-U_R1808(Aug 2018)
 Performance Stabilization
 
