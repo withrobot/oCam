@@ -160,6 +160,37 @@ int g_1CGN_U2[][3] =
 	{ 320,240,  6000 },
 	{ 320,240,  5000 },
 };
+
+int g_1CGN_UT3[][3] =
+{
+	{ 1280,960, 3000 },
+	{ 1280,720, 3000 },
+	{ 640,480,  3000 },
+	{ 320,240,  3000 },
+};
+
+int g_1CGN_UT2[][3] =
+{
+	{ 1280,960, 3000 },
+	{ 640,480,  3000 },
+	{ 320,240,  3000 },
+};
+
+int g_1MGN_UT3[][3] =
+{
+	{ 1280,960, 3000 },
+	{ 1280,720, 3000 },
+	{ 640,480,  3000 },
+	{ 320,240,  3000 },
+};
+
+int g_1MGN_UT2[][3] =
+{
+	{ 1280,960, 3000 },
+	{ 640,480,  3000 },
+	{ 320,240,  3000 },
+};
+
 int g_1CGN_Flag;
 // by SDKIM 1MCG, 1CGN FPS 리스트 변경 20180221
 // 1CGN Flag 추가 20190325
@@ -748,7 +779,34 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 	g_1CGN_Flag = 0;
 	g_18CRN_Flag = 0;
 	g_1CGNS_Flag = 0;
-	if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T") {
+	//konan91 1C(M)GN-U-T 용 추가
+	
+	if (m_CamModel == "oCam-1CGN-U-T") {
+		g_1CGN_Flag = 1;
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_1CGN_UT2, sizeof(g_1CGN_UT2));
+			num_list = sizeof(g_1CGN_UT2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_1CGN_UT3, sizeof(g_1CGN_UT3));
+			num_list = sizeof(g_1CGN_UT3) / 12;
+		}
+	}
+	else if (m_CamModel == "oCam-1MGN-U-T") {
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_1MGN_UT2, sizeof(g_1MGN_UT2));
+			num_list = sizeof(g_1MGN_UT2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_1MGN_UT3, sizeof(g_1MGN_UT3));
+			num_list = sizeof(g_1MGN_UT3) / 12;
+		}
+	}
+	else if (m_CamModel == "oCam-1CGN-U") {
 		g_1CGN_Flag = 1;
 		if (m_UsbType == "USB2")
 		{
@@ -761,7 +819,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 			num_list = sizeof(g_1CGN_U3) / 12;
 		}
 	}
-	else if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T") {
+	else if (m_CamModel == "oCam-1MGN-U") {
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_1MGN_U2, sizeof(g_1MGN_U2));
