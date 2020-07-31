@@ -17,6 +17,20 @@ Fix resolution to 30 fps only as follows</br>
  640 (H) x  480 (V) pixels   30 fps (binning)</br>
  320 (H) x  240 (V) pixels   30 fps (cropping)</br>
 
+## oCam-1MGN-U_R1906(Jun 2019)
+Bug fixed - Brightness</br>
+
+## oCam-1CGN-U_R1903(Mar 2019)
+Transfer type fixed</br>
+USB3.0 : Isochronous</br>
+USB2.0 : Bulk</br>
+
+## oCam-1MGN-U_R1903(Mar 2019)
+Transfer type fixed</br>
+USB3.0 : Isochronous</br>
+USB2.0 : Bulk</br>
+
+
 ## oCam-1CGN-U_R1808(Aug 2018)
 Performance Stabilization
 
