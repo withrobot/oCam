@@ -180,7 +180,11 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)\libCamCap\*$(PlatformShortName).dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\.</Command>
+      <Command>copy $(SolutionDir)\libCamCap\*$(PlatformShortName).dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\.
+copy $(SolutionDir)\FFmpeg\x86\lib\avcodec-58.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x86\lib\avformat-58.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x86\lib\avutil-56.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x86\lib\swresample-3.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -213,7 +217,11 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)\libCamCap\*$(PlatformShortName).dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\.</Command>
+      <Command>copy $(SolutionDir)\libCamCap\*$(PlatformShortName).dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\.
+copy $(SolutionDir)\FFmpeg\x64\lib\avcodec-58.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x64\lib\avformat-58.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x64\lib\avutil-56.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\
+copy $(SolutionDir)\FFmpeg\x64\lib\swresample-3.dll $(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
