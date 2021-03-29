@@ -1,6 +1,6 @@
 # The oCam-viewer for the windows.
 ## updates
-R2012 (Dec. 2020)
+R2012 (Dec. 2020)</br>
     - Functions Added:
         - Video recording function
         - Camera connection status pop-up window
