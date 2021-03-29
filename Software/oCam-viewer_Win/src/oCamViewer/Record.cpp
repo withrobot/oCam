@@ -15,7 +15,7 @@
 #define USE_AACBSF (0)
 #define USE_H264BSF (0)
 
-//@fungofljm Recording �߰� 20201019
+//@fungofljm Recording 추가 20201019
 const char* test_infile;
 FILE* test;
 

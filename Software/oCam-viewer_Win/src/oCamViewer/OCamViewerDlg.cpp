@@ -198,6 +198,57 @@ int g_1MGN_UT2[][3] =
 	{ 320,240,  3000 },
 };
 
+//fungofljm 1MGN-U-T용 1811, 2006 펌웨어 분류 210316
+int g_1MGN_UT3_1811[][3] =
+{
+	{ 1280,960, 5400 },
+	{ 1280,960, 5000 },
+	{ 1280,960, 3000 },
+	{ 1280,960, 2500 },
+	{ 1280,960, 1500 },
+	{ 1280,720, 6000 },
+	{ 1280,720, 5000 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480, 10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 320,240, 18000 },
+	{ 320,240, 15000 },
+	{ 320,240, 12000 },
+	{ 320,240, 10000 },
+	{ 320,240, 6000 },
+	{ 320,240, 5000 },
+};
+
+int g_1MGN_UT2_1811[][3] =
+{
+	{ 1280,960, 3000 },
+	{ 1280,960, 2500 },
+	{ 1280,960, 1500 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480, 10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 320,240, 18000 },
+	{ 320,240, 15000 },
+	{ 320,240, 12000 },
+	{ 320,240, 10000 },
+	{ 320,240,  6000 },
+	{ 320,240,  5000 },
+};
+
 int g_1CGN_Flag;
 // by SDKIM 1MCG, 1CGN FPS 리스트 변경 20180221
 // 1CGN Flag 추가 20190325
@@ -678,7 +729,8 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 		}
 		m_Display.Display(m_ImageSrc);
 	}
-	else if (m_CamModel == "oCamS-1CGN-U") {
+
+	else if (m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1CGN-U-F") {
 		BYTE* stereodst = (BYTE*)m_streoImage.GetPtr1D();
 		SplitImage((char*)src, (char*)stereodst, m_Width, m_Height);
 		Bayer2RGB((char*)stereodst, (char*)dst, m_Width * 2, m_Height, BayerGR2RGB);
@@ -708,7 +760,7 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 
 void COCamViewerDlg::OnBnClickedButtonPlay()
 {
-	if (m_CamModel == "") AfxMessageBox("Camera is not connected.Please check and restart.\n");
+	if (m_CamModel == "") Popup_Check_box();
 	else {
 #ifdef FOR_LOWSPEED_MACHINE_BY_SDKIM
 		m_forLowSpeedMachine_Devide = (int)(m_FPS / 15.0);
@@ -729,7 +781,7 @@ void COCamViewerDlg::OnBnClickedButtonPlay()
 
 			m_IrImage.Alloc(m_Width, m_Height, MV_Y8);
 		}
-		else if (m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1MGN-U")
+		else if (m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1MGN-U" || m_CamModel == "oCamS-1CGN-U-F")
 		{
 			m_ImageSrc.Alloc(2 * m_Width, m_Height, MV_Y8);
 			m_streoImage.Alloc(2 * m_Width, m_Height, MV_Y8);
@@ -852,14 +904,14 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 	m_UsbType = CamGetDeviceInfo(m_CamSel, INFO_USB_TYPE);
 	m_FW = CamGetDeviceInfo(m_CamSel, INFO_DATE_TIME);
 
-	if (m_vid != 1204 && m_connect_flag == false) {
+	if (m_vid != 0x04B4 && m_connect_flag == false) {
 		Popup_Check_box();
 		m_Fwcheck_flag = false;
 	}
 	m_connect_flag = true;
 
 	if (m_Fwcheck_flag == false) {
-		if (((m_WinVersion >= Windows_Version) && (m_bcdDevice & 0x0080) == 0) || ((m_WinVersion < Windows_Version) && (m_bcdDevice & 0x0080) != 0) && m_vid == 1204) {
+		if (((m_WinVersion >= Windows_Version) && (m_bcdDevice & 0x0080) == 0) || ((m_WinVersion < Windows_Version) && (m_bcdDevice & 0x0080) != 0) && m_vid == 0x04B4) {
 			if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCamS-1CGN-U") {
 				m_Fwcheck_flag = true;
 				Popup_Window_box();
@@ -900,16 +952,32 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 			num_list = sizeof(g_1CGN_UT3) / 12;
 		}
 	}
+
+	//fungofljm 1MGN-U-T용 이전 F/W, 2006 F/W 분류 210316
 	else if (m_CamModel == "oCam-1MGN-U-T") {
-		if (m_UsbType == "USB2")
-		{
-			memcpy(g_Resolution, g_1MGN_UT2, sizeof(g_1MGN_UT2));
-			num_list = sizeof(g_1MGN_UT2) / 12;
+		if(m_bcdDevice >= 0x2006) { 
+			if (m_UsbType == "USB2")
+			{
+				memcpy(g_Resolution, g_1MGN_UT2, sizeof(g_1MGN_UT2));
+				num_list = sizeof(g_1MGN_UT2) / 12;
+			}
+			else
+			{
+				memcpy(g_Resolution, g_1MGN_UT3, sizeof(g_1MGN_UT3));
+				num_list = sizeof(g_1MGN_UT3) / 12;
+			}
 		}
-		else
-		{
-			memcpy(g_Resolution, g_1MGN_UT3, sizeof(g_1MGN_UT3));
-			num_list = sizeof(g_1MGN_UT3) / 12;
+		else {
+			if (m_UsbType == "USB2")
+			{
+				memcpy(g_Resolution, g_1MGN_UT2_1811, sizeof(g_1MGN_UT2_1811));
+				num_list = sizeof(g_1MGN_UT2_1811) / 12;
+			}
+			else
+			{
+				memcpy(g_Resolution, g_1MGN_UT3_1811, sizeof(g_1MGN_UT3_1811));
+				num_list = sizeof(g_1MGN_UT3_1811) / 12;
+			}
 		}
 	}
 	else if (m_CamModel == "oCam-1CGN-U") {
@@ -983,7 +1051,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 		}
 	}
 	//konan91 oCamS 1CGN, MGN 추가 2019 07 23
-	else if (m_CamModel == "oCamS-1CGN-U") {
+	else if (m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1CGN-U-F") {
 		g_1CGNS_Flag = 1;
 		if (m_UsbType == "USB2")
 		{

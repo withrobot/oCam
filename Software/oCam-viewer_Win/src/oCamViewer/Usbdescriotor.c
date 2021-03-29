@@ -444,7 +444,7 @@ void EnumerateHubPorts(HANDLE hHubDevice, ULONG NumPorts)
 		connectionInfoEx->ConnectionIndex = index;
 
 		success = DeviceIoControl(hHubDevice, IOCTL_USB_GET_NODE_CONNECTION_INFORMATION_EX, connectionInfoEx, nBytesEx, connectionInfoEx, nBytesEx, &nBytesEx, NULL);
-		if (success && connectionInfoEx->DeviceDescriptor.idVendor == 1204) {
+		if (success && connectionInfoEx->DeviceDescriptor.idVendor == 0x04B4) {
 			m_vid = connectionInfoEx->DeviceDescriptor.idVendor;
 			m_bcdDevice = connectionInfoEx->DeviceDescriptor.bcdDevice;
 		}
@@ -633,7 +633,7 @@ void Oops(_In_ PCHAR File, ULONG Line) {
 /*****************************************************************************
 
 Windows_info()
-//Windows os ���� Ȯ�� �߰� 20201116
+//Windows os 버전 판단 20201116
 *****************************************************************************/
 
 int Windows_info() {
