@@ -2,15 +2,16 @@
 ## updates
 R2012 (Dec. 2020)</br>
     - Functions Added:
-        - Video recording function
-        - Camera connection status pop-up window
-        - Firmware version and Windows version check pop-up window
-        - Add Model oCamS-1CGN-U-F
+        - Video recording function</br>
+        - Camera connection status pop-up window</br>
+        - Firmware version and Windows version check pop-up window</br>
+        - Add Model oCamS-1CGN-U-F</br>
     - Bugs Fixed:
-        - Error termination on clicking [Play] when camera is not connected
-        - Fixed White balance function (oCam-1CGN-U, oCam-1CGN-U-T, oCam-18CRN-U, oCamS-1CGN-U)
-        - Overlapped camera images for  are separated
-        - FPS list is corrected for oCam-1MGN-U-T
+        - Error termination on clicking [Play] when camera is not connected</br>
+        - Fixed White balance function (oCam-1CGN-U, oCam-1CGN-U-T, oCam-18CRN-U, oCamS-1CGN-U)</br>
+        - Overlapped camera images for  are separated</br>
+        - FPS list is corrected for oCam-1MGN-U-T</br>
+
 R1808 (Aug. 2018)
     - Performance Stabilization
 
