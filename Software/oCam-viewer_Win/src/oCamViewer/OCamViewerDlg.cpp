@@ -912,7 +912,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 
 	if (m_Fwcheck_flag == false) {
 		if (((m_WinVersion >= Windows_Version) && (m_bcdDevice & 0x0080) == 0) || ((m_WinVersion < Windows_Version) && (m_bcdDevice & 0x0080) != 0) && m_vid == 0x04B4) {
-			if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCamS-1CGN-U") {
+			if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1CGN-U-F") {
 				m_Fwcheck_flag = true;
 				Popup_Window_box();
 				exit(1);
