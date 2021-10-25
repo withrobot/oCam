@@ -36,8 +36,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -89,13 +89,13 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intermediate_\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName>oCamViewer 20201231</TargetName>
+    <TargetName>oCamViewer 20211019</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intermediate_\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName>oCamViewer 20201231</TargetName>
+    <TargetName>oCamViewer 20211019</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

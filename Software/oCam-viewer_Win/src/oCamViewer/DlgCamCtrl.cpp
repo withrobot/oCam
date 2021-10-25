@@ -26,6 +26,7 @@ extern char g_IR_check;
 extern int g_1CGN_Flag;
 extern int g_18CRN_Flag;
 extern int g_1CGNS_Flag;
+extern int g_1MGNS_Flag;
 
 // CDlgCamCtrl dialog
 
@@ -37,6 +38,7 @@ CDlgCamCtrl::CDlgCamCtrl(CWnd* pParent /*=NULL*/)
 	ptrCam = NULL;
 
 	Create(CDlgCamCtrl::IDD, pParent);	// create dialog
+	m_autoExposure = 0;
 }
 
 CDlgCamCtrl::~CDlgCamCtrl()
@@ -66,6 +68,7 @@ BEGIN_MESSAGE_MAP(CDlgCamCtrl, CDialog)
 	ON_BN_CLICKED(IDC_BUTTON_CAM_COLOR_CORRECTION, &CDlgCamCtrl::OnBnClickedButtonCamColorCorrection)
 	ON_BN_CLICKED(IDC_CHECK1, &CDlgCamCtrl::OnBnClickedCheck1)
 	ON_BN_CLICKED(IDC_CHECK2, &CDlgCamCtrl::OnBnClickedCheck2)
+	ON_BN_CLICKED(IDC_CHECK_AUTOEXPOSURE, &CDlgCamCtrl::OnBnClickedCheckAutoexposure)
 END_MESSAGE_MAP()
 
 
@@ -95,6 +98,11 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(FALSE);
 	GetDlgItem(IDC_CHECK1)->EnableWindow(FALSE);
 	GetDlgItem(IDC_CHECK2)->EnableWindow(FALSE);
+
+	if (g_1CGNS_Flag == 1 || g_1MGNS_Flag == 1)
+		GetDlgItem(IDC_CHECK_AUTOEXPOSURE)->EnableWindow(TRUE);
+	else
+		GetDlgItem(IDC_CHECK_AUTOEXPOSURE)->EnableWindow(FALSE);
 
 	if (g_2WRS_Flag == 1)
 	{
@@ -321,7 +329,7 @@ void CDlgCamCtrl::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 #define ERASE_FIRMWARE  0x30303030  // 펌웨어 지우기명령
 
 static const int DEFAULT_EXPOSURE = -6;
-static const int DEFAULT_GAIN = 128;
+static const int DEFAULT_GAIN = 64;
 static const int DEFAULT_WB_COMP = 100;
 
 void CDlgCamCtrl::OnBnClickedButtonCamCcDefault()
@@ -452,13 +460,14 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	//*/
 	control_command(SAVE_SCALE);
 	//// 껏다키는방법
+	CamSetCtrl(ptrCam, CTRL_GAIN, m_scGain.GetPos());
 	CamStop(ptrCam);
 	CamStart(ptrCam);
 
 	// save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
-	m_scGain.SetPos(DEFAULT_GAIN);
-	CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
-	SetDlgItemInt(IDC_STATIC_GAIN, DEFAULT_GAIN);
+	//m_scGain.SetPos(DEFAULT_GAIN);
+	//CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
+	//SetDlgItemInt(IDC_STATIC_GAIN, DEFAULT_GAIN);
 }
 
 void CDlgCamCtrl::control_command(unsigned int value)
@@ -531,5 +540,21 @@ void CDlgCamCtrl::OnBnClickedCheck2()
 	else {
 		g_IR_check = 0;
 	}
+}
 
+void CDlgCamCtrl::OnBnClickedCheckAutoexposure()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (m_autoExposure == 0)
+	{
+		m_autoExposure = 1;
+		GetDlgItem(IDC_SLIDER_EXPOSURE)->EnableWindow(FALSE);
+		CamSetCtrl(ptrCam, CTRL_AUTOEXPOSURE, 0);
+	}
+	else
+	{
+		m_autoExposure = 0;
+		GetDlgItem(IDC_SLIDER_EXPOSURE)->EnableWindow(TRUE);
+		CamSetCtrl(ptrCam, CTRL_EXPOSURE, m_scExposure.GetPos());
+	}
 }

@@ -1,0 +1,18 @@
+﻿  Popup_Check_Box.cpp
+D:\oCam\src\oCamViewer\Popup_Check_Box.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\oCam\src\oCamViewer\Popup_Check_Box.cpp(34,1): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
+  Popup_Window_Box.cpp
+D:\oCam\src\oCamViewer\Popup_Window_Box.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\oCam\src\oCamViewer\Popup_Window_Box.cpp(144,1): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
+  Record.cpp
+D:\oCam\src\oCamViewer\Record.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\oCam\src\oCamViewer\Record.cpp(10,1): warning C4005: 'LOG': 매크로 재정의
+D:\oCam\src\oCamViewer\Record.cpp(8): message : 'LOG'의 이전 정의를 참조하십시오.
+D:\oCam\src\oCamViewer\Record.cpp(435,1): fatal error C1010: 미리 컴파일된 헤더를 찾는 동안 예기치 않은 파일의 끝이 나타났습니다. '#include "stdafx.h"'을(를) 소스에 추가하시겠습니까?
+  OCamViewerDlg.cpp
+D:\oCam\src\oCamViewer\OCamViewerDlg.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\usbspec.h(806,12): error C2332: 'struct': 태그 이름이 없습니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\usbspec.h(806,12): error C2059: 구문 오류: '상수'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\usbspec.h(806,16): error C2334: '{' 앞에 예기치 않은 토큰이 있습니다. 명백한 함수 본문을 건너뜁니다.
+D:\oCam\src\oCamViewer\Record.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'libavformat/avformat.h': No such file or directory
+  코드를 생성하고 있습니다...

@@ -34,6 +34,7 @@ public:
 
 	int			m_CamSel_Ctrl;
 	int			m_WinVersion_Ctrl;
+	int			m_autoExposure;
 
 	enum { IDD = IDD_DLGCAMCTRL };
 
@@ -50,4 +51,5 @@ public:
 	CButton check_WDR_ctrl;
 	afx_msg void OnBnClickedCheck2();
 	CButton check_IR_ctrl;
+	afx_msg void OnBnClickedCheckAutoexposure();
 };
