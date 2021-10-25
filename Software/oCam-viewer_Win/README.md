@@ -1,5 +1,12 @@
 # The oCam-viewer for the windows.
 ## updates
+
+R2110 (Oct. 2020)</br>
+- Functions Added:
+    - Resolution and fps(oCam-1MGN-U, oCamS-1MGN-U, oCamS-1CGN-U)</br>
+    - Auto Exposure button and function</br>
+    - oCam library Auto exposure</br>
+
 R2012 (Dec. 2020)</br>
 - Functions Added:
     - Video recording function</br>
