@@ -1,5 +1,11 @@
 # Release Note
 
+## oCam-1CGN-U_R2101(Jan 2021)
+## oCam-1CGN-U-T_R2101(Jan 2021)
+## oCam-18CRN-U_R2101(Jan 2021)
+
+Bug fixed - Windows 10 release 2020 version. (white balance fix) / Windows 10 release version : 19041
+
 ## oCam-1xGN-U-T_R2006(Jun 2020)
 ### USB 3.0
 Performance Stabilization</br>
