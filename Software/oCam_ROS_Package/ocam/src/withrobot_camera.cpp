@@ -31,7 +31,7 @@
 #include <linux/uvcvideo.h>
 #include <libv4l2.h>
 
-#include "withrobot_camera.hpp"
+#include "ocam/withrobot_camera.hpp"
 
 
 using namespace Withrobot;

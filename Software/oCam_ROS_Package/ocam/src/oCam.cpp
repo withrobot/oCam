@@ -11,7 +11,7 @@
 #include <ocam/camConfig.h>
 #include <boost/thread.hpp>
 
-#include "withrobot_camera.hpp"
+#include "ocam/withrobot_camera.hpp"
 
 class Camera
 {
