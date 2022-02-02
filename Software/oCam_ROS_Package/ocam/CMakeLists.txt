@@ -41,3 +41,22 @@ include_directories(
 add_executable(ocam src/oCam.cpp src/withrobot_camera.cpp src/withrobot_utility.cpp)
 target_link_libraries(ocam ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} -lv4l2 -ludev)
 add_dependencies(ocam ${PROJECT_NAME}_gencfg)
+
+## Mark executables and/or libraries for installation
+install(TARGETS ocam
+   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+## install 'include' dir.
+install(
+  DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+## install 'launch' dir.
+install(DIRECTORY
+   launch
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
