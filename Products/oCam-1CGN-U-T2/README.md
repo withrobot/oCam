@@ -24,7 +24,7 @@ Type | Description |
 ------|------|
 **Sensor** | OnSemi AR0144 CMOS Color image sensor |
 **Sensor Size** | 1/4 inch |
-**Output Format** | BayerRGB |
+**Output Format** | Bayer RGB |
 **Interface** | USB 3.0 Super-Speed(USB Type C) |
 **Lens** | 표준 M12 교환형(Focal length 3.5mm) | 
 **Supported OS** | Windows 10(64bit), Linux(64bit) | 
@@ -33,7 +33,7 @@ Type | Description |
 **Rating** | DC 5V / 100mA(normal), 200mA(max) |
 **Shutter** | Global Shutter |
 **Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (기본 렌즈 기준) |
-**Camera Control** | * Manual Exposure Control<br/> * Gain Control(Red, Blue)<br/> * Auto White Balance set(by oCam-Viewer* software)<br/> |
+**Camera Control** | * Manual Exposure Control<br/> * Gain Control<br/> * Manual White Balance(Red, Blue)<br/>* Auto White Balance set(by oCam-Viewer* software)<br/> |
 **Frame Rate** | 1280x800 @60fps, 1280x720 @60fps(cropping), 640x480 @100fps(cropping), 640x400 @100fps(binning), 320x240 @180fps(cropping) | 
 **Weight** | 약 12.9 g | 
 **PCB Size** | 39mm x 39mm | 
