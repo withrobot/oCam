@@ -11,7 +11,6 @@ oCam-1CGN-U-T2는 외부 트리거(External Trigger)를 지원하는 1 메가 �
 * 교체형 M12 표준 렌즈를 지원하여 다양한 기존 상용 렌즈를 활용 가능
 * 글로벌 셔터 방식으로 Image Skew가 없는 선명한 영상 취득 가능
 
-[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
 
 ## Board Detail
 ![ScreenShot](../../images/oCam-1CGN-U-T2_layout.jpg)
@@ -76,8 +75,8 @@ Type | Description |
 <br/>
 ![ScreenShot](../../images/continuous.png)
 
+[![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
 
 ## Softwares
-* TBD
 * [oCam_viewer_Windows](../../Software/oCam-viewer_Win)
 * [oCam_viewer_Linux](../../Software/oCam_viewer_Linux)
