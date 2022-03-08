@@ -29,7 +29,6 @@ Type | Description |
 **Operation Temperature** | 0°C ~ + 70°C |
 **Rating** | DC 5V / 100mA(normal), 200mA(max) |
 **Shutter** | Global Shutter |
-**Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (기본 렌즈 기준) |
 **Camera Control** | * Manual Exposure Control<br/> * Gain Control<br/> * Manual White Balance(Red, Blue)<br/>* Auto White Balance set(by oCam-Viewer* software)<br/> |
 **Frame Rate** | 1280x800 @60fps, 1280x720 @60fps(cropping), 640x480 @100fps(cropping), 640x400 @100fps(binning), 320x240 @180fps(cropping) | 
 **Weight** | 약 12.9 g | 
