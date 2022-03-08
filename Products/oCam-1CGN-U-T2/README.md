@@ -37,9 +37,11 @@ Type | Description |
 * *oCam-Viewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
 
 ## 관련 동영상
+### Lens Shading Correction(LSC) 조정 전 후 비교
 [![ScreenShot](https://img.youtube.com/vi/azLa09gcLzk/0.jpg)](https://youtu.be/azLa09gcLzk)
-         
 
+### Color chart를 이용한 White balance(WB) 조정
+[![ScreenShot](https://img.youtube.com/vi/PtVgNP9g-0o/0.jpg)](https://youtu.be/PtVgNP9g-0o)
 
 
 ## 트리거 신호
