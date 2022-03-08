@@ -37,7 +37,9 @@ Type | Description |
 * *oCam-Viewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
 
 ## 관련 동영상
-[![ScreenShot](https://img.youtube.com/vi/azLa09gcLzk&t=1s/0.jpg)](https://www.youtube.com/watch?v=azLa09gcLzk&t=1s)
+[![ScreenShot](https://img.youtube.com/vi/azLa09gcLzk/0.jpg)](https://youtu.be/azLa09gcLzk)
+         
+
 
 
 ## 트리거 신호
