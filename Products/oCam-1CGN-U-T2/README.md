@@ -1,21 +1,21 @@
 # oCam - 1MP USB 3.0 Color Trigger Global Shutter Camera
 ### Model No. oCam-1CGN-U-T2 - [Homepage](http://withrobot.com/camera/ocam-1cgn-u-t2/)
 
-![ScreenShot](../../images/oCam-1XGN-U-T.png)
+![ScreenShot](../../images/oCam-1CGN-U-T2_model.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
 
 [![ScreenShot](../../images/mtrigger_ocam.png)](https://youtu.be/37N3-lrL4lY)
 
-oCam-1CGN-U-T는 외부 트리거(External Trigger)를 지원하는 1 메가 픽셀급의 글로벌 셔터 칼라 카메라로 다음과 같은 특징을 갖고 있습니다.
+oCam-1CGN-U-T2는 외부 트리거(External Trigger)를 지원하는 1 메가 픽셀급의 글로벌 셔터 칼라 카메라로 다음과 같은 특징을 갖고 있습니다.
 * 외부 트리거(External Trigger) 지원: 영상 취득의 Timing을 임의로 조절할 수 있어 다수의 카메라의 동기 촬영과 외부 조명과 동기화 가능
-* 인터페이스: USB3.0 SuperSpeed, 최대 160 FPS(320 × 240 해상도 기준)
+* 인터페이스: USB3.0 SuperSpeed, 최대 180 FPS(320 × 240 해상도 기준)
 * UVC 1.1 표준 지원으로 리눅스 및 윈도우 OS에서 별도의 드라이버 설치가 불필요
 * 교체형 M12 표준 렌즈를 지원하여 다양한 기존 상용 렌즈를 활용 가능
 * 글로벌 셔터 방식으로 Image Skew가 없는 선명한 영상 취득 가능
  
 
 ## Board Detail
-![ScreenShot](../../images/oCam-1XGN-U-T_layout.png)
+![ScreenShot](../../images/oCam-1CGN-U-T2_layout.jpg)
 
 
 ## Specifications
