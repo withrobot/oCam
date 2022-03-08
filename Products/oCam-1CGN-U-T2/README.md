@@ -1,5 +1,5 @@
 # oCam - 1MP USB 3.0 Color Trigger Global Shutter Camera
-### Model No. oCam-1CGN-U-T - sales website
+### Model No. oCam-1CGN-U-T2 - [Homepage](http://withrobot.com/camera/ocam-1cgn-u-t2/)
 
 ![ScreenShot](../../images/oCam-1XGN-U-T.png)
 ![ScreenShot](../../images/oCam-2WRS-U_tripod.png)
