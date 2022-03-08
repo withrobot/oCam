@@ -36,6 +36,10 @@ Type | Description |
 **PCB Size** | 39mm x 39mm | 
 * *oCam-Viewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
 
+## 관련 동영상
+[![ScreenShot](https://img.youtube.com/azLa09gcLzk&t=1s/0.jpg)](https://www.youtube.com/watch?v=azLa09gcLzk&t=1s)
+
+
 ## 트리거 신호
 ### 트리거 신호 포트
 외부 트리거 신호는 카메라 후면에 노출된 3핀 커넥터에 연결하여 인가할 수 있습니다.  커넥터의 각 핀은 아래와 같습니다.<br/>
