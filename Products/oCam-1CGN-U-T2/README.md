@@ -22,23 +22,22 @@ oCam-1CGN-U-T2는 외부 트리거(External Trigger)를 지원하는 1 메가 �
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi AR0135 CMOS Color image sensor |
-**Sensor Size** | 1/3 inch |
+**Sensor** | OnSemi AR0144 CMOS Color image sensor |
+**Sensor Size** | 1/4 inch |
 **Output Format** | BayerRGB |
-**Interface** | USB 3.0 Super-Speed |
-**Lens** | 표준 M12 교환형(Focal length 3.6mm) | 
-**Supported OS** | Windows7 / 10, Linux, Plug-and play by UVC(USB Video Class) protocol | 
+**Interface** | USB 3.0 Super-Speed(USB Type C) |
+**Lens** | 표준 M12 교환형(Focal length 3.5mm) | 
+**Supported OS** | Windows 10(64bit), Linux(64bit) | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0°C ~ + 70°C |
-**Rating** | DC 5V / 180mA |
-**Shutter** | Electric Global Shutter |
+**Rating** | DC 5V / 100mA(normal), 200mA(max) |
+**Shutter** | Global Shutter |
 **Field Of View(FOV)** | 50˚(V) x 92.8˚(H) x 110˚(D) (기본 렌즈 기준) |
-**Camera Control** | * Manual Exposure Control<br/> * Gain Control<br/> * Maunual White Balance Red Control<br/> * Maunual White Balance Red Control<br/> * Auto White Balance Setup (by oCamViewer* Software) |
-**Frame Rate** | 1280x960 @54fps, 1280x720 @60fps, 640x480 @100fps, 320x240 @180fps | 
-**Weight** | 약 27.2 그램(케이스 포함) | 
+**Camera Control** | * Manual Exposure Control<br/> * Gain Control(Red, Blue)<br/> * Auto White Balance set(by oCam-Viewer* software)<br/> |
+**Frame Rate** | 1280x800 @60fps, 1280x720 @60fps(cropping), 640x480 @100fps(cropping), 640x400 @100fps(binning), 320x240 @180fps(cropping) | 
+**Weight** | 약 12.9 g | 
 **PCB Size** | 39mm x 39mm | 
-**외형 크기** | 49mm x 49mm x 20mm |
-* *oCamViewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
+* *oCam-Viewer: 별도로 위드로봇㈜에서 제공하는 Windows용 카메라 영상 뷰어 프로그램
 
 ## 트리거 신호
 ### 트리거 신호 포트
