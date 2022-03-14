@@ -253,6 +253,7 @@ int g_1MGN_UT2_1811[][3] =
 };
 
 int g_1CGN_Flag;
+int g_1MGN_Flag;
 // by SDKIM 1MCG, 1CGN FPS 리스트 변경 20180221
 // 1CGN Flag 추가 20190325
 // sdkim 2WRS 추가 20180220
@@ -428,6 +429,143 @@ int g_1MGNS_U2[][3] =
 	{640,360,2000},
 	{640,360,1500},
 	{640,360,1000},
+};
+
+//22-01-13
+int g_1CGN_UT2_Flag;
+//fungofljm 1CGN-U-T2 USB2.0 해상도 추가
+// UT2의미 = USB2, v2의미 = UT2
+int g_1CGN_UT2_v2[][3] =
+{
+	{ 1280,800, 3000 },
+	{ 1280,800, 2500 },
+	{ 1280,800, 1500 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480,  10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 640,400,  10000 },
+	{ 640,400,  9000 },
+	{ 640,400,  6000 },
+	{ 640,400,  5000 },
+	{ 640,400,  3000 },
+	{ 640,400,  2500 },
+	{ 640,400,  1500 },
+	{ 320,240,  18000 },
+	{ 320,240,  15000 },
+	{ 320,240,  12000 },
+	{ 320,240,  10000 },
+	{ 320,240,  6000 },
+	{ 320,240,  5000 }
+};
+
+//fungofljm 1CGN-U-T2 USB3.0 해상도 추가
+// UT3의미 = USB3, v2의미 = UT2
+int g_1CGN_UT3_v2[][3] =
+{
+	{ 1280,800, 6000 },
+	{ 1280,800, 5000 },
+	{ 1280,800, 3000 },
+	{ 1280,800, 2500 },
+	{ 1280,800, 1500 },
+	{ 1280,720, 6000 },
+	{ 1280,720, 5000 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480,  10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 640,400,  10000 },
+	{ 640,400,  9000 },
+	{ 640,400,  6000 },
+	{ 640,400,  5000 },
+	{ 640,400,  3000 },
+	{ 640,400,  2500 },
+	{ 640,400,  1500 },
+	{ 320,240,  18000 },
+	{ 320,240,  15000 },
+	{ 320,240,  12000 },
+	{ 320,240,  10000 },
+	{ 320,240,  6000 },
+	{ 320,240,  5000 }
+};
+//22-01-28
+//fungofljm 1MGN-U-T2 USB2.0 해상도 추가
+// UT2의미 = USB2, v2의미 = UT2
+int g_1MGN_UT2_v2[][3] =
+{
+	{ 1280,800, 3000 },
+	{ 1280,800, 2500 },
+	{ 1280,800, 1500 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480,  10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 640,400,  10000 },
+	{ 640,400,  9000 },
+	{ 640,400,  6000 },
+	{ 640,400,  5000 },
+	{ 640,400,  3000 },
+	{ 640,400,  2500 },
+	{ 640,400,  1500 },
+	{ 320,240,  18000 },
+	{ 320,240,  15000 },
+	{ 320,240,  12000 },
+	{ 320,240,  10000 },
+	{ 320,240,  6000 },
+	{ 320,240,  5000 }
+};
+//fungofljm 1MGN-U-T2 USB3.0 해상도 추가
+// UT3의미 = USB3, v2의미 = UT2
+int g_1MGN_UT3_v2[][3] =
+{
+	{ 1280,800, 6000 },
+	{ 1280,800, 5000 },
+	{ 1280,800, 3000 },
+	{ 1280,800, 2500 },
+	{ 1280,800, 1500 },
+	{ 1280,720, 6000 },
+	{ 1280,720, 5000 },
+	{ 1280,720, 3000 },
+	{ 1280,720, 2500 },
+	{ 1280,720, 1500 },
+	{ 640,480,  10000 },
+	{ 640,480,  9000 },
+	{ 640,480,  6000 },
+	{ 640,480,  5000 },
+	{ 640,480,  3000 },
+	{ 640,480,  2500 },
+	{ 640,480,  1500 },
+	{ 640,400,  10000 },
+	{ 640,400,  9000 },
+	{ 640,400,  6000 },
+	{ 640,400,  5000 },
+	{ 640,400,  3000 },
+	{ 640,400,  2500 },
+	{ 640,400,  1500 },
+	{ 320,240,  18000 },
+	{ 320,240,  15000 },
+	{ 320,240,  12000 },
+	{ 320,240,  10000 },
+	{ 320,240,  6000 },
+	{ 320,240,  5000 }
 };
 
 // CAboutDlg dialog used for App About
@@ -712,7 +850,7 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 			m_Display.Display(m_IrImage);
 		}
 	}
-	else if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T") {
+	else if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-1CGN-U-T2") {
 		Bayer2RGB((char*)src, (char*)dst, m_Width, m_Height, BayerGR2RGB);
 		if (m_record_flag == true) {
 			RGB2YUV420P_Converter(dst, m_Width, m_Height);
@@ -726,7 +864,7 @@ LRESULT COCamViewerDlg::CallbackProc(WPARAM wParam, LPARAM lParam)
 		}
 		m_Display.Display(m_Image);
 	}
-	else if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T") {
+	else if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T" || m_CamModel == "oCam-1MGN-U-T2") {
 		if (m_record_flag == true) {
 			Gray2YUV420p_Converter(src, m_Width, m_Height, 0, 1, 2, 3);
 		}
@@ -775,7 +913,7 @@ void COCamViewerDlg::OnBnClickedButtonPlay()
 		//fungofljm recording flag 추가 20200922
 		g_cam_start_flag = 1;
 
-		if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-1MGN-U-T" || m_CamModel == "oCam-18CRN-U")
+		if (m_CamModel == "oCam-1MGN-U" || m_CamModel == "oCam-1MGN-U-T" || m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCam-1CGN-U-T2" || m_CamModel == "oCam-1MGN-U-T2")
 		{
 			m_ImageSrc.Alloc(m_Width, m_Height, MV_Y8);
 		}
@@ -820,6 +958,15 @@ void COCamViewerDlg::OnBnClickedButtonPlay()
 
 		m_CurrFPS = 0;
 		m_StartTime = timeGetTime();
+
+		if (m_DlgCamCtrl.m_autoExposure == 1)
+		{
+			CamSetCtrl(m_DlgCamCtrl.ptrCam, CTRL_AUTOEXPOSURE, 0);
+		}
+		else
+		{
+			CamSetCtrl(m_DlgCamCtrl.ptrCam, CTRL_EXPOSURE, m_DlgCamCtrl.m_scExposure.GetPos());
+		}
 	}
 }
 
@@ -916,7 +1063,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 
 	if (m_Fwcheck_flag == false) {
 		if (((m_WinVersion >= Windows_Version) && (m_bcdDevice & 0x0080) == 0) || ((m_WinVersion < Windows_Version) && (m_bcdDevice & 0x0080) != 0) && m_vid == 0x04B4) {
-			if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1CGN-U-F") {
+			if (m_CamModel == "oCam-1CGN-U" || m_CamModel == "oCam-1CGN-U-T" || m_CamModel == "oCam-18CRN-U" || m_CamModel == "oCamS-1CGN-U" || m_CamModel == "oCamS-1CGN-U-F" /*|| m_CamModel == "oCam-1CGN-U-T2"*/) {
 				m_Fwcheck_flag = true;
 				Popup_Window_box();
 				exit(1);
@@ -939,9 +1086,11 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 	g_2WRS_Flag = 0;
 	g_4IRO_Flag = 0;
 	g_1CGN_Flag = 0;
+	g_1MGN_Flag = 0;
 	g_18CRN_Flag = 0;
 	g_1CGNS_Flag = 0;
 	g_1MGNS_Flag = 0;
+	g_1CGN_UT2_Flag = 0;
 	//konan91 1C(M)GN-U-T 용 추가
 
 	if (m_CamModel == "oCam-1CGN-U-T") {
@@ -960,6 +1109,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 
 	//fungofljm 1MGN-U-T용 이전 F/W, 2006 F/W 분류 210316
 	else if (m_CamModel == "oCam-1MGN-U-T") {
+		g_1MGN_Flag = 1;
 		if(m_bcdDevice >= 0x2006) { 
 			if (m_UsbType == "USB2")
 			{
@@ -999,6 +1149,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 		}
 	}
 	else if (m_CamModel == "oCam-1MGN-U") {
+		g_1MGN_Flag = 1;
 		if (m_UsbType == "USB2")
 		{
 			memcpy(g_Resolution, g_1MGN_U2, sizeof(g_1MGN_U2));
@@ -1082,6 +1233,32 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 		{
 			memcpy(g_Resolution, g_1MGNS_U3, sizeof(g_1MGNS_U3));
 			num_list = sizeof(g_1MGNS_U3) / 12;
+		}
+	}
+	else if (m_CamModel == "oCam-1CGN-U-T2") {
+		g_1CGN_UT2_Flag = 1;
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_1CGN_UT2_v2, sizeof(g_1CGN_UT2_v2));
+			num_list = sizeof(g_1CGN_UT2_v2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_1CGN_UT3_v2, sizeof(g_1CGN_UT3_v2));
+			num_list = sizeof(g_1CGN_UT3_v2) / 12;
+		}
+	}
+	else if (m_CamModel == "oCam-1MGN-U-T2") {
+		g_1MGN_Flag = 1;
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_1MGN_UT2_v2, sizeof(g_1MGN_UT2_v2));
+			num_list = sizeof(g_1MGN_UT2_v2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_1MGN_UT3_v2, sizeof(g_1MGN_UT3_v2));
+			num_list = sizeof(g_1MGN_UT3_v2) / 12;
 		}
 	}
 	// sdkim 2WRS 추가 20180220

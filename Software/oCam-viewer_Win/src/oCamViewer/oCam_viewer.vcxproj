@@ -89,13 +89,13 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intermediate_\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName>oCamViewer 20211019</TargetName>
+    <TargetName>oCamViewer 20201231</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intermediate_\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName>oCamViewer 20211019</TargetName>
+    <TargetName>oCamViewer 20220308</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

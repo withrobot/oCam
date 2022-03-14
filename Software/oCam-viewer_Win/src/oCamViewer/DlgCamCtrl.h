@@ -35,6 +35,7 @@ public:
 	int			m_CamSel_Ctrl;
 	int			m_WinVersion_Ctrl;
 	int			m_autoExposure;
+	int			m_camColorCorrectionFlag;
 
 	enum { IDD = IDD_DLGCAMCTRL };
 
@@ -45,11 +46,12 @@ protected:
 public:
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnBnClickedButtonCamCcDefault();
-	afx_msg void OnBnClickedButtonCamCcReset();
+	//afx_msg void OnBnClickedButtonCamCcReset();
 	afx_msg void OnBnClickedButtonCamColorCorrection();
 	afx_msg void OnBnClickedCheck1();
 	CButton check_WDR_ctrl;
 	afx_msg void OnBnClickedCheck2();
 	CButton check_IR_ctrl;
 	afx_msg void OnBnClickedCheckAutoexposure();
+	afx_msg void OnBnClickedButtonCamCcReset();
 };

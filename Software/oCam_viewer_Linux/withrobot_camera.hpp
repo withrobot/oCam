@@ -206,7 +206,9 @@ namespace Withrobot {
          * 장치 이름 제공 함수
          * @return device name
          */
-        inline std::string get_dev_name() { return std::string((const char*) v4l2_s.capability.card); }
+        std::string product_name;
+//        inline std::string get_dev_name() { return std::string((const char*) v4l2_s.capability.card); }
+        inline std::string get_dev_name() { return product_name; }
 
     private:
         struct _buffer {

@@ -70,6 +70,9 @@ oCam::oCam(QWidget *parent) :
     format.pixformat = DEFAULT_PIXFORMAT;
 
     enum_dev_list();
+    camColorCorrectionFlag = false;
+    DEFAULT_WB_COMP_BLUE = 100;
+    DEFAULT_WB_COMP_RED = 100;
 }
 
 oCam::~oCam()
@@ -298,6 +301,8 @@ bool oCam::start()
         return false;
     }
 
+    ocam->product_name = dev_list[ui->cbbDeviceList->currentIndex()].product;
+    
     title = ocam->get_dev_name() + "  " +
             Withrobot::to_string<unsigned int>(format.width) + " x " + Withrobot::to_string<unsigned int>(format.height) + " (" +
             Withrobot::to_string<unsigned char>((format.pixformat >> 0) & 0xFF) +
@@ -355,7 +360,7 @@ bool oCam::start()
             /* Color Correction Push Button */
             correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
             ui->vLayoutMisc->addWidget(correctionPushBtn);
-            correctionPushBtn->setEnabled(false);
+            correctionPushBtn->setEnabled(true);
 
             connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
             misc_control_form_pushBtn.push_back(correctionPushBtn);
@@ -390,7 +395,7 @@ bool oCam::start()
             /* Color Correction Push Button */
             correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
             ui->vLayoutMisc->addWidget(correctionPushBtn);
-            correctionPushBtn->setEnabled(false);
+            correctionPushBtn->setEnabled(true);
 
             connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
             misc_control_form_pushBtn.push_back(correctionPushBtn);
@@ -684,11 +689,87 @@ static const int DEFAULT_EXPOSURE = 128;
 static const int DEFAULT_GAIN = 64;
 static const int DEFAULT_WB_COMP = 100;
 
+void oCam::set_default_color_correction()
+{
+    if(ocam->product_name == "oCam-1CGN-U-T2" && camColorCorrectionFlag == false)
+    {
+        DEFAULT_WB_COMP_BLUE = 152;
+        DEFAULT_WB_COMP_RED = 138;
+    }
+    else if (ocam->product_name == "oCam-1CGN-U-T2" && camColorCorrectionFlag == true)
+    {
+        DEFAULT_WB_COMP_BLUE = DEFAULT_WB_COMP;
+        DEFAULT_WB_COMP_RED = DEFAULT_WB_COMP;
+    }
+
+    /* White Balance Red/Blue setting & slider update*/
+    for (unsigned int i=0; i < integer_control_form_list.size(); i++) {
+        if (integer_control_form_list[i]->is_enabled())
+        {
+            if(!strcmp("Exposure (Absolute)", integer_control_form_list[i]->get_name()))
+                integer_control_form_list[i]->set_value(DEFAULT_EXPOSURE);
+
+            if(!strcmp("Gain", integer_control_form_list[i]->get_name()))
+                integer_control_form_list[i]->set_value(DEFAULT_GAIN);
+
+            if(!strcmp("White Balance Blue Component", integer_control_form_list[i]->get_name()))
+                integer_control_form_list[i]->set_value(DEFAULT_WB_COMP_BLUE);
+
+            if(!strcmp("White Balance Red Component", integer_control_form_list[i]->get_name()))
+                integer_control_form_list[i]->set_value(DEFAULT_WB_COMP_RED);
+        }
+    }
+
+    /* White Balance Red/Blue setting */
+    ocam->set_control("White Balance Blue Component", DEFAULT_WB_COMP_BLUE);
+    ocam->set_control("White Balance Red Component", DEFAULT_WB_COMP_RED);
+}
+
+void oCam::reset_color_correction()
+{
+    DBG_PRINTF("reset_color_correction called!");
+
+    set_default_color_correction();
+
+    /*
+     * erase scale trigger
+     */
+    control_command(ERASE_SCALE);
+
+    if(ocam->product_name != "oCam-1CGN-U-T2")
+    {
+        /*
+         * load scale trigger
+         */
+        control_command(LOAD_SCALE);
+    }
+
+    // 껏다키는방법
+    ocam->stop();
+    ocam->start();
+
+    // save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
+    ocam->set_control("Gain", DEFAULT_GAIN);
+}
+
 void oCam::calculate_color_correction()
 {
-    correctionPushBtn->setEnabled(false);
-
+    camColorCorrectionFlag = true;
     DBG_PRINTF("calculate_color_correction called!");
+    reset_color_correction();
+    camColorCorrectionFlag = false;
+
+    int frame_size_cnt = 0;
+    while(1)
+    {
+        int frame_size = ocam->get_frame(frame_buffer, format.image_size, 1);
+        if (frame_size > 0)
+        {
+            frame_size_cnt++;
+        }
+        if(frame_size_cnt > 5)
+            break;
+    }
 
     /*
      *  calculate the white balance
@@ -732,58 +813,6 @@ void oCam::calculate_color_correction()
 
     // save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
     ocam->set_control("Gain", DEFAULT_GAIN);
-}
-
-
-void oCam::reset_color_correction()
-{
-    //    correctionPushBtn->setEnabled(false);
-
-    DBG_PRINTF("reset_color_correction called!");
-
-
-    set_default_color_correction();
-    /*
-     * erase scale trigger
-     */
-    control_command(ERASE_SCALE);
-
-    /*
-     * load scale trigger
-     */
-    control_command(LOAD_SCALE);
-
-    // 껏다키는방법
-    ocam->stop();
-    ocam->start();
-
-    // save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
-    ocam->set_control("Gain", DEFAULT_GAIN);
-
-    correctionPushBtn->setEnabled(true);
-
-}
-
-
-void oCam::set_default_color_correction()
-{
-    /* White Balance Red/Blue setting & slider update*/
-    for (unsigned int i=0; i < integer_control_form_list.size(); i++) {
-        if (integer_control_form_list[i]->is_enabled()) {
-            if(!strcmp("Exposure (Absolute)", integer_control_form_list[i]->get_name()))
-                integer_control_form_list[i]->set_value(DEFAULT_EXPOSURE);
-
-            if(!strcmp("Gain", integer_control_form_list[i]->get_name()))
-                integer_control_form_list[i]->set_value(DEFAULT_GAIN);
-
-            if(!strcmp("White Balance Blue Component", integer_control_form_list[i]->get_name()))
-                integer_control_form_list[i]->set_value(DEFAULT_WB_COMP);
-
-            if(!strcmp("White Balance Red Component", integer_control_form_list[i]->get_name()))
-                integer_control_form_list[i]->set_value(DEFAULT_WB_COMP);
-        }
-    }
-
 }
 
 void oCam::control_command(uint32_t value)

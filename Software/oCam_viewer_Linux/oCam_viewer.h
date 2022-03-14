@@ -50,6 +50,8 @@
  * @{
  */
 
+#include <QDebug>
+
 #define DEFAULT_IMAGE_WIDTH         640
 #define DEFAULT_IMAGE_HEIGHT        480
 #define DEFAULT_PIXFORMAT           Withrobot::fourcc_to_pixformat('Y','U','V','Y')
@@ -113,6 +115,10 @@ private:
     int defaultWbCompRed;
 
     bool no_device;
+    bool camColorCorrectionFlag;
+
+    int DEFAULT_WB_COMP_BLUE;
+    int DEFAULT_WB_COMP_RED;
 
 public:
     /** 장치 이름 */

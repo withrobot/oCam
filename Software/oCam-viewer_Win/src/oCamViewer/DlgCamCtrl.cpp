@@ -24,9 +24,11 @@ extern char g_IR_check;
 
 //konan91 1CGN, 18CRN 구분 flag 추가 20190315
 extern int g_1CGN_Flag;
+extern int g_1MGN_Flag;
 extern int g_18CRN_Flag;
 extern int g_1CGNS_Flag;
 extern int g_1MGNS_Flag;
+extern int g_1CGN_UT2_Flag;
 
 // CDlgCamCtrl dialog
 
@@ -39,6 +41,7 @@ CDlgCamCtrl::CDlgCamCtrl(CWnd* pParent /*=NULL*/)
 
 	Create(CDlgCamCtrl::IDD, pParent);	// create dialog
 	m_autoExposure = 0;
+	m_camColorCorrectionFlag = 0;
 }
 
 CDlgCamCtrl::~CDlgCamCtrl()
@@ -84,7 +87,7 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 	long pos = 0;
 	uint8_t Blue_Gain = 0;
 	uint8_t Red_Gain = 0;
-
+	
 	GetDlgItem(IDC_SLIDER_BRIGHTNESS)->EnableWindow(FALSE);
 	GetDlgItem(IDC_SLIDER_CONTRAST)->EnableWindow(FALSE);
 	GetDlgItem(IDC_SLIDER_HUE)->EnableWindow(FALSE);
@@ -99,10 +102,23 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 	GetDlgItem(IDC_CHECK1)->EnableWindow(FALSE);
 	GetDlgItem(IDC_CHECK2)->EnableWindow(FALSE);
 
-	if (g_1CGNS_Flag == 1 || g_1MGNS_Flag == 1)
+	if (g_1CGNS_Flag == 1 || g_1MGNS_Flag == 1 || g_1CGN_Flag == 1 || g_1MGN_Flag == 1 || g_1CGN_UT2_Flag == 1)
+	{
 		GetDlgItem(IDC_CHECK_AUTOEXPOSURE)->EnableWindow(TRUE);
+	}
 	else
+	{
 		GetDlgItem(IDC_CHECK_AUTOEXPOSURE)->EnableWindow(FALSE);
+	}
+	
+	if (g_1CGNS_Flag == 1 || g_1CGN_Flag == 1 || g_1CGN_UT2_Flag == 1 || g_18CRN_Flag == 1)
+	{
+		GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(TRUE);
+	}
+	else
+	{
+		GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(FALSE);
+	}
 
 	if (g_2WRS_Flag == 1)
 	{
@@ -175,7 +191,7 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 
 	//fungofljm WhiteBalance 수정 및 Windows os 버전 확인 추가 20201116
 	if (m_WinVersion_Ctrl >= Windows_Version) {
-		if (g_1CGNS_Flag == 1 || g_18CRN_Flag == 1 || g_1CGN_Flag == 1)
+		if (g_1CGNS_Flag == 1 || g_18CRN_Flag == 1 || g_1CGN_Flag == 1 || g_1CGN_UT2_Flag == 1)
 		{
 			//Blue_Gain을 카메라에서 초기값 수신
 			Blue_Gain = CamGetWhiteBalanceInfo(m_CamSel_Ctrl, INFO_BLUE_GAIN);
@@ -215,7 +231,7 @@ void CDlgCamCtrl::UpdateCamCtrl(CAMPTR pCam, int imgWidth, int imgHeight)
 			SetDlgItemInt(IDC_STATIC_WB_RED, pos);
 
 			/* 여기에서 1CGN 임을 판단하여 컬러 보정 요소 버튼 활성화 */
-			if (g_1CGN_Flag == 1 || g_18CRN_Flag == 1) {
+			if (g_1CGN_Flag == 1 || g_18CRN_Flag == 1 || g_1CGN_UT2_Flag == 1) {
 				GetDlgItem(IDC_BUTTON_CAM_CC_DEFAULT)->EnableWindow(TRUE);
 				GetDlgItem(IDC_BUTTON_CAM_CC_RESET)->EnableWindow(TRUE);
 			}
@@ -330,10 +346,24 @@ void CDlgCamCtrl::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 
 static const int DEFAULT_EXPOSURE = -6;
 static const int DEFAULT_GAIN = 64;
-static const int DEFAULT_WB_COMP = 100;
+//static const int DEFAULT_WB_COMP_BLUE = 100;
+//static const int DEFAULT_WB_COMP_RED = 100;
+int DEFAULT_WB_COMP_BLUE = 100;
+int DEFAULT_WB_COMP_RED = 100;
 
 void CDlgCamCtrl::OnBnClickedButtonCamCcDefault()
 {
+	if (m_camColorCorrectionFlag == 0 && g_1CGN_UT2_Flag == 1)
+	{
+		DEFAULT_WB_COMP_BLUE = 152;
+		DEFAULT_WB_COMP_RED = 138;
+	}
+	else if (m_camColorCorrectionFlag == 1 && g_1CGN_UT2_Flag == 1)
+	{
+		DEFAULT_WB_COMP_BLUE = 100;
+		DEFAULT_WB_COMP_RED = 100;
+	}
+
 	/* White Balance Red/Blue setting & slider update*/
 	m_scExposure.SetPos(DEFAULT_EXPOSURE);
 	CamSetCtrl(ptrCam, CTRL_EXPOSURE, DEFAULT_EXPOSURE);
@@ -345,40 +375,39 @@ void CDlgCamCtrl::OnBnClickedButtonCamCcDefault()
 	CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
 	SetDlgItemInt(IDC_STATIC_GAIN, DEFAULT_GAIN);
 
-	m_scWbBlue.SetPos(DEFAULT_WB_COMP);
-	CamSetWhiteBalanceInfo(m_CamSel_Ctrl, CTRL_BLUE_GAIN + DEFAULT_WB_COMP);
-	SetDlgItemInt(IDC_STATIC_WB_BLUE, DEFAULT_WB_COMP);
+	m_scWbBlue.SetPos(DEFAULT_WB_COMP_BLUE);
+	CamSetWhiteBalanceInfo(m_CamSel_Ctrl, CTRL_BLUE_GAIN + DEFAULT_WB_COMP_BLUE);
+	SetDlgItemInt(IDC_STATIC_WB_BLUE, DEFAULT_WB_COMP_BLUE);
 
-	m_scWbRed.SetPos(DEFAULT_WB_COMP);
-	CamSetWhiteBalanceInfo(m_CamSel_Ctrl, CTRL_RED_GAIN + DEFAULT_WB_COMP);
-	SetDlgItemInt(IDC_STATIC_WB_RED, DEFAULT_WB_COMP);
+	m_scWbRed.SetPos(DEFAULT_WB_COMP_RED);
+	CamSetWhiteBalanceInfo(m_CamSel_Ctrl, CTRL_RED_GAIN + DEFAULT_WB_COMP_RED);
+	SetDlgItemInt(IDC_STATIC_WB_RED, DEFAULT_WB_COMP_RED);
 }
-
 
 void CDlgCamCtrl::OnBnClickedButtonCamCcReset()
 {
-
 	DBG_PRINTF(L"reset_color_correction called!");
-
+	
 	OnBnClickedButtonCamCcDefault();
 	/*
 	* erase scale trigger
 	*/
 	control_command(ERASE_SCALE);
-
+	
 	/*
 	* load scale trigger
 	*/
-	control_command(LOAD_SCALE);
-
+	if (g_1CGN_UT2_Flag != 1)
+	{
+		control_command(LOAD_SCALE);
+	}
+	
 	// 껏다키는방법
 	CamStop(ptrCam);
 	CamStart(ptrCam);
 	CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
-
-	// save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
 	
-	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(TRUE);
+	// save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
 }
 
 //#ifndef _DEBUG // by SDKIM 20180220
@@ -391,11 +420,11 @@ void CDlgCamCtrl::OnBnClickedButtonCamCcReset()
 void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 {
 	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(FALSE);
-
+	m_camColorCorrectionFlag = 1;
 	DBG_PRINTF(L"calculate_color_correction called!");
+	OnBnClickedButtonCamCcReset();
 
 	//wImage stereodst(width, height, MV_Y8);
-
 	double normList[3];
 
 	/*
@@ -403,14 +432,14 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	 */
 	 //konan91 1CGN, 18CRN color correction 구분 20190325 
 	 //fungofljm 1CGNS color correction 활성화 및 1CGN, 18CRN 과 color correction 구분 20201102
-	if (g_1CGN_Flag == 1 || g_18CRN_Flag == 1) {
+	if (g_1CGN_Flag == 1 || g_18CRN_Flag == 1 || g_1CGN_UT2_Flag == 1) {
 		wImage src(width, height, MV_Y8);
 		wImage stereo_dst(width, height, MV_Y8);
 		wImage dst(width, height, MV_RGB24);
 
 		CamGetImage(ptrCam, (BYTE*)src.GetPtr1D());
 
-		if (g_1CGN_Flag == 1) {
+		if (g_1CGN_Flag == 1 || g_1CGN_UT2_Flag == 1) {
 			Bayer2RGB((char*)src.GetPtr1D(), (char*)dst.GetPtr1D(), width, height, BayerGR2RGB);
 		}
 
@@ -420,7 +449,6 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 
 		calNormOfImage(normList, (unsigned char*)dst.GetPtr1D(), width, height);
 	}
-
 	else if (g_1CGNS_Flag == 1) {
 		wImage src(width * 2, height, MV_Y8);
 		wImage stereo_dst(width * 2, height, MV_Y8);
@@ -454,7 +482,7 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	if (m_WinVersion_Ctrl >= Windows_Version)
 		CamSetWhiteBalanceInfo(m_CamSel_Ctrl, CTRL_RED_GAIN + settingValueRed);
 	SetDlgItemInt(IDC_STATIC_WB_RED, settingValueRed);
-
+	
 	///*
 	//* save trigger
 	//*/
@@ -464,6 +492,8 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	CamStop(ptrCam);
 	CamStart(ptrCam);
 
+	m_camColorCorrectionFlag = 0;
+	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(TRUE);
 	// save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
 	//m_scGain.SetPos(DEFAULT_GAIN);
 	//CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
