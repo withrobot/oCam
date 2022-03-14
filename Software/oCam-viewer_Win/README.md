@@ -1,6 +1,14 @@
 # The oCam-viewer for the windows.
 ## updates
 
+R2203 (Mar. 2022)</br>
+- Functions Added:
+    - oCam-1MGN-U, oCam-1MGN-U-T, oCam-1MGN-U, oCam-1MGN-U-T, oCam-1CGN-U-T2, oCam-1MGN-U-T2 AutoExposure function
+    - oCam-1MGN-U-T2, oCam-1CGN-U-T2 Camera model and resolution
+- Bugs Fixed:
+    - oCam-1CGN-U-T2 ColorCorrection function corrected
+
+
 R2110 (Oct. 2021)</br>
 - Functions Added:
     - Resolution and fps(oCam-1MGN-U, oCamS-1MGN-U, oCamS-1CGN-U)</br>
