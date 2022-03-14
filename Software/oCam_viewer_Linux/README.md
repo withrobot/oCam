@@ -4,9 +4,9 @@ oCam control program
 ## Release Note
 
 
-* R2203 (Mar. 2022)
-- oCam-1CGN-U-T2 ColorCorrection function corrected
-- ColorCorrection button Enable
+R2203 (Mar. 2022)
+  - oCam-1CGN-U-T2 ColorCorrection function corrected
+  - ColorCorrection button Enable
 
 * 20191007
 Support for the oCamS-1XGN-U.
