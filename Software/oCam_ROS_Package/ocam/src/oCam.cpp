@@ -21,21 +21,36 @@ class Camera
 private:
     int width_;
     int height_;
+    int dev_num;
+    bool flag0144 = false;
+    std::vector<Withrobot::usb_device_info> dev_list;
     std::string devPath_;
 
 public:
 
     Camera(int resolution, double frame_rate): camera(NULL) {
-
-        enum_dev_list();
+        
+        enum_dev_list(dev_list);
 
         camera = new Withrobot::Camera(devPath_.c_str());
 
-        if (resolution == 0) { width_ = 1280; height_ = 960;}
-        if (resolution == 1) { width_ = 1280; height_ = 720;}
-        if (resolution == 2) { width_ = 640; height_  = 480;}
-        if (resolution == 3) { width_ = 320; height_  = 240;}
-
+        for (int i=0; i < dev_num; i++) {
+            if (flag0144 = true)
+            {
+                if (resolution == 0) { width_ = 1280; height_ = 800;}
+                if (resolution == 1) { width_ = 1280; height_ = 720;}
+                if (resolution == 2) { width_ = 640; height_  = 480;}
+                if (resolution == 3) { width_ = 640; height_  = 400;}
+                if (resolution == 4) { width_ = 320; height_  = 240;}
+            }
+            else{
+                if (resolution == 0) { width_ = 1280; height_ = 960;}
+                if (resolution == 1) { width_ = 1280; height_ = 720;}
+                if (resolution == 2) { width_ = 640; height_  = 480;}
+                if (resolution == 3) { width_ = 320; height_  = 240;}
+            }
+            
+        }
         camera->set_format(width_, height_, Withrobot::fourcc_to_pixformat('G','R','B','G'), 1, (unsigned int)frame_rate);
 
         /*
@@ -55,11 +70,11 @@ public:
 
 	}
 
-    void enum_dev_list()
+    void enum_dev_list(std::vector<Withrobot::usb_device_info> dev_list)
     {
         /* enumerate device(UVC compatible devices) list */
-        std::vector<Withrobot::usb_device_info> dev_list;
-        int dev_num = Withrobot::get_usb_device_info_list(dev_list);
+        // std::vector<Withrobot::usb_device_info> dev_list;
+        dev_num = Withrobot::get_usb_device_info_list(dev_list);
 
         if (dev_num < 1) {
             dev_list.clear();
@@ -68,6 +83,7 @@ public:
         }
 
         for (unsigned int i=0; i < dev_list.size(); i++) {
+	    
             if (dev_list[i].product == "oCam-1CGN-U")
             {
                 devPath_ = dev_list[i].dev_node;
@@ -76,6 +92,18 @@ public:
             else if (dev_list[i].product == "oCam-1CGN-U-T")
             {
                 devPath_ = dev_list[i].dev_node;
+                return;
+            }
+            else if (dev_list[i].product == "oCam-1CGN-U-T2")
+            {
+                devPath_ = dev_list[i].dev_node;
+                flag0144 = true;
+                return;
+            }
+            else if (dev_list[i].product == "oCam-1MGN-U-T2")
+            {
+                devPath_ = dev_list[i].dev_node;
+                flag0144 = true;
                 return;
             }
             else if (dev_list[i].product == "oCam-1MGN-U")
@@ -252,8 +280,8 @@ public:
         ros::NodeHandle priv_nh("~");
 
         /* default parameters */
-        resolution_ = 2;
-        frame_rate_ = 30.0;
+        resolution_ = 0;
+        frame_rate_ = 60.0;
         exposure_ = 100;
         gain_ = 150;
         wb_blue_ = 200;

@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(Boost REQUIRED COMPONENTS system)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.2.0 REQUIRED)
 
 generate_dynamic_reconfigure_options(
   cfg/cam.cfg
@@ -38,6 +38,20 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
 )
 
+
 add_executable(ocam src/oCam.cpp src/withrobot_camera.cpp src/withrobot_utility.cpp)
 target_link_libraries(ocam ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} -lv4l2 -ludev)
 add_dependencies(ocam ${PROJECT_NAME}_gencfg)
+
+
+################################################################################
+# Install
+################################################################################
+
+install(DIRECTORY launch
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+
+
+
