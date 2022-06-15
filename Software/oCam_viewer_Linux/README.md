@@ -2,20 +2,14 @@
 oCam control program
 
 ## Release Note
+* 20191007
+Support for the oCamS-1XGN-U.
 
+* 20170925
+Add: Auto-Exposure Control menu.
 
-R2203 (Mar. 2022)
-  - oCam-1CGN-U-T2 ColorCorrection function corrected
-  - ColorCorrection button Enable
-
-R2019 (Oct. 2019)
-  - Support for the oCamS-1XGN-U.
-
-R2017 (Sep. 2017)
-  - Add: Auto-Exposure Control menu.
-
-R2017 (Apr. 2017)
-  - Support for the oCam-1CGN-U.
+* 20170420
+Support for the oCam-1CGN-U.
 
 ## How to build on linux
 Requirements

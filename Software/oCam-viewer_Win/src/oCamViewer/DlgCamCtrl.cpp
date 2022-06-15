@@ -488,16 +488,15 @@ void CDlgCamCtrl::OnBnClickedButtonCamColorCorrection()
 	//*/
 	control_command(SAVE_SCALE);
 	//// 껏다키는방법
-	CamSetCtrl(ptrCam, CTRL_GAIN, m_scGain.GetPos());
 	CamStop(ptrCam);
 	CamStart(ptrCam);
 
 	m_camColorCorrectionFlag = 0;
 	GetDlgItem(IDC_BUTTON_CAM_COLOR_CORRECTION)->EnableWindow(TRUE);
 	// save trigger 이후, Gain 값이 변했으므로 껐다가 켰을때 64로 시작 할 수 있도록
-	//m_scGain.SetPos(DEFAULT_GAIN);
-	//CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
-	//SetDlgItemInt(IDC_STATIC_GAIN, DEFAULT_GAIN);
+	m_scGain.SetPos(DEFAULT_GAIN);
+	CamSetCtrl(ptrCam, CTRL_GAIN, DEFAULT_GAIN);
+	SetDlgItemInt(IDC_STATIC_GAIN, DEFAULT_GAIN);
 }
 
 void CDlgCamCtrl::control_command(unsigned int value)

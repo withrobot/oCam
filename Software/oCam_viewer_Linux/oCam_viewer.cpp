@@ -404,8 +404,33 @@ bool oCam::start()
     }
     else{
         if(ocam->get_dev_name() =="oCamS-1CGN-U"){
-            format.width = format.width*2;
+            format.width = format.width * 2;
             StereoImage = true;
+
+            // add miscellaneous controls
+            /* Default Push Button */
+            defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
+            ui->vLayoutMisc->addWidget(defaultPushBtn);
+            defaultPushBtn->setEnabled(true);
+
+            connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
+            misc_control_form_pushBtn.push_back(defaultPushBtn);
+
+            /* Reset Push Button */
+            resetPushBtn = new ControlFormPushBtn("Reset Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(resetPushBtn);
+            resetPushBtn->setEnabled(true);
+
+            connect(resetPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(reset_color_correction()));
+            misc_control_form_pushBtn.push_back(resetPushBtn);
+
+            /* Color Correction Push Button */
+            correctionPushBtn = new ControlFormPushBtn("Color correction", "Do it.");
+            ui->vLayoutMisc->addWidget(correctionPushBtn);
+            correctionPushBtn->setEnabled(true);
+
+            connect(correctionPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(calculate_color_correction()));
+            misc_control_form_pushBtn.push_back(correctionPushBtn);
         }
         else if(ocam->get_dev_name() =="oCamS-1MGN-U"){
             format.width = format.width*2;
@@ -774,7 +799,15 @@ void oCam::calculate_color_correction()
     /*
      *  calculate the white balance
      */
-    Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+    if(StereoImage)
+    {
+        Split_Stereo_image(frame_buffer,stereo_buffer,format.width, format.height);
+        Bayer2BGR(stereo_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+    }
+    else
+    {
+        Bayer2BGR(frame_buffer, rgb_buffer, format.width, format.height, BayerGB2RGB);
+    }
 
     double normList[3];
     calNormOfImage(normList, rgb_buffer, format.width, format.height);

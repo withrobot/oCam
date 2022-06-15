@@ -1048,7 +1048,7 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 
 	m_CamSel = m_cbCam.GetCurSel();
 	m_DlgCamCtrl.m_CamSel_Ctrl = m_CamSel;
-
+	printf("test!!!!!! : %d\n", m_CamSel);
 	m_cbResolution.ResetContent();
 	m_CamModel = CamGetDeviceInfo(m_CamSel, INFO_MODEL_NAME);
 	m_CamSN = CamGetDeviceInfo(m_CamSel, INFO_SERIAL_NUM);

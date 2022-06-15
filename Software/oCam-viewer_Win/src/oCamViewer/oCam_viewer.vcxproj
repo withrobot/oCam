@@ -95,7 +95,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)_build_\$(PlatformShortName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intermediate_\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
-    <TargetName>oCamViewer 20220308</TargetName>
+    <TargetName>oCamViewer 20220614</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
