@@ -1,7 +1,7 @@
 // DlgCamCtrl.cpp : implementation file
+//
 
-
-// #include "stdafx.h"
+#include "stdafx.h"
 #include "DlgCamCtrl.h"
 #include "afxdialogex.h"
 
