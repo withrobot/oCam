@@ -1,5 +1,5 @@
 // DlgCamCtrl.cpp : implementation file
-//
+
 
 #include "stdafx.h"
 #include "DlgCamCtrl.h"
