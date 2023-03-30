@@ -1,0 +1,63 @@
+<launch>
+
+    <arg name="resolution"    default="0"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 -->
+    <arg name="frame_rate"    default="20"/>
+    <arg name="exposure"      default="50"/>
+    <arg name="gain"          default="50"/>
+    <arg name="wb_blue"       default="200"/>
+    <arg name="wb_red"        default="160"/>
+    <arg name="auto_exposure" default="false"/>
+    <arg name="show_image"    default="false"/>
+
+    <group ns = "right">
+
+        <!-- Nodelet manager -->
+        <node pkg="nodelet" type="nodelet" name="right_nodelet_manager" args="manager" cwd="node" output="screen"/>
+
+        <node pkg="ocam" type="ocam" name="right" args="manager" cwd="node" output="screen">
+            <param name="serial"        value="SN"/>
+            <param name="resolution"    value="$(arg resolution)"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 -->
+            <param name="frame_rate"    value="$(arg frame_rate)"/>
+            <param name="exposure"      value="$(arg exposure)"/>
+            <param name="gain"          value="$(arg gain)"/>
+            <param name="wb_blue"       value="$(arg wb_blue)"/>
+            <param name="wb_red"        value="$(arg wb_red)"/>
+            <param name="auto_exposure" value="$(arg auto_exposure)"/>
+            <param name="show_image"    value="$(arg show_image)"/>
+            <param name="camera_frame_id" value="right"/>
+        </node>
+
+        <!-- Color rectified image -->
+        <node pkg="nodelet" type="nodelet" name="right_image_rectify_color" args="load image_proc/rectify right_nodelet_manager" respawn="true">
+            <remap from="image_rect" to="image_rect_color" />
+        </node> 
+
+    </group>
+
+    <group ns = "left">
+        <!-- Nodelet manager -->
+        <node pkg="nodelet" type="nodelet" name="left_nodelet_manager" args="manager" cwd="node" output="screen"/>
+
+        <node pkg="ocam" type="ocam" name="left" args="manager" cwd="node" output="screen">
+            <param name="serial"        value="SN"/>
+            <param name="resolution"    value="$(arg resolution)"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 -->
+            <param name="frame_rate"    value="$(arg frame_rate)"/>
+            <param name="exposure"      value="$(arg exposure)"/>
+            <param name="gain"          value="$(arg gain)"/>
+            <param name="wb_blue"       value="$(arg wb_blue)"/>
+            <param name="wb_red"        value="$(arg wb_red)"/>
+            <param name="auto_exposure" value="$(arg auto_exposure)"/>
+            <param name="show_image"    value="$(arg show_image)"/>
+            <param name="camera_frame_id" value="left"/>
+        </node>
+
+        <!-- Color rectified image -->
+        <node pkg="nodelet" type="nodelet" name="left_image_rectify_color" args="load image_proc/rectify left_nodelet_manager" respawn="true">
+            <remap from="image_rect" to="image_rect_color" />
+        </node> 
+
+    </group>    
+
+	  
+
+</launch>
