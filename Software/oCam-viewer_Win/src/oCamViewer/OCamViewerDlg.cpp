@@ -35,6 +35,37 @@ int g_change_when_stop_flag = 0;
 int g_1CGNS_Flag = 0;
 int g_1MGNS_Flag = 0;
 
+int g_5CRO_U_C3[][3] = {		
+	{2592, 1944, 375},
+	{2592, 1944, 750},
+	{1920,1080, 750},
+	{1920,1080, 1500},
+	{1280,960, 1500},
+	{1280,960, 3000},
+	{1280,720, 1500},
+	{1280,720, 3000},
+	{640,480, 3000},
+	{640,480, 6000},
+	{640,480, 9000},
+	{320,240, 3000},
+	{320,240, 6000},
+	{320,240, 9000},
+	{320,240, 12000},
+};
+
+int g_5CRO_U_C2[][3] = {
+	{2592, 1944, 375},
+	{1920,1080, 750},
+	{1280,960, 1500},
+	{1280,720, 1500},
+	{640,480, 3000},
+	{640,480, 6000},
+	{320,240, 3000},
+	{320,240, 6000},
+	{320,240, 9000},
+	{320,240, 12000},
+};
+
 int g_5CRO_U3[][3] = {		// default
 	{2592, 1944, 375},
 	{2592, 1944, 750},
@@ -1261,6 +1292,17 @@ void COCamViewerDlg::OnCbnSelchangeComboCam()
 			num_list = sizeof(g_1MGN_UT3_v2) / 12;
 		}
 	}
+	else if (m_CamModel == "oCam-5CRO-U-C") {
+		if (m_UsbType == "USB2")
+		{
+			memcpy(g_Resolution, g_5CRO_U_C2, sizeof(g_5CRO_U_C2));
+			num_list = sizeof(g_5CRO_U_C2) / 12;
+		}
+		else
+		{
+			memcpy(g_Resolution, g_5CRO_U_C3, sizeof(g_5CRO_U_C3));
+			num_list = sizeof(g_5CRO_U_C3) / 12;
+		}
 	// sdkim 2WRS 추가 20180220
 	else {
 		if (m_UsbType == "USB2")
