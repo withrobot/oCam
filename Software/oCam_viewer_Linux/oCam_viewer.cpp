@@ -167,7 +167,7 @@ void oCam::update_gui()
 
         case PIX_FORMAT_MJPEG:
             /* convert mjpeg to rgb */
-            //format_converter->jpeg_to_rgb(rgb_buffer, frame_buffer, frame_size);
+            format_converter->jpeg_to_rgb(rgb_buffer, frame_buffer, frame_size);
             break;
 
         case PIX_FORMAT_GREY:
@@ -436,6 +436,18 @@ bool oCam::start()
             format.width = format.width*2;
             StereoImage = true;
         }
+                
+        else if( ocam->get_dev_name() == "oCam-5CRO-U-C" )
+        {
+            StereoImage = false;
+            IRImage = false;
+            defaultPushBtn = new ControlFormPushBtn("Set Default", "Do it.");
+            ui->vLayoutMisc->addWidget(defaultPushBtn);
+            defaultPushBtn->setEnabled(true);
+
+            connect(defaultPushBtn, SIGNAL(btnClicked(bool)), this, SLOT(set_default_color_correction()));
+            misc_control_form_pushBtn.push_back(defaultPushBtn);
+        }
     }
     /* change window geometry */
     QRect geo = geometry();
@@ -545,7 +557,7 @@ bool oCam::start()
     qtmr_timer->start(STATIC_QTIMER_RATE);
 #else
     int timer_rate = (int)(1.0 / format.frame_rate * 1000.0);
-    std::cout << "Frame Rate : " << format.frame_rate << "Timer rate : " << timer_rate << std::endl;
+    // std::cout << "Frame Rate : " << format.frame_rate << "Timer rate : " << timer_rate << std::endl;
     DBG_PRINTF("qTimer Rate: %d", timer_rate);
     qtmr_timer->start(timer_rate);
 #endif
